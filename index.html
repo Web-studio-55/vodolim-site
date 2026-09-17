@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vodolim — Mala tvrtka za velike projekte</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,'Segoe UI',system-ui,sans-serif;
+  background:#F7F5F1;color:#18180F;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:60px;padding:0 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(12,12,10,.92);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{height:28px;filter:brightness(0) invert(1);object-fit:contain}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{font-size:11.5px;letter-spacing:.05em;color:rgba(255,255,255,.35);transition:color .2s}
+.nav-links a:hover{color:rgba(255,255,255,.85)}
+.nav-cta{
+  background:#3A9B4E;color:#fff!important;
+  font-size:11px!important;letter-spacing:.1em!important;
+  padding:8px 18px;border-radius:3px;transition:background .2s!important;
+}
+.nav-cta:hover{background:#2E8040!important}
+.nav-lang{display:flex;gap:8px}
+.nav-lang a{font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.2);transition:color .2s}
+.nav-lang a:hover,.nav-lang a.on{color:rgba(255,255,255,.55)}
+.nav-r{display:flex;align-items:center;gap:20px}
+
+/* ── HERO (full bleed) ── */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://vodolim.hr/wp-content/uploads/2015/05/Construction-Buildings-Images.jpg') center/cover no-repeat;
+  filter:brightness(.38);
+  transform:scale(1.03);
+}
+.hero-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,8,6,.98) 0%,rgba(8,8,6,.55) 50%,rgba(8,8,6,.18) 100%);
+}
+.hero-content{
+  position:relative;
+  width:100%;padding:0 40px 72px;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:flex-end;gap:48px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px solid rgba(58,155,78,.35);border-radius:20px;
+  padding:5px 14px 5px 8px;margin-bottom:28px;width:fit-content;
+}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#3A9B4E;flex-shrink:0}
+.hero-badge span{font-size:10.5px;letter-spacing:.14em;color:rgba(255,255,255,.4)}
+.hero-h{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(52px,7.5vw,110px);
+  font-weight:400;line-height:.95;letter-spacing:-.04em;
+  color:#fff;margin-bottom:28px;
+}
+.hero-h em{color:#3A9B4E;font-style:normal}
+.hero-sub{
+  font-size:15px;color:rgba(255,255,255,.3);
+  line-height:1.85;max-width:360px;margin-bottom:40px;
+}
+.hero-btns{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-g{
+  background:#3A9B4E;color:#fff;
+  font-size:11.5px;letter-spacing:.1em;
+  padding:14px 28px;border-radius:3px;
+  transition:background .2s,transform .15s;display:inline-block;
+}
+.btn-g:hover{background:#2E8040;transform:translateY(-1px)}
+.btn-ghost{
+  font-size:11.5px;letter-spacing:.08em;
+  color:rgba(255,255,255,.3);
+  border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.btn-ghost:hover{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.4)}
+.hero-stats{
+  display:flex;flex-direction:column;gap:0;
+  border:1px solid rgba(255,255,255,.08);border-radius:8px;
+  overflow:hidden;min-width:160px;flex-shrink:0;
+}
+.hero-stat{
+  padding:22px 24px;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.hero-stat:last-child{border:none}
+.stat-n{
+  font-family:Georgia,serif;font-size:38px;color:#fff;
+  letter-spacing:-.04em;line-height:1;margin-bottom:5px;
+}
+.stat-n sup{font-size:18px;color:#3A9B4E;vertical-align:super}
+.stat-l{font-size:9.5px;letter-spacing:.16em;color:rgba(255,255,255,.22)}
+
+/* ── MARQUEE TICKER ── */
+.ticker{
+  background:#3A9B4E;padding:12px 0;overflow:hidden;
+  border-top:none;
+}
+.ticker-inner{
+  display:flex;gap:0;width:max-content;
+  animation:ticker 24s linear infinite;
+}
+.ticker-item{
+  font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.7);
+  padding:0 40px;white-space:nowrap;
+}
+.ticker-sep{color:rgba(255,255,255,.3);margin-right:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── STANOVI ── */
+.stanovi{padding:100px 40px;background:#F7F5F1}
+.stanovi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.stanovi-img{
+  position:relative;border-radius:12px;overflow:hidden;
+  height:520px;background:#E8E5DF;
+}
+.stanovi-img img{width:100%;height:100%;object-fit:cover}
+.stanovi-stamp{
+  position:absolute;bottom:20px;right:20px;
+  background:#3A9B4E;color:#fff;
+  font-size:10px;letter-spacing:.16em;
+  padding:10px 16px;border-radius:3px;
+}
+.lbl{font-size:10px;letter-spacing:.2em;color:#3A9B4E;margin-bottom:14px;display:block}
+.h2{font-family:Georgia,serif;font-size:clamp(28px,3vw,42px);font-weight:400;line-height:1.15;letter-spacing:-.02em;color:#18180F;margin-bottom:20px}
+.body-txt{font-size:16px;color:#6B6860;line-height:1.9;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tag{
+  font-size:11.5px;padding:6px 14px;border-radius:20px;
+  border:1px solid rgba(24,24,15,.12);color:#7A7870;
+  transition:border-color .2s,color .2s;
+}
+.tag:hover{border-color:#3A9B4E;color:#3A9B4E}
+
+/* ── PORTFOLIO ── */
+.portfolio{padding:100px 40px;background:#EDEAE4}
+.port-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+.s-lnk{font-size:11px;letter-spacing:.1em;color:#3A9B4E;border-bottom:1px solid #3A9B4E;padding-bottom:1px}
+/* Bento portfolio */
+.port-g{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto;gap:14px}
+.pc{
+  position:relative;border-radius:10px;overflow:hidden;
+  background:#1E1E18;cursor:pointer;
+}
+.pc-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .65s cubic-bezier(.25,.46,.45,.94);
+  will-change:transform;
+}
+.pc:hover .pc-img{transform:scale(1.07)}
+.pc-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,6,4,.9) 0%,rgba(6,6,4,.2) 55%,transparent 100%);
+}
+.pc-info{position:absolute;bottom:0;left:0;right:0;padding:18px 20px}
+.pc-cat{
+  display:inline-block;
+  font-size:9px;letter-spacing:.14em;color:#3A9B4E;
+  background:rgba(58,155,78,.13);border:1px solid rgba(58,155,78,.25);
+  padding:3px 9px;border-radius:20px;margin-bottom:8px;
+}
+.pc-name{font-family:Georgia,serif;font-weight:400;color:#fff;line-height:1.3}
+.pc-loc{font-size:10px;color:rgba(255,255,255,.32);letter-spacing:.08em;margin-top:3px}
+/* grid placement */
+.pc-a{grid-column:1/6;grid-row:1/3;height:480px}
+.pc-b{grid-column:6/9;grid-row:1;height:228px}
+.pc-c{grid-column:9/13;grid-row:1;height:228px}
+.pc-d{grid-column:6/9;grid-row:2;height:228px}
+.pc-e{grid-column:9/13;grid-row:2;height:228px}
+.pc-f{grid-column:1/4;height:170px}
+.pc-g{grid-column:4/7;height:170px}
+.pc-h{grid-column:7/10;height:170px}
+.pc-i{grid-column:10/13;height:170px}
+.pc-a .pc-name{font-size:26px}
+.pc-b .pc-name,.pc-c .pc-name,.pc-d .pc-name,.pc-e .pc-name{font-size:15px}
+.pc-f .pc-name,.pc-g .pc-name,.pc-h .pc-name,.pc-i .pc-name{font-size:12px}
+
+/* ── USLUGE (bento) ── */
+.usluge{padding:100px 40px;background:#18180F}
+.usluge-head{margin-bottom:52px}
+.usluge-head .lbl{color:#3A9B4E}
+.usluge-head .h2{color:#fff}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bc{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:36px 32px;
+  transition:background .25s,border-color .25s;
+}
+.bc:hover{background:rgba(255,255,255,.07);border-color:rgba(58,155,78,.25)}
+.bc-n{
+  font-family:Georgia,serif;font-size:56px;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.1);
+  line-height:1;margin-bottom:20px;
+}
+.bc-h{font-size:17px;font-weight:600;color:#fff;margin-bottom:10px}
+.bc-p{font-size:14px;color:rgba(255,255,255,.33);line-height:1.8}
+.bc-wide{grid-column:span 2}
+.bc-wide .bc-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+
+/* ── O NAMA ── */
+.onama{padding:100px 40px;background:#F7F5F1}
+.onama-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.onama-img-wrap{position:relative}
+.onama-img{border-radius:12px;overflow:hidden;height:500px;background:#E8E5DF}
+.onama-img img{width:100%;height:100%;object-fit:cover}
+.onama-yr{
+  position:absolute;bottom:20px;left:20px;
+  background:#18180F;color:#fff;
+  font-family:Georgia,serif;font-size:54px;line-height:1;
+  padding:14px 20px;border-radius:6px;letter-spacing:-.04em;
+}
+.onama-yr span{color:#3A9B4E}
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:32px}
+.tl-item{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid rgba(24,24,15,.07)}
+.tl-item:last-child{border:none}
+.tl-yr{font-size:12px;letter-spacing:.08em;color:#3A9B4E;width:48px;flex-shrink:0;padding-top:2px}
+.tl-txt{font-size:14px;color:#7A7870;line-height:1.7}
+.tl-txt strong{color:#18180F;font-weight:600}
+
+/* ── NISKOENERGETSKE (dark) ── */
+.nisko{padding:100px 40px;background:#18180F}
+.nisko-top{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-bottom:64px}
+.nisko .lbl{color:#3A9B4E}
+.nisko .h2{color:#fff}
+.nisko-desc{font-size:16px;color:rgba(255,255,255,.32);line-height:1.9;margin-top:16px}
+.nisko-steps{display:flex;flex-direction:column;gap:18px;padding-top:8px}
+.nisko-step{display:flex;gap:14px;align-items:flex-start}
+.ns-dot{width:6px;height:6px;border-radius:50%;background:#3A9B4E;flex-shrink:0;margin-top:9px}
+.ns-txt{font-size:14.5px;color:rgba(255,255,255,.4);line-height:1.75}
+.nisko-kpis{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden}
+.kpi{padding:52px 40px;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.kpi:last-child{border:none}
+.kpi-n{font-family:Georgia,serif;font-size:68px;color:#fff;line-height:1;letter-spacing:-.04em}
+.kpi-n sup{font-size:32px;color:#3A9B4E;vertical-align:super}
+.kpi-l{font-size:14px;color:rgba(255,255,255,.4);margin-top:12px}
+.kpi-s{font-size:9.5px;letter-spacing:.14em;color:rgba(255,255,255,.18);margin-top:5px}
+
+/* ── EU PROJEKTI ── */
+.eu{padding:100px 40px;background:#EDEAE4}
+.eu-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.eu-txt .body-txt{color:#6B6860}
+.eu-card{
+  background:#fff;border:1px solid rgba(24,24,15,.08);
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,.04);
+}
+.eu-card-head{background:#3A9B4E;padding:18px 24px}
+.eu-card-head h3{font-size:11px;letter-spacing:.14em;color:#fff;font-weight:600}
+.eu-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 24px;border-bottom:1px solid rgba(24,24,15,.06);gap:16px}
+.eu-row:last-child{border:none}
+.eu-k{font-size:12.5px;color:#A09D97;white-space:nowrap}
+.eu-v{font-size:13px;font-weight:600;color:#18180F;text-align:right;line-height:1.5}
+.eu-v.g{color:#3A9B4E}
+.eu-logos{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:32px}
+.eu-logo{height:34px;opacity:.45;object-fit:contain;filter:grayscale(.5)}
+
+/* ── NOVOSTI ── */
+.novosti{padding:100px 40px;background:#F7F5F1}
+.news-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.nc{
+  background:#fff;border:1px solid rgba(24,24,15,.07);
+  border-radius:12px;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+}
+.nc:hover{transform:translateY(-5px);box-shadow:0 24px 56px rgba(0,0,0,.1)}
+.nc-img{height:210px;overflow:hidden;background:#EDEAE4}
+.nc-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.nc:hover .nc-img img{transform:scale(1.06)}
+.nc-body{padding:24px 24px 28px}
+.nc-date{font-size:9.5px;letter-spacing:.14em;color:#A09D97;margin-bottom:10px}
+.nc-h{font-size:15px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:9px}
+.nc-p{font-size:13px;color:#7A7870;line-height:1.8}
+
+/* ── NJEMAČKO TRŽIŠTE ── */
+.de{padding:100px 40px;background:#18180F}
+.de-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.de .h2{color:#fff}
+.de .lbl{color:#3A9B4E}
+.de-desc{font-size:16px;color:rgba(255,255,255,.32);line-height:1.9;margin-bottom:14px;margin-top:16px}
+.de-pts{display:flex;flex-direction:column;gap:14px;margin:28px 0}
+.de-pt{display:flex;gap:12px;align-items:flex-start}
+.dp-dot{width:5px;height:5px;border-radius:50%;background:#3A9B4E;flex-shrink:0;margin-top:10px}
+.dp-txt{font-size:15px;color:rgba(255,255,255,.38);line-height:1.7}
+.de-img{border-radius:12px;overflow:hidden;height:460px;background:#1A1A14}
+.de-img img{width:100%;height:100%;object-fit:cover;opacity:.6}
+
+/* ── PARTNERI ── */
+.partners{padding:44px 40px;background:#EDEAE4;border-top:1px solid rgba(24,24,15,.09)}
+.partners-row{display:flex;align-items:center;gap:0}
+.partners-lbl{font-size:9.5px;letter-spacing:.2em;color:#A09D97;white-space:nowrap;padding-right:36px;border-right:1px solid rgba(24,24,15,.12);margin-right:36px;flex-shrink:0}
+.p-logos{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+.p-logo{height:44px;opacity:.38;filter:grayscale(1);object-fit:contain;transition:opacity .25s,filter .25s}
+.p-logo:hover{opacity:.8;filter:grayscale(0)}
+.p-name{font-size:13.5px;color:#B0ADA7;letter-spacing:.04em;transition:color .2s}
+.p-name:hover{color:#6B6860}
+
+/* ── KONTAKT ── */
+.kontakt{padding:100px 40px;background:#F7F5F1;border-top:1px solid rgba(24,24,15,.09)}
+.kontakt-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.kontakt .h2{margin-bottom:40px}
+.k-items{display:flex;flex-direction:column;gap:26px}
+.k-lbl{font-size:9.5px;letter-spacing:.18em;color:#A09D97;margin-bottom:4px}
+.k-val{font-size:16px;color:#18180F}
+.k-val a{transition:color .2s}
+.k-val a:hover{color:#3A9B4E}
+form{display:flex;flex-direction:column;gap:14px}
+.f-lbl{font-size:9.5px;letter-spacing:.14em;color:#A09D97;display:block;margin-bottom:7px}
+input,textarea{
+  width:100%;padding:13px 16px;
+  border:1px solid rgba(24,24,15,.13);border-radius:6px;
+  font:inherit;font-size:15px;color:#18180F;background:#fff;
+  outline:none;transition:border-color .2s,box-shadow .2s;
+}
+input:focus,textarea:focus{border-color:#3A9B4E;box-shadow:0 0 0 3px rgba(58,155,78,.1)}
+textarea{min-height:130px;resize:vertical}
+.f-btn{
+  background:#3A9B4E;color:#fff;
+  font:inherit;font-size:11.5px;letter-spacing:.12em;
+  padding:15px 32px;border-radius:3px;border:none;cursor:pointer;
+  align-self:flex-start;transition:background .2s,transform .15s;
+}
+.f-btn:hover{background:#2E8040;transform:translateY(-1px)}
+
+/* ── EU STRIP ── */
+.eu-strip{background:#EDEAE4;border-top:1px solid rgba(24,24,15,.09);padding:16px 40px}
+.eu-strip p{font-size:11.5px;color:#7A7870;line-height:1.7}
+.eu-strip strong{color:#18180F}
+
+/* ── FOOTER ── */
+footer{background:#18180F;padding:60px 40px 28px}
+.footer-top{display:flex;justify-content:space-between;gap:48px;margin-bottom:60px}
+.footer-brand{font-size:13px;letter-spacing:.15em;color:rgba(255,255,255,.5);margin-bottom:6px}
+.footer-sub{font-size:12px;color:rgba(255,255,255,.18)}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.fc-t{font-size:9.5px;letter-spacing:.18em;color:rgba(255,255,255,.22);margin-bottom:18px}
+.fc-links{display:flex;flex-direction:column;gap:10px}
+.fc-links a{font-size:13px;color:rgba(255,255,255,.32);transition:color .2s}
+.fc-links a:hover{color:rgba(255,255,255,.8)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.16)}
+.footer-soc{display:flex;gap:20px}
+.footer-soc a{font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.2);transition:color .2s}
+.footer-soc a:hover{color:rgba(255,255,255,.6)}
+
+/* ── MOBILE ── */
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero-content{grid-template-columns:1fr;padding:0 20px 60px}
+  .hero-stats{flex-direction:row;border-radius:10px;min-width:0}
+  .hero-stat{flex:1;padding:16px 14px;border-bottom:none;border-right:1px solid rgba(255,255,255,.07)}
+  .hero-stat:last-child{border:none}
+  .stanovi,.onama,.eu,.kontakt,.novosti,.nisko,.de,.usluge,.portfolio{padding:64px 20px}
+  .stanovi-inner,.onama-inner,.eu-inner,.kontakt-inner,.de-inner,.nisko-top{grid-template-columns:1fr;gap:40px}
+  .port-g{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .pc-a{grid-column:1/3;grid-row:auto;height:280px}
+  .pc-b,.pc-c,.pc-d,.pc-e{grid-column:span 1;height:180px}
+  .pc-f,.pc-g,.pc-h,.pc-i{grid-column:span 1;height:140px}
+  .bento{grid-template-columns:1fr}
+  .bc-wide{grid-column:span 1}
+  .bc-wide .bc-inner{grid-template-columns:1fr}
+  .news-g{grid-template-columns:1fr}
+  .nisko-kpis{grid-template-columns:1fr}
+  .kpi{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
+  .kpi:last-child{border:none}
+  .partners-row{flex-direction:column;gap:20px}
+  .partners-lbl{border:none;padding:0;margin:0}
+  .footer-top{flex-direction:column}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .footer-bot{flex-direction:column;gap:12px;text-align:center}
+  .partners{padding:36px 20px}
+  .eu-strip{padding:16px 20px}
+}
+@media(max-width:520px){
+  .hero-h{font-size:42px}
+  .port-g{grid-template-columns:1fr}
+  .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i{grid-column:span 1;height:200px}
+  .hero-stats{flex-direction:column}
+  .hero-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
+  .hero-stat:last-child{border:none}
+  .footer-cols{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .pc-img,.nc-img img,.btn-g,.btn-g:hover,.f-btn,.f-btn:hover,.nc{
+    transition:none;transform:none!important;
+  }
+  .ticker-inner{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="https://vodolim.hr/wp-content/uploads/2015/05/logo31.png" alt="Vodolim" onerror="this.style.display='none'">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Naslovnica</a></li>
+    <li><a href="#stanovi">Stanovi</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#onama">O nama</a></li>
+    <li><a href="#nisko">Niskoenergetske</a></li>
+    <li><a href="#projekti">Projekti</a></li>
+    <li><a href="#novosti">Novosti</a></li>
+    <li><a href="#njemacko">Njemačko tržište</a></li>
+    <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="nav-lang">
+      <a href="#" class="on">HR</a>
+      <a href="#">EN</a>
+      <a href="#">DE</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-dot"></span>
+        <span>TRADICIJA OD 1973. GODINE</span>
+      </div>
+      <h1 class="hero-h">Vaš partner<br>u <em>gradnji</em></h1>
+      <p class="hero-sub">Instalacije, gradnja i energetska obnova. Od obiteljske kuće do bolnice — sve na jednom mjestu.</p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-g">Pogledaj projekte</a>
+        <a href="#kontakt" class="btn-ghost">Zatražite ponudu</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-n">50<sup>+</sup></div>
+        <div class="stat-l">GODINA ISKUSTVA</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">150<sup>+</sup></div>
+        <div class="stat-l">STRUČNJAKA</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">24<sup>+</sup></div>
+        <div class="stat-l">PROJEKATA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">GRADNJA</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">INSTALACIJE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">ENERGETSKA OBNOVA</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">NISKOENERGETSKE KUĆE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">NJEMAČKO TRŽIŠTE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">PROJEKTIRANJE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">KLJUČ U RUKE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">GRADNJA</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">INSTALACIJE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">ENERGETSKA OBNOVA</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">NISKOENERGETSKE KUĆE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">NJEMAČKO TRŽIŠTE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">PROJEKTIRANJE</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">KLJUČ U RUKE</span>
+    <span class="ticker-item">✦</span>
+  </div>
+</div>
+
+<!-- STANOVI -->
+<section id="stanovi" class="stanovi">
+  <div class="stanovi-inner">
+    <div class="stanovi-img">
+      <img src="https://vodolim.hr/wp-content/uploads/2021/09/OBITELJSKAKUCA-DONJA-STBICA-700x420.jpg" alt="Vodolim stanovi" onerror="this.style.display='none'">
+      <div class="stanovi-stamp">KLJUČ U RUKE</div>
+    </div>
+    <div>
+      <span class="lbl">Vodolim Stanovi</span>
+      <h2 class="h2">Gradite kuću za odmor ili obiteljsku kuću?</h2>
+      <p class="body-txt">S Vodolimom je cijeli proces jednostavniji, sigurniji i učinkovitiji. Od projektiranja i potrebne dokumentacije, preko dozvola, do kompletne gradnje, instalacija i završnih radova.</p>
+      <p class="body-txt">Sve na jednom mjestu — vi samo gledate kako vaš dom raste.</p>
+      <div class="tags">
+        <span class="tag">Projektna dokumentacija</span>
+        <span class="tag">Dozvole i papirologij a</span>
+        <span class="tag">Gradnja</span>
+        <span class="tag">Instalacije</span>
+        <span class="tag">Završni radovi</span>
+      </div>
+      <br><br>
+      <a href="#kontakt" class="btn-g">Zatražite ponudu</a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+  <div class="port-head">
+    <div>
+      <span class="lbl">Naš rad</span>
+      <h2 class="h2">Odabrani projekti</h2>
+    </div>
+    <a href="#" class="s-lnk">Svi projekti →</a>
+  </div>
+  <div class="port-g">
+    <!-- A: large -->
+    <div class="pc pc-a">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2015/05/porfolio-3-700x420-1.jpg');background-color:#1e2a1e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">ZDRAVSTVO</span>
+        <div class="pc-name">Bolnica Merkur</div>
+        <div class="pc-loc">ZAGREB</div>
+      </div>
+    </div>
+    <!-- B -->
+    <div class="pc pc-b">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2024/10/staracki-Lobor_003-3-1-700x420.jpg');background-color:#1e1e2a"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">SOCIJALNA SKRB</span>
+        <div class="pc-name">Dom za starije — Lobor</div>
+        <div class="pc-loc">LOBOR</div>
+      </div>
+    </div>
+    <!-- C -->
+    <div class="pc pc-c">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/TURISTICKI-KOMPLEPKS-PETRAM-SAVUDRIJA-700x420.jpg');background-color:#1e2620"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">TURIZAM</span>
+        <div class="pc-name">Petram kompleks</div>
+        <div class="pc-loc">SAVUDRIJA</div>
+      </div>
+    </div>
+    <!-- D -->
+    <div class="pc pc-d">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/CENTAR-ZA-SOCIJALNU-SKRB-NOVI-MAROV-700x420.jpg');background-color:#221e22"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">SOCIJALNA SKRB</span>
+        <div class="pc-name">Centar za soc. skrb</div>
+        <div class="pc-loc">NOVI MAROF</div>
+      </div>
+    </div>
+    <!-- E -->
+    <div class="pc pc-e">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/ENERGETKA-OBNOVA-JAKOVLJE-700x420.jpg');background-color:#1e2418"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">ENERGETSKA OBNOVA</span>
+        <div class="pc-name">Energetska obnova</div>
+        <div class="pc-loc">JAKOVLJE</div>
+      </div>
+    </div>
+    <!-- F–I small -->
+    <div class="pc pc-f">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2015/05/4-700x420.jpg');background-color:#1e261e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Vrtić Omišalj</div><div class="pc-loc">OMIŠALJ</div></div>
+    </div>
+    <div class="pc pc-g">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/STAMBENA-ZGRADA-DONJA-STUBICA-700x420.jpg');background-color:#1e221e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Stambena zgrada</div><div class="pc-loc">DONJA STUBICA</div></div>
+    </div>
+    <div class="pc pc-h">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2025/02/20250130_095539-1-700x420.jpg');background-color:#1e1e26"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Svetice zgrada</div><div class="pc-loc">ZAGREB</div></div>
+    </div>
+    <div class="pc pc-i">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/FB_IMG_1630730910255-700x420.jpg');background-color:#261e1e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Proizvodni pogon</div><div class="pc-loc">KRAPINA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- USLUGE (bento) -->
+<section id="usluge" class="usluge">
+  <div class="usluge-head">
+    <span class="lbl">Što radimo</span>
+    <h2 class="h2">Naše usluge</h2>
+  </div>
+  <div class="bento">
+    <div class="bc">
+      <div class="bc-n">01</div>
+      <div class="bc-h">Niskoenergetske kuće</div>
+      <div class="bc-p">Kompletna rješenja za gradnju — od projektne dokumentacije i dozvola do ključa u ruke.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">02</div>
+      <div class="bc-h">Veliki javni objekti</div>
+      <div class="bc-p">Bolnice, škole, vrtići, stambene i poslovne zgrade. Iskustvo s najzahtjevnijim projektima.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">03</div>
+      <div class="bc-h">Unutarnji radovi</div>
+      <div class="bc-p">Žbukanje, oblaganje, keramika, parket, sanitarni čvorovi — kompletna priprema interijera.</div>
+    </div>
+    <div class="bc bc-wide">
+      <div class="bc-inner">
+        <div>
+          <div class="bc-n">04</div>
+          <div class="bc-h">MEP instalacije</div>
+          <div class="bc-p">Vodovodne, kanalizacijske, toplinske i mehaničke instalacije za sve vrste objekata.</div>
+        </div>
+        <div>
+          <div class="bc-n">05</div>
+          <div class="bc-h">Energetska obnova</div>
+          <div class="bc-p">Modernizacija objekata, smanjenje potrošnje energije uz mogućnost EU sufinanciranja.</div>
+        </div>
+      </div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">06</div>
+      <div class="bc-h">Projektiranje i dokumentacija</div>
+      <div class="bc-p">Projektna dokumentacija, troškovnici, pribavljanje dozvola i ostala papirologij a.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">07</div>
+      <div class="bc-h">Iznajmljivanje opreme</div>
+      <div class="bc-p">Profesionalna građevinska i instalaterska oprema dostupna za najam na vašem gradilištu.</div>
+    </div>
+  </div>
+</section>
+
+<!-- O NAMA -->
+<section id="onama" class="onama">
+  <div class="onama-inner">
+    <div class="onama-img-wrap">
+      <div class="onama-img">
+        <img src="https://vodolim.hr/wp-content/uploads/2021/09/VISESTABNEA-ZGRADA-SREDISCE-700x420.jpg" alt="Vodolim" onerror="this.style.display='none'">
+      </div>
+      <div class="onama-yr">19<span>73</span>.</div>
+    </div>
+    <div>
+      <span class="lbl">O nama</span>
+      <h2 class="h2">Mala tvrtka za<br>velike projekte</h2>
+      <p class="body-txt">Počeli smo s vodoinstalacijama i limarskim radovima. Danas smo sveobuhvatni partner u gradnji — od obiteljske kuće do bolnice.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
+        <div style="border:1px solid rgba(58,155,78,.25);border-radius:6px;padding:10px 16px;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:#3A9B4E;letter-spacing:.04em">ISO 9001</div>
+          <div style="font-size:10px;color:#A09D97;margin-top:2px;letter-spacing:.06em">KVALITETA</div>
+        </div>
+        <div style="border:1px solid rgba(58,155,78,.25);border-radius:6px;padding:10px 16px;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:#3A9B4E;letter-spacing:.04em">ISO 14001</div>
+          <div style="font-size:10px;color:#A09D97;margin-top:2px;letter-spacing:.06em">OKOLIŠ</div>
+        </div>
+        <div style="border:1px solid rgba(58,155,78,.25);border-radius:6px;padding:10px 16px;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:#3A9B4E;letter-spacing:.04em">ISO 45001</div>
+          <div style="font-size:10px;color:#A09D97;margin-top:2px;letter-spacing:.06em">SIGURNOST</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-yr">1973.</span>
+          <span class="tl-txt"><strong>Osnivanje</strong> — Vodolim kreće kao obrt za vodoinstalacije i limarske radove u Donjoj Stubici.</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-yr">2000s</span>
+          <span class="tl-txt"><strong>Širenje</strong> — Preuzimamo prve veće javne projekte: bolnice, škole, vrtići diljem Hrvatsk e.</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-yr">2018.</span>
+          <span class="tl-txt"><strong>Njemačko tržište</strong> — Počinjemo surađivati s njemačkim investitorima i partnerima.</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-yr">2023.</span>
+          <span class="tl-txt"><strong>Vodolim instalacije d.o.o.</strong> — Prelaz iz obrta u društvo s ograničenom odgovornošću (23. studenog).</span>
+        </div>
+        <div class="tl-item">
+          <span class="tl-yr">Danas</span>
+          <span class="tl-txt"><strong>50+ godina, 150 stručnjaka</strong> — Jedno od najiskusnijih građevinskih poduzeća u regiji.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NISKOENERGETSKE KUĆE -->
+<section id="nisko" class="nisko">
+  <div class="nisko-top">
+    <div>
+      <span class="lbl">Zelena gradnja</span>
+      <h2 class="h2">Niskoenergetske kuće</h2>
+      <p class="nisko-desc">Gradimo kuće koje troše manje, a pružaju više. Kompletna usluga — od ideje do ključa.</p>
+    </div>
+    <div class="nisko-steps">
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Projektiranje i dokumentacija — idejno rješenje, glavni projekt, dozvole</p></div>
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Kompletna gradnja — temelji, konstrukcija, krov, fasada</p></div>
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Instalacije — grijanje, hlađenje, vodovodne i električne</p></div>
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Završni radovi — žbukanje, oblaganje, keramika, parket</p></div>
+    </div>
+  </div>
+  <div class="nisko-kpis">
+    <div class="kpi">
+      <div class="kpi-n">78<sup>%</sup></div>
+      <div class="kpi-l">Zemljina energija</div>
+      <div class="kpi-s">GEOTERMALNI SUSTAV</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">70<sup>%</sup></div>
+      <div class="kpi-l">Sunčeva energija</div>
+      <div class="kpi-s">SOLARNI PANELI</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">22<sup>%</sup></div>
+      <div class="kpi-l">El. energija</div>
+      <div class="kpi-s">KONVENCIONALNO</div>
+    </div>
+  </div>
+</section>
+
+<!-- EU PROJEKTI -->
+<section id="projekti" class="eu">
+  <div>
+    <span class="lbl">EU Projekti</span>
+    <h2 class="h2" style="margin-bottom:48px">Projekti i financiranja</h2>
+  </div>
+  <div class="eu-inner">
+    <div class="eu-txt">
+      <p class="body-txt">Vodolim instalacije d.o.o. aktivno koristi europske fondove za digitalizaciju i povećanje konkurentnosti. Naši projekti financirani su kroz Next Generation EU.</p>
+      <p class="body-txt">Dosad smo realizirali 24+ projekata diljem Hrvatske — od bolnica i škola do turističkih kompleksa i niskoenergetskih kuća.</p>
+      <div class="eu-logos">
+        <img class="eu-logo" src="https://vodolim.hr/wp-content/uploads/2021/02/HAMAG.jpg" alt="HAMAG" onerror="this.outerHTML='<span style=\'font-size:13px;color:#A09D97;\'>HAMAG</span>'">
+        <img class="eu-logo" src="https://vodolim.hr/wp-content/uploads/2021/02/ESIF-Logo.png" alt="ESIF" onerror="this.outerHTML='<span style=\'font-size:13px;color:#A09D97;\'>ESIF</span>'">
+      </div>
+    </div>
+    <div class="eu-card">
+      <div class="eu-card-head"><h3>EU PROJEKT — KRATKI OPIS</h3></div>
+      <div class="eu-row"><span class="eu-k">Ukupna vrijednost</span><span class="eu-v">15.000 €</span></div>
+      <div class="eu-row"><span class="eu-k">EU sufinanciranje</span><span class="eu-v g">8.400 €</span></div>
+      <div class="eu-row"><span class="eu-k">Razdoblje</span><span class="eu-v">2025. – 2026.</span></div>
+      <div class="eu-row"><span class="eu-k">Izvor</span><span class="eu-v" style="font-size:12px">Next Generation EU</span></div>
+      <div class="eu-row"><span class="eu-k">Ref. br.</span><span class="eu-v" style="font-size:11px">NPOO.C1.1.2.R3-12.01</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOVOSTI -->
+<section id="novosti" class="novosti">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+    <div><span class="lbl">Iz kompanije</span><h2 class="h2">Novosti</h2></div>
+    <a href="#" class="s-lnk">Sve vijesti →</a>
+  </div>
+  <div class="news-g">
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/07/WhatsApp-Image-2026-06-27-at-11.19.28-700x420.jpeg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">01. SRPNJA 2026.</div>
+        <div class="nc-h">Radničke igre — sport i zajedništvo</div>
+        <div class="nc-p">Smijeh, sportski duh i odlična atmosfera obilježili su godišnje radničke igre u Donjoj Stubici.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/06/706813813_1641579977575636_8497993175470067808_n-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">11. LIPNJA 2026.</div>
+        <div class="nc-h">Team building u Bolfanu</div>
+        <div class="nc-p">Jačanje timskog duha kroz sport, druženje i zajedničke vrijednosti na Vinskom Vrhu u Bolfanu.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/04/653711293_1585015586565409_378279913576056762_n-1-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">14. TRAVNJA 2026.</div>
+        <div class="nc-h">Vrtić u Mariji Gorici — gradnja počela</div>
+        <div class="nc-p">Krenuli smo s izgradnjom novog dječjeg vrtića koji će uskoro ugostiti djecu u Mariji Gorici.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/03/643371864_1566636511736650_2180135527392484269_n-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">10. OŽUJKA 2026.</div>
+        <div class="nc-h">Stručno usavršavanje u Italiji</div>
+        <div class="nc-p">Posjet talijanskoj tvornici vodećeg europskog proizvođača uz suradnju s Tim Novak d.o.o.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2025/02/20240718_121244-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">04. STUDENOG 2025.</div>
+        <div class="nc-h">Poslovna zgrada C.S. Prečko</div>
+        <div class="nc-p">Komercijalna zgrada s podzemljem i tri nadzemne etaže u zagrebačkom Prečkom.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2025/09/Black-and-Beige-Simple-Book-Mockup-Instagram-Post-700x420.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">09. RUJNA 2025.</div>
+        <div class="nc-h">Novi broj Vodoritma</div>
+        <div class="nc-p">Novo izdanje internog magazina Vodolima — pratite zbivanja iz naše tvrtke.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NJEMAČKO TRŽIŠTE -->
+<section id="njemacko" class="de">
+  <div class="de-inner">
+    <div>
+      <span class="lbl">Međunarodni rad</span>
+      <h2 class="h2">Njemačko tržište</h2>
+      <p class="de-desc">Vodolim već 6 godina uspješno posluje u Njemačkoj, radeći isključivo s njemačkim investitorima. Naše iskustvo i kvaliteta rada prepoznati su daleko izvan granica Hrvatske.</p>
+      <p class="de-desc">Pozivamo instalatere specijalizirane za vodovodne, grijalne i rashladne sustave da postanu naši partneri.</p>
+      <div class="de-pts">
+        <div class="de-pt"><div class="dp-dot"></div><p class="dp-txt">Osiguran smještaj za sve partnere</p></div>
+        <div class="de-pt"><div class="dp-dot"></div><p class="dp-txt">Sigurno i stabilno poslovanje</p></div>
+        <div class="de-pt"><div class="dp-dot"></div><p class="dp-txt">Redovite i zajamčene isplate</p></div>
+      </div>
+      <a href="#kontakt" class="btn-g">Postani partner</a>
+    </div>
+    <div class="de-img">
+      <img src="https://vodolim.hr/wp-content/uploads/2015/05/NASLOVNA-SLIDER-31.jpg" alt="Njemačko tržište" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERI -->
+<div class="partners">
+  <div class="partners-row">
+    <span class="partners-lbl">NAŠI PARTNERI</span>
+    <div class="p-logos">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/wiesman-mali-logo.png" alt="Viessmann" onerror="this.outerHTML='<span class=\'p-name\'>Viessmann</span>'">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/geberit.png" alt="Geberit" onerror="this.outerHTML='<span class=\'p-name\'>Geberit</span>'">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/wurth.png" alt="Würth" onerror="this.outerHTML='<span class=\'p-name\'>Würth</span>'">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/kolpa.png" alt="Kolpasan" onerror="this.outerHTML='<span class=\'p-name\'>Kolpasan</span>'">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/helios.png" alt="Helios" onerror="this.outerHTML='<span class=\'p-name\'>Helios</span>'">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/slo.png" alt="Slovarm" onerror="this.outerHTML='<span class=\'p-name\'>Slovarm</span>'">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/vargon.png" alt="Vargon" onerror="this.outerHTML='<span class=\'p-name\'>Vargon</span>'">
+      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/inker.png" alt="Inker" onerror="this.outerHTML='<span class=\'p-name\'>Inker</span>'">
+    </div>
+  </div>
+</div>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="kontakt">
+  <div class="kontakt-inner">
+    <div>
+      <span class="lbl">Kako do nas</span>
+      <h2 class="h2">Razgovarajmo o<br>vašem projektu</h2>
+      <div class="k-items">
+        <div><div class="k-lbl">ADRESA</div><div class="k-val">Nova ulica 3 A, Donja Stubica</div></div>
+        <div><div class="k-lbl">TELEFON</div><div class="k-val"><a href="tel:+38549286596">+385 (0) 49 286 596</a></div></div>
+        <div><div class="k-lbl">MOBITEL</div><div class="k-val"><a href="tel:+385984441 56">098 444 156</a></div></div>
+        <div><div class="k-lbl">EMAIL</div><div class="k-val"><a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a></div></div>
+        <div><div class="k-lbl">PRATITE NAS</div><div class="k-val" style="display:flex;gap:20px"><a href="https://www.facebook.com/vodolimkuce" target="_blank" style="color:#3A9B4E">Facebook</a><a href="https://www.instagram.com/vodolim.vodolim" target="_blank" style="color:#3A9B4E">Instagram</a></div></div>
+      </div>
+    </div>
+    <form onsubmit="return false">
+      <div><label class="f-lbl">IME I PREZIME</label><input type="text" placeholder="Vaše ime i prezime"></div>
+      <div><label class="f-lbl">EMAIL</label><input type="email" placeholder="vaš@email.com"></div>
+      <div><label class="f-lbl">TELEFON</label><input type="tel" placeholder="+385 ..."></div>
+      <div><label class="f-lbl">PORUKA</label><textarea placeholder="Opišite vaš projekt ili upit..."></textarea></div>
+      <button class="f-btn">POŠALJI UPIT</button>
+    </form>
+  </div>
+</section>
+
+<!-- EU STRIP -->
+<div class="eu-strip">
+  <p><strong>EU projekt:</strong> Podizanje konkurentnosti kroz ulaganje u softversko rješenje — Vodolim instalacije d.o.o. · Ukupna vrijednost: 15.000 € · EU sufinanciranje: 8.400 € · 2025.–2026. · Next Generation EU · Ref. br. NPOO.C1.1.2.R3-12.01-V15.0333</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">VODOLIM INSTALACIJE D.O.O.</div>
+      <div class="footer-sub">Mala tvrtka za velike projekte · Tradicija od 1973.</div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="fc-t">NAVIGACIJA</div>
+        <div class="fc-links">
+          <a href="#stanovi">Vodolim stanovi</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#onama">O nama</a>
+          <a href="#nisko">Niskoenergetske kuće</a>
+          <a href="#projekti">Projekti</a>
+          <a href="#novosti">Novosti</a>
+          <a href="#njemacko">Njemačko tržište</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-t">KONTAKT</div>
+        <div class="fc-links">
+          <a href="tel:+38549286596">+385 (0) 49 286 596</a>
+          <a href="tel:+385984441 56">098 444 156</a>
+          <a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a>
+          <a href="#">Nova ulica 3A, Donja Stubica</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-t">PRAVNO</div>
+        <div class="fc-links">
+          <a href="#">Politika privatnosti</a>
+          <a href="#">Kolačići</a>
+          <a href="#">EU projekti</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span class="footer-copy">© Vodolim instalacije d.o.o. 2024. Sva prava pridržana.</span>
+    <div class="footer-soc">
+      <a href="https://www.facebook.com/vodolimkuce" target="_blank">FACEBOOK</a>
+      <a href="https://www.instagram.com/vodolim.vodolim" target="_blank">INSTAGRAM</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
