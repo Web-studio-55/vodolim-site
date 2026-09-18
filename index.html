@@ -25,7 +25,7 @@ nav{
   border-bottom:1px solid rgba(255,255,255,.06);
 }
 .nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo img{height:28px;filter:brightness(0) invert(1);object-fit:contain}
+.nav-logo img{height:36px;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
 .nav-links{display:flex;gap:24px;list-style:none;align-items:center}
 .nav-links a{font-size:11.5px;letter-spacing:.05em;color:rgba(255,255,255,.35);transition:color .2s}
 .nav-links a:hover{color:rgba(255,255,255,.85)}
@@ -364,6 +364,37 @@ footer{background:#18180F;padding:60px 40px 28px}
 .footer-soc a{font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.2);transition:color .2s}
 .footer-soc a:hover{color:rgba(255,255,255,.6)}
 
+/* ── ACCESSIBILITY ── */
+.access-btn{
+  position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:300;
+  background:#3A9B4E;width:44px;height:44px;
+  border-radius:0 6px 6px 0;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:2px 2px 12px rgba(0,0,0,.2);
+  transition:width .2s,background .2s;
+  cursor:pointer;
+}
+.access-btn:hover{background:#2E8040;width:50px}
+.access-btn svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
+.access-panel{
+  position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:299;
+  background:#fff;border-radius:0 12px 12px 0;
+  box-shadow:4px 0 24px rgba(0,0,0,.12);
+  padding:20px 20px 20px 60px;
+  width:220px;
+  display:none;flex-direction:column;gap:10px;
+}
+.access-panel.open{display:flex}
+.access-panel h4{font-size:11px;letter-spacing:.14em;color:#A09D97;margin-bottom:4px}
+.access-opt{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:#18180F;cursor:pointer;
+  padding:8px 10px;border-radius:6px;border:1px solid rgba(24,24,15,.1);
+  transition:background .15s,border-color .15s;background:#F7F5F1;
+}
+.access-opt:hover{background:#EDEAE4;border-color:#3A9B4E}
+.access-opt svg{width:18px;height:18px;fill:#3A9B4E;flex-shrink:0}
+
 /* ── FLOATING BUTTONS ── */
 .float-btns{
   position:fixed;right:16px;bottom:80px;z-index:300;
@@ -446,6 +477,76 @@ html,body{overflow-x:hidden;max-width:100%}
 </style>
 </head>
 <body>
+
+<!-- ACCESSIBILITY -->
+<button class="access-btn" onclick="document.querySelector('.access-panel').classList.toggle('open')" aria-label="Pristupačnost" title="Pristupačnost">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="4" r="2"/><path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26L6 8.03V13h2V9.5l2.12-.56L8 20h2l1.07-4h2.86L15 20h2l-1.54-8.83c1.21 1.2 3.08 1.85 5 1.83z"/></svg>
+</button>
+<div class="access-panel">
+  <h4>Accessibility Tools</h4>
+  <div class="access-opt" id="ac-inc">
+    <svg viewBox="0 0 24 24"><path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"/></svg>
+    Increase Text
+  </div>
+  <div class="access-opt" id="ac-dec">
+    <svg viewBox="0 0 24 24"><path d="M18 7h-5V4H6v3H3v3h3v7h3v-7h5v7h3v-7h3V7z"/></svg>
+    Decrease Text
+  </div>
+  <div class="access-opt" id="ac-gray">
+    <svg viewBox="0 0 24 24"><path d="M3 3h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zM3 7h2v2H3zm16 0h2v2h-2zM3 11h2v2H3zm16 0h2v2h-2zM3 15h2v2H3zm16 0h2v2h-2zM3 19h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+    Grayscale
+  </div>
+  <div class="access-opt" id="ac-hi">
+    <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16V5c3.86 0 7 3.14 7 7s-3.14 7-7 7z"/></svg>
+    High Contrast
+  </div>
+  <div class="access-opt" id="ac-neg">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+    Negative Contrast
+  </div>
+  <div class="access-opt" id="ac-light">
+    <svg viewBox="0 0 24 24"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+    Light Background
+  </div>
+  <div class="access-opt" id="ac-links">
+    <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+    Links Underline
+  </div>
+  <div class="access-opt" id="ac-font">
+    <svg viewBox="0 0 24 24"><path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"/></svg>
+    Readable Font
+  </div>
+  <div class="access-opt" id="ac-reset">
+    <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+    Reset
+  </div>
+</div>
+<style>
+body.ac-gray{filter:grayscale(1)}
+body.ac-hi{filter:contrast(2) brightness(.8)}
+body.ac-neg{filter:invert(1) hue-rotate(180deg)}
+body.ac-light{background:#fff!important}
+body.ac-links a{text-decoration:underline!important}
+body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacing:.03em!important;line-height:1.8!important}
+</style>
+<script>
+(function(){
+  var fs=16;
+  function tog(cls){document.body.classList.toggle(cls)}
+  document.getElementById('ac-inc').onclick=function(){fs=Math.min(fs+2,24);document.documentElement.style.fontSize=fs+'px'};
+  document.getElementById('ac-dec').onclick=function(){fs=Math.max(fs-2,12);document.documentElement.style.fontSize=fs+'px'};
+  document.getElementById('ac-gray').onclick=function(){['ac-hi','ac-neg'].forEach(function(c){document.body.classList.remove(c)});tog('ac-gray')};
+  document.getElementById('ac-hi').onclick=function(){['ac-gray','ac-neg'].forEach(function(c){document.body.classList.remove(c)});tog('ac-hi')};
+  document.getElementById('ac-neg').onclick=function(){['ac-gray','ac-hi'].forEach(function(c){document.body.classList.remove(c)});tog('ac-neg')};
+  document.getElementById('ac-light').onclick=function(){tog('ac-light')};
+  document.getElementById('ac-links').onclick=function(){tog('ac-links')};
+  document.getElementById('ac-font').onclick=function(){tog('ac-font')};
+  document.getElementById('ac-reset').onclick=function(){
+    fs=16;document.documentElement.style.fontSize='16px';
+    ['ac-gray','ac-hi','ac-neg','ac-light','ac-links','ac-font'].forEach(function(c){document.body.classList.remove(c)});
+  };
+})();
+</script>
 
 <!-- FLOATING CONTACT BUTTONS -->
 <div class="float-btns">
