@@ -336,14 +336,14 @@ nav{
 .de-img img{width:100%;height:100%;object-fit:cover;opacity:.6}
 
 /* ── PARTNERI ── */
-.partners{padding:44px 40px;background:#EDEAE4;border-top:1px solid rgba(24,24,15,.09)}
-.partners-row{display:flex;align-items:center;gap:0}
-.partners-lbl{font-size:9.5px;letter-spacing:.2em;color:#A09D97;white-space:nowrap;padding-right:36px;border-right:1px solid rgba(24,24,15,.12);margin-right:36px;flex-shrink:0}
-.p-logos{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
-.p-logo{height:44px;opacity:.38;filter:grayscale(1);object-fit:contain;transition:opacity .25s,filter .25s}
-.p-logo:hover{opacity:.8;filter:grayscale(0)}
-.p-name{font-size:13.5px;color:#B0ADA7;letter-spacing:.04em;transition:color .2s}
-.p-name:hover{color:#6B6860}
+.partners{padding:48px 40px;background:#F7F5F1;border-top:1px solid rgba(24,24,15,.09)}
+.partners-lbl{font-size:9.5px;letter-spacing:.2em;color:#A09D97;text-align:center;display:block;margin-bottom:28px}
+.p-logos{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
+.p-logo-card{background:#fff;border:1px solid rgba(24,24,15,.09);border-radius:10px;padding:16px 24px;display:flex;align-items:center;justify-content:center;height:80px;min-width:130px;transition:box-shadow .2s,border-color .2s}
+.p-logo-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:rgba(24,24,15,.15)}
+.p-logo-card img{height:36px;max-width:110px;object-fit:contain;filter:grayscale(1);opacity:.7;transition:opacity .25s,filter .25s}
+.p-logo-card:hover img{filter:grayscale(0);opacity:1}
+.p-name{font-size:13.5px;color:#B0ADA7;letter-spacing:.04em}
 
 /* ── KONTAKT ── */
 .kontakt{padding:100px 40px;background:#F7F5F1;border-top:1px solid rgba(24,24,15,.09)}
@@ -466,8 +466,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .kpi{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:36px 24px}
   .kpi:last-child{border:none}
   .kpi-n{font-size:52px}
-  .partners-row{flex-direction:column;gap:20px}
-  .partners-lbl{border:none;padding:0;margin:0}
+  .p-logo-card{min-width:100px;padding:12px 16px;height:68px}
   .p-logos{gap:20px;justify-content:center}
   .p-logo{height:36px}
   .footer-top{flex-direction:column}
@@ -1629,18 +1628,16 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 
 <!-- PARTNERI -->
 <div class="partners">
-  <div class="partners-row">
-    <span class="partners-lbl">NAŠI PARTNERI</span>
-    <div class="p-logos">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/wiesman-mali-logo.png" alt="Viessmann" onerror="this.outerHTML='<span class=\'p-name\'>Viessmann</span>'">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/geberit.png" alt="Geberit" onerror="this.outerHTML='<span class=\'p-name\'>Geberit</span>'">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/wurth.png" alt="Würth" onerror="this.outerHTML='<span class=\'p-name\'>Würth</span>'">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/kolpa.png" alt="Kolpasan" onerror="this.outerHTML='<span class=\'p-name\'>Kolpasan</span>'">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/helios.png" alt="Helios" onerror="this.outerHTML='<span class=\'p-name\'>Helios</span>'">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/slo.png" alt="Slovarm" onerror="this.outerHTML='<span class=\'p-name\'>Slovarm</span>'">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/vargon.png" alt="Vargon" onerror="this.outerHTML='<span class=\'p-name\'>Vargon</span>'">
-      <img class="p-logo" src="https://vodolim.hr/wp-content/uploads/2015/05/inker.png" alt="Inker" onerror="this.outerHTML='<span class=\'p-name\'>Inker</span>'">
-    </div>
+  <span class="partners-lbl">NAŠI PARTNERI</span>
+  <div class="p-logos">
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wiesman-mali-logo.png" alt="Viessmann" onerror="this.outerHTML='<span class=\'p-name\'>Viessmann</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/geberit.png" alt="Geberit" onerror="this.outerHTML='<span class=\'p-name\'>Geberit</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wurth.png" alt="Würth" onerror="this.outerHTML='<span class=\'p-name\'>Würth</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/kolpa.png" alt="Kolpasan" onerror="this.outerHTML='<span class=\'p-name\'>Kolpasan</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/helios.png" alt="Helios" onerror="this.outerHTML='<span class=\'p-name\'>Helios</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/slo.png" alt="Slovarm" onerror="this.outerHTML='<span class=\'p-name\'>Slovarm</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/vargon.png" alt="Vargon" onerror="this.outerHTML='<span class=\'p-name\'>Vargon</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/inker.png" alt="Inker" onerror="this.outerHTML='<span class=\'p-name\'>Inker</span>'"></div>
   </div>
 </div>
 
