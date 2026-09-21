@@ -151,8 +151,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 40px;d
 .eu-k{font-size:12.5px;color:#A09D97;white-space:nowrap}
 .eu-v{font-size:13px;font-weight:600;color:#18180F;text-align:right;line-height:1.5}
 .eu-v.g{color:#3A9B4E}
-.eu-logos{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:32px}
-.eu-logo{height:34px;opacity:.45;object-fit:contain;filter:grayscale(.5)}
+.eu-logos{display:flex;gap:0;align-items:center;flex-wrap:wrap;margin-top:32px;background:#fff;border-radius:10px;padding:16px 24px;border:1px solid rgba(24,24,15,.09)}
+.eu-logo{height:44px;opacity:1;object-fit:contain;filter:none;padding:0 16px;border-right:1px solid rgba(24,24,15,.08)}
+.eu-logo:last-of-type{border-right:none}
 
 /* ── NOVOSTI ── */
 .novosti{padding:100px 40px;background:#F7F5F1}
