@@ -250,7 +250,7 @@ footer{background:#18180F;padding:60px 40px 28px}
 
 /* ── SCROLL PROGRESS + BTT ── */
 .scroll-bar{position:fixed;top:0;left:0;height:3px;background:#3A9B4E;z-index:500;width:0;transition:width .08s linear;pointer-events:none}
-.btt{position:fixed;right:16px;bottom:148px;z-index:300;width:44px;height:44px;border-radius:50%;background:rgba(24,24,15,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;border:1px solid rgba(255,255,255,.12)}
+.btt{position:fixed;right:16px;bottom:210px;z-index:300;width:44px;height:44px;border-radius:50%;background:rgba(24,24,15,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;border:1px solid rgba(255,255,255,.12)}
 .btt.show{opacity:1;pointer-events:auto}
 .btt:hover{transform:translateY(-3px)}
 .btt svg{width:20px;height:20px;fill:#fff}
@@ -478,7 +478,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .lbox-prev,.lbox-next{width:36px;height:36px;font-size:16px;left:8px}
   .lbox-next{right:8px}
   .float-btns{right:12px;bottom:130px}
-  .btt{right:12px;bottom:132px}
+  .btt{right:12px;bottom:258px}
 }
 @media(max-width:520px){
   .port-g{grid-template-columns:1fr}
