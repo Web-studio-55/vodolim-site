@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cjenik usluga | Vodolim instalacije d.o.o.</title>
+<meta name="description" content="Vodolim instalacije — cjenik usluga usklađen s HOK Pravilnikom NN 101/2026. Sidrena cijena 10. rujna 2026.">
+<link rel="stylesheet" href="style.css">
+<style>
+.cjenik-table{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
+.cjenik-table thead th{font-size:10.5px;letter-spacing:.1em;color:#A09D97;text-transform:uppercase;font-weight:600;padding:10px 16px;border-bottom:2px solid #E0DDD8;text-align:left;background:#F9F7F2}
+.cjenik-table thead th:last-child{text-align:right}
+.cjenik-table tbody tr{border-bottom:1px solid #F0EDE8;transition:background .15s}
+.cjenik-table tbody tr:hover{background:#F5F3EE}
+.cjenik-table tbody td{padding:14px 16px;color:#2A2A1F;vertical-align:top}
+.cjenik-table tbody td:last-child{text-align:right;white-space:nowrap;font-weight:600;color:#2A2A1F}
+.cjenik-table tbody td .cj-naziv{font-weight:600;color:#1A1A10;margin-bottom:3px}
+.cjenik-table tbody td .cj-opis{font-size:12px;color:#7A7870;line-height:1.6}
+.cjenik-note{font-size:12px;color:#7A7870;margin-top:16px;line-height:1.7;padding:16px;background:#F9F7F2;border-left:3px solid #3A9B4E;border-radius:0 4px 4px 0}
+@media(max-width:760px){.cjenik-table{font-size:13px}.cjenik-table tbody td{padding:12px 10px}.cjenik-table thead th{padding:8px 10px}}
+</style>
+</head>
+<body>
+<div class="scroll-bar" id="scroll-bar"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMobileMenu()">Naslovnica</a>
+  <a href="stanovi.html" onclick="closeMobileMenu()">Stanovi</a>
+  <a href="portfolio.html" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="onama.html" onclick="closeMobileMenu()">O nama</a>
+  <a href="nisko.html" onclick="closeMobileMenu()">Niskoenergetske kuće</a>
+  <a href="projekti.html" onclick="closeMobileMenu()">EU Projekti</a>
+  <a href="novosti.html" onclick="closeMobileMenu()">Novosti</a>
+  <a href="njemacko.html" onclick="closeMobileMenu()">Njemačko tržište</a>
+  <a href="cjenik.html" onclick="closeMobileMenu()" style="color:#fff">Cjenik</a>
+  <a href="kontakt.html" class="m-cta" onclick="closeMobileMenu()">Kontakt</a>
+  <div class="m-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Vodolim"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Naslovnica</a></li>
+    <li><a href="stanovi.html">Stanovi</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="onama.html">O nama</a></li>
+    <li><a href="nisko.html">Niskoenergetske</a></li>
+    <li><a href="projekti.html">Projekti</a></li>
+    <li><a href="novosti.html">Novosti</a></li>
+    <li><a href="njemacko.html">Njemačko tržište</a></li>
+    <li><a href="cjenik.html" class="active">Cjenik</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="nav-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="lbl">Transparentno</span>
+  <h1 class="page-h">Cjenik usluga</h1>
+  <p class="page-sub">Cjenik je usklađen s HOK Pravilnikom NN 101/2026. Sidrena cijena: 10. rujna 2026.</p>
+</div>
+
+<!-- CJENIK -->
+<section style="padding:80px 40px;background:#F9F7F2">
+  <div style="max-width:900px;margin:0 auto" class="reveal">
+    <span class="lbl">Usluge</span>
+    <h2 class="h2">Naše usluge i cijene</h2>
+    <div class="cjenik-note">
+      Sve cijene su okvirne i ovise o specifičnostima projekta. Za točnu ponudu <a href="kontakt.html" style="color:#3A9B4E">kontaktirajte nas</a>.
+      Cjenik je usklađen s HOK Pravilnikom NN 101/2026. Sidrena cijena: 10.9.2026.
+    </div>
+    <div style="overflow-x:auto">
+      <table class="cjenik-table">
+        <thead>
+          <tr>
+            <th style="width:40px">#</th>
+            <th>Usluga</th>
+            <th>Jedinica</th>
+            <th>Cijena (EUR, bez PDV-a)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="color:#A09D97;font-size:12px">1</td>
+            <td>
+              <div class="cj-naziv">Instalacijski radovi (vodovodne i kanalizacijske instalacije)</div>
+              <div class="cj-opis">Ugradnja cijevnih sustava, sanitarnih uređaja, vodomjera i odvodnih sifona u novogradnji i rekonstrukciji.</div>
+            </td>
+            <td style="white-space:nowrap;color:#7A7870">paušal / m²</td>
+            <td>od 35 EUR/m²</td>
+          </tr>
+          <tr>
+            <td style="color:#A09D97;font-size:12px">2</td>
+            <td>
+              <div class="cj-naziv">Plinske instalacije</div>
+              <div class="cj-opis">Izvedba unutarnje plinske mreže, ugradnja trošila i sigurnosnih elemenata, atestiranje.</div>
+            </td>
+            <td style="white-space:nowrap;color:#7A7870">paušal</td>
+            <td>po ponudi</td>
+          </tr>
+          <tr>
+            <td style="color:#A09D97;font-size:12px">3</td>
+            <td>
+              <div class="cj-naziv">Grijanje i hlađenje (HVAC)</div>
+              <div class="cj-opis">Projektiranje i ugradnja sustava grijanja, hlađenja, ventilacije, toplotnih crpki i solarnih panela.</div>
+            </td>
+            <td style="white-space:nowrap;color:#7A7870">sustav</td>
+            <td>po ponudi</td>
+          </tr>
+          <tr>
+            <td style="color:#A09D97;font-size:12px">4</td>
+            <td>
+              <div class="cj-naziv">Visokogradnja — izgradnja kuće</div>
+              <div class="cj-opis">Kompletna izgradnja obiteljske kuće ili vikendice uključujući temelje, konstruktivne elemente, krovište i izolaciju.</div>
+            </td>
+            <td style="white-space:nowrap;color:#7A7870">m²</td>
+            <td>od 900 EUR/m²</td>
+          </tr>
+          <tr>
+            <td style="color:#A09D97;font-size:12px">5</td>
+            <td>
+              <div class="cj-naziv">Energetska obnova</div>
+              <div class="cj-opis">Izolacija fasade, zamjena stolarije, modernizacija sustava grijanja — povećanje energetskog razreda.</div>
+            </td>
+            <td style="white-space:nowrap;color:#7A7870">m² / paušal</td>
+            <td>od 80 EUR/m²</td>
+          </tr>
+          <tr>
+            <td style="color:#A09D97;font-size:12px">6</td>
+            <td>
+              <div class="cj-naziv">Završni radovi (gips, obloge, keramika)</div>
+              <div class="cj-opis">Gipsarski, keramičarski i ličilački radovi, ugradnja unutarnje stolarije.</div>
+            </td>
+            <td style="white-space:nowrap;color:#7A7870">m²</td>
+            <td>od 25 EUR/m²</td>
+          </tr>
+          <tr>
+            <td style="color:#A09D97;font-size:12px">7</td>
+            <td>
+              <div class="cj-naziv">Najam strojeva i opreme</div>
+              <div class="cj-opis">Kratkoročni i dugoročni najam građevinskih strojeva i alata za izvođače.</div>
+            </td>
+            <td style="white-space:nowrap;color:#7A7870">dan / tjedan</td>
+            <td>po dogovoru</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cjenik-note" style="margin-top:24px">
+      <strong>Napomena:</strong> Navedene cijene su okvirne sidrene cijene prema HOK Pravilniku NN 101/2026 važećem od 1.10.2026. Konačna cijena utvrđuje se prema specifikaciji radova, lokaciji gradilišta i uvjetima projekta. PDV nije uključen. Za besplatnu procjenu projekta <a href="kontakt.html" style="color:#3A9B4E">kontaktirajte nas</a>.
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section style="background:#3A9B4E;padding:80px 40px;text-align:center" class="reveal">
+  <span style="display:block;font-size:11px;letter-spacing:.15em;color:rgba(255,255,255,.5);margin-bottom:12px">BESPLATNO</span>
+  <h2 style="font-family:Georgia,serif;font-size:clamp(28px,4vw,48px);font-weight:400;color:#fff;margin-bottom:16px;letter-spacing:-.03em">Zatražite besplatnu procjenu</h2>
+  <p style="font-size:15px;color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 36px;line-height:1.7">Opišite vaš projekt i u roku 24h dobivate okvirnu ponudu bez obaveza.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="kontakt.html" style="display:inline-block;padding:14px 32px;background:#fff;color:#3A9B4E;font-size:11.5px;font-weight:700;letter-spacing:.1em;border-radius:3px;text-decoration:none">POŠALJI UPIT</a>
+    <a href="tel:+38549286596" style="display:inline-block;padding:14px 28px;border:1px solid rgba(255,255,255,.4);border-radius:3px;font-size:11.5px;letter-spacing:.1em;color:#fff;text-decoration:none">NAZOVI NAS</a>
+  </div>
+</section>
+
+<!-- EU STRIP -->
+<div class="eu-strip"><p><strong>EU projekt:</strong> Podizanje konkurentnosti kroz ulaganje u softversko rješenje — Vodolim instalacije d.o.o. · Ukupna vrijednost: 15.000 € · EU sufinanciranje: 8.400 € · 2025.–2026. · Next Generation EU · Ref. br. NPOO.C1.1.2.R3-12.01-V15.0333</p></div>
+<footer>
+  <div class="footer-top">
+    <div><div class="footer-brand">VODOLIM INSTALACIJE D.O.O.</div><div class="footer-sub">Mala tvrtka za velike projekte · Tradicija od 1973.</div></div>
+    <div class="footer-cols">
+      <div><div class="fc-t">NAVIGACIJA</div><div class="fc-links"><a href="stanovi.html">Vodolim stanovi</a><a href="portfolio.html">Portfolio</a><a href="onama.html">O nama</a><a href="nisko.html">Niskoenergetske kuće</a><a href="projekti.html">EU Projekti</a><a href="novosti.html">Novosti</a><a href="njemacko.html">Njemačko tržište</a></div></div>
+      <div><div class="fc-t">KONTAKT</div><div class="fc-links"><a href="tel:+38549286596">+385 (0) 49 286 596</a><a href="tel:+38598444156">098 444 156</a><a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a><a>Nova ulica 3A, Donja Stubica</a></div></div>
+      <div><div class="fc-t">PRAVNO</div><div class="fc-links"><a href="cjenik.html">Cjenik usluga</a><a href="#">Politika privatnosti</a><a href="#">Kolačići</a><a href="projekti.html">EU projekti</a></div></div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span class="footer-copy">© Vodolim instalacije d.o.o. 2024. Sva prava pridržana.</span>
+    <div class="footer-soc"><a href="https://www.facebook.com/vodolimkuce" target="_blank">FACEBOOK</a><a href="https://www.instagram.com/vodolim.vodolim" target="_blank">INSTAGRAM</a></div>
+  </div>
+</footer>
+<div class="gdpr" id="gdpr">
+  <div class="gdpr-txt">Koristimo kolačiće kako bismo poboljšali vaše iskustvo. <a href="#">Politika kolačića</a>.</div>
+  <div class="gdpr-btns"><button class="gdpr-decline" id="gdpr-decline">Odbij</button><button class="gdpr-accept" id="gdpr-accept">Prihvati sve</button></div>
+</div>
+<div class="float-btns">
+  <a href="https://wa.me/38598444156" target="_blank" class="float-btn float-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <a href="tel:+38549286596" class="float-btn float-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+</div>
+<button class="btt" id="btt"><svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg></button>
+<div class="sticky-bar">
+  <a href="tel:+38549286596" class="sticky-call"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>NAZOVI</a>
+  <a href="kontakt.html" class="sticky-upit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>POŠALJI UPIT</a>
+</div>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var h=document.getElementById('hamburger');m.classList.toggle('open');h.classList.toggle('open')}
+function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}
+(function(){var bar=document.getElementById('scroll-bar');var btt=document.getElementById('btt');window.addEventListener('scroll',function(){var st=window.scrollY||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(st/h*100):0)+'%';btt.classList.toggle('show',st>400)},{passive:true});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+(function(){var el=document.getElementById('gdpr');try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}document.getElementById('gdpr-accept').onclick=function(){try{localStorage.setItem('gdpr','1')}catch(e){}el.classList.add('gdpr-hidden')};document.getElementById('gdpr-decline').onclick=function(){try{localStorage.setItem('gdpr','0')}catch(e){}el.classList.add('gdpr-hidden')}})();
+(function(){var els=document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});els.forEach(function(el){io.observe(el)})})();
+</script>
+</body>
+</html>

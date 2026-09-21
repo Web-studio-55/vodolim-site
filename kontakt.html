@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt | Vodolim instalacije d.o.o.</title>
+<meta name="description" content="Kontaktirajte Vodolim instalacije — tel. +385 49 286 596, Nova ulica 3A, Donja Stubica. Pošaljite upit za ponudu.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scroll-bar" id="scroll-bar"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMobileMenu()">Naslovnica</a>
+  <a href="stanovi.html" onclick="closeMobileMenu()">Stanovi</a>
+  <a href="portfolio.html" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="onama.html" onclick="closeMobileMenu()">O nama</a>
+  <a href="nisko.html" onclick="closeMobileMenu()">Niskoenergetske kuće</a>
+  <a href="projekti.html" onclick="closeMobileMenu()">EU Projekti</a>
+  <a href="novosti.html" onclick="closeMobileMenu()">Novosti</a>
+  <a href="njemacko.html" onclick="closeMobileMenu()">Njemačko tržište</a>
+  <a href="cjenik.html" onclick="closeMobileMenu()">Cjenik</a>
+  <a href="kontakt.html" class="m-cta" onclick="closeMobileMenu()" style="color:#fff">Kontakt</a>
+  <div class="m-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Vodolim"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Naslovnica</a></li>
+    <li><a href="stanovi.html">Stanovi</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="onama.html">O nama</a></li>
+    <li><a href="nisko.html">Niskoenergetske</a></li>
+    <li><a href="projekti.html">Projekti</a></li>
+    <li><a href="novosti.html">Novosti</a></li>
+    <li><a href="njemacko.html">Njemačko tržište</a></li>
+    <li><a href="cjenik.html">Cjenik</a></li>
+    <li><a href="kontakt.html" class="nav-cta active">Kontakt</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="nav-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="lbl">Pišite nam</span>
+  <h1 class="page-h">Kontakt</h1>
+  <p class="page-sub">Pošaljite nam upit ili nas nazovite — odgovaramo brzo i bez obveze.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+<section style="padding:100px 40px;background:#F9F7F2">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+
+    <!-- FORM -->
+    <div class="reveal">
+      <span class="lbl">Upit</span>
+      <h2 class="h2" style="margin-bottom:8px">Pošaljite upit</h2>
+      <p style="font-size:14px;color:#7A7870;margin-bottom:36px">Opišite vaš projekt i javit ćemo se u roku 24h.</p>
+      <form action="https://formspree.io/f/xpwzgdkv" method="POST" style="display:flex;flex-direction:column;gap:16px">
+        <input type="hidden" name="_subject" value="Novi upit — Vodolim web">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div>
+            <label style="font-size:11px;letter-spacing:.1em;color:#A09D97;display:block;margin-bottom:6px">IME I PREZIME *</label>
+            <input type="text" name="ime" required placeholder="Ivan Horvat" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #E0DDD8;border-radius:4px;font-size:14px;color:#2A2A1F;background:#fff;outline:none;font-family:inherit">
+          </div>
+          <div>
+            <label style="font-size:11px;letter-spacing:.1em;color:#A09D97;display:block;margin-bottom:6px">TELEFON</label>
+            <input type="tel" name="telefon" placeholder="091 234 5678" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #E0DDD8;border-radius:4px;font-size:14px;color:#2A2A1F;background:#fff;outline:none;font-family:inherit">
+          </div>
+        </div>
+        <div>
+          <label style="font-size:11px;letter-spacing:.1em;color:#A09D97;display:block;margin-bottom:6px">E-MAIL *</label>
+          <input type="email" name="email" required placeholder="ivan@example.com" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #E0DDD8;border-radius:4px;font-size:14px;color:#2A2A1F;background:#fff;outline:none;font-family:inherit">
+        </div>
+        <div>
+          <label style="font-size:11px;letter-spacing:.1em;color:#A09D97;display:block;margin-bottom:6px">VRSTA PROJEKTA</label>
+          <select name="projekt" style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #E0DDD8;border-radius:4px;font-size:14px;color:#2A2A1F;background:#fff;outline:none;font-family:inherit;appearance:none;cursor:pointer">
+            <option value="">Odaberite...</option>
+            <option>Izgradnja kuće</option>
+            <option>Niskoenergetska kuća</option>
+            <option>Instalacijski radovi</option>
+            <option>Energetska obnova</option>
+            <option>Visokogradnja</option>
+            <option>Najam opreme</option>
+            <option>Suradnja — Njemačko tržište</option>
+            <option>Ostalo</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:11px;letter-spacing:.1em;color:#A09D97;display:block;margin-bottom:6px">PORUKA *</label>
+          <textarea name="poruka" required rows="5" placeholder="Opišite vaš projekt, lokaciju, željene rokove..." style="width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid #E0DDD8;border-radius:4px;font-size:14px;color:#2A2A1F;background:#fff;outline:none;font-family:inherit;resize:vertical"></textarea>
+        </div>
+        <button type="submit" class="btn-g" style="align-self:flex-start">Pošalji upit</button>
+      </form>
+    </div>
+
+    <!-- INFO -->
+    <div class="reveal-r">
+      <span class="lbl">Podaci</span>
+      <h2 class="h2" style="margin-bottom:32px">Kontakt informacije</h2>
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:40px;height:40px;background:#3A9B4E;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.1em;color:#A09D97;margin-bottom:6px">TELEFON</div>
+            <a href="tel:+38549286596" style="display:block;font-size:15px;color:#2A2A1F;text-decoration:none">+385 (0) 49 286 596</a>
+            <a href="tel:+38549287755" style="display:block;font-size:15px;color:#2A2A1F;text-decoration:none">+385 (0) 49 287 755</a>
+            <a href="tel:+38598444156" style="display:block;font-size:14px;color:#3A9B4E;text-decoration:none;margin-top:4px">098 444 156</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:40px;height:40px;background:#3A9B4E;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.1em;color:#A09D97;margin-bottom:6px">E-MAIL</div>
+            <a href="mailto:vodolim@vodolim.eu" style="display:block;font-size:15px;color:#2A2A1F;text-decoration:none">vodolim@vodolim.eu</a>
+            <a href="mailto:vodolim@vodolim.hr" style="display:block;font-size:14px;color:#7A7870;text-decoration:none">vodolim@vodolim.hr</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:40px;height:40px;background:#3A9B4E;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.1em;color:#A09D97;margin-bottom:6px">ADRESA</div>
+            <p style="font-size:15px;color:#2A2A1F;margin:0">Nova ulica 3A<br>49240 Donja Stubica</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:40px;height:40px;background:#F0EDE8;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3A9B4E" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.1em;color:#A09D97;margin-bottom:6px">TVRTKA</div>
+            <p style="font-size:14px;color:#2A2A1F;margin:0;line-height:1.7">Vodolim instalacije d.o.o.<br>OIB: 57970950313<br>IBAN (ZABA): HR43 2360000 1101255728<br>IBAN (PBZ): HR26 2300091160386123</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start">
+          <div style="width:40px;height:40px;background:#F0EDE8;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3A9B4E" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div style="font-size:11px;letter-spacing:.1em;color:#A09D97;margin-bottom:6px">RADNO VRIJEME</div>
+            <p style="font-size:14px;color:#2A2A1F;margin:0;line-height:1.7">Pon–Pet: 7:00 – 16:00<br>Subota: 7:00 – 13:00<br>Nedjelja: zatvoreno</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section style="height:420px;background:#E8E5E0;position:relative;overflow:hidden">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2783.0!2d15.9357!3d46.0123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d8cfb5555555%3A0x0!2sNova+ulica+3A%2C+49240+Donja+Stubica!5e0!3m2!1shr!2shr!4v1"
+    width="100%" height="100%" style="border:0;display:block" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<!-- EU STRIP -->
+<div class="eu-strip"><p><strong>EU projekt:</strong> Podizanje konkurentnosti kroz ulaganje u softversko rješenje — Vodolim instalacije d.o.o. · Ukupna vrijednost: 15.000 € · EU sufinanciranje: 8.400 € · 2025.–2026. · Next Generation EU · Ref. br. NPOO.C1.1.2.R3-12.01-V15.0333</p></div>
+<footer>
+  <div class="footer-top">
+    <div><div class="footer-brand">VODOLIM INSTALACIJE D.O.O.</div><div class="footer-sub">Mala tvrtka za velike projekte · Tradicija od 1973.</div></div>
+    <div class="footer-cols">
+      <div><div class="fc-t">NAVIGACIJA</div><div class="fc-links"><a href="stanovi.html">Vodolim stanovi</a><a href="portfolio.html">Portfolio</a><a href="onama.html">O nama</a><a href="nisko.html">Niskoenergetske kuće</a><a href="projekti.html">EU Projekti</a><a href="novosti.html">Novosti</a><a href="njemacko.html">Njemačko tržište</a></div></div>
+      <div><div class="fc-t">KONTAKT</div><div class="fc-links"><a href="tel:+38549286596">+385 (0) 49 286 596</a><a href="tel:+38598444156">098 444 156</a><a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a><a>Nova ulica 3A, Donja Stubica</a></div></div>
+      <div><div class="fc-t">PRAVNO</div><div class="fc-links"><a href="cjenik.html">Cjenik usluga</a><a href="#">Politika privatnosti</a><a href="#">Kolačići</a><a href="projekti.html">EU projekti</a></div></div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span class="footer-copy">© Vodolim instalacije d.o.o. 2024. Sva prava pridržana.</span>
+    <div class="footer-soc"><a href="https://www.facebook.com/vodolimkuce" target="_blank">FACEBOOK</a><a href="https://www.instagram.com/vodolim.vodolim" target="_blank">INSTAGRAM</a></div>
+  </div>
+</footer>
+<div class="gdpr" id="gdpr">
+  <div class="gdpr-txt">Koristimo kolačiće kako bismo poboljšali vaše iskustvo. <a href="#">Politika kolačića</a>.</div>
+  <div class="gdpr-btns"><button class="gdpr-decline" id="gdpr-decline">Odbij</button><button class="gdpr-accept" id="gdpr-accept">Prihvati sve</button></div>
+</div>
+<div class="float-btns">
+  <a href="https://wa.me/38598444156" target="_blank" class="float-btn float-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <a href="tel:+38549286596" class="float-btn float-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+</div>
+<button class="btt" id="btt"><svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg></button>
+<div class="sticky-bar">
+  <a href="tel:+38549286596" class="sticky-call"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>NAZOVI</a>
+  <a href="kontakt.html" class="sticky-upit" style="background:#3A9B4E;color:#fff"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>POŠALJI UPIT</a>
+</div>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var h=document.getElementById('hamburger');m.classList.toggle('open');h.classList.toggle('open')}
+function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}
+(function(){var bar=document.getElementById('scroll-bar');var btt=document.getElementById('btt');window.addEventListener('scroll',function(){var st=window.scrollY||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(st/h*100):0)+'%';btt.classList.toggle('show',st>400)},{passive:true});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+(function(){var el=document.getElementById('gdpr');try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}document.getElementById('gdpr-accept').onclick=function(){try{localStorage.setItem('gdpr','1')}catch(e){}el.classList.add('gdpr-hidden')};document.getElementById('gdpr-decline').onclick=function(){try{localStorage.setItem('gdpr','0')}catch(e){}el.classList.add('gdpr-hidden')}})();
+(function(){var els=document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});els.forEach(function(el){io.observe(el)})})();
+</script>
+</body>
+</html>

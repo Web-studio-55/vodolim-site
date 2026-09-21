@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vodolim Stanovi — Gradnja i obnova | Vodolim</title>
+<meta name="description" content="S Vodolimom je cijeli proces jednostavniji. Od projektiranja i dozvola do kompletne gradnje i završnih radova.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scroll-bar" id="scroll-bar"></div>
+<div class="lbox" id="lbox" role="dialog" aria-modal="true">
+  <button class="lbox-close" id="lbox-close">×</button>
+  <button class="lbox-prev" id="lbox-prev">‹</button>
+  <img class="lbox-img" id="lbox-img" src="" alt="">
+  <button class="lbox-next" id="lbox-next">›</button>
+  <div class="lbox-info"><div class="lbox-name" id="lbox-name"></div><div class="lbox-loc" id="lbox-loc"></div></div>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMobileMenu()">Naslovnica</a>
+  <a href="stanovi.html" onclick="closeMobileMenu()" style="color:#fff">Stanovi</a>
+  <a href="portfolio.html" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="onama.html" onclick="closeMobileMenu()">O nama</a>
+  <a href="nisko.html" onclick="closeMobileMenu()">Niskoenergetske kuće</a>
+  <a href="projekti.html" onclick="closeMobileMenu()">EU Projekti</a>
+  <a href="novosti.html" onclick="closeMobileMenu()">Novosti</a>
+  <a href="njemacko.html" onclick="closeMobileMenu()">Njemačko tržište</a>
+  <a href="cjenik.html" onclick="closeMobileMenu()">Cjenik</a>
+  <a href="kontakt.html" class="m-cta" onclick="closeMobileMenu()">Kontakt</a>
+  <div class="m-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Vodolim"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Naslovnica</a></li>
+    <li><a href="stanovi.html" class="active">Stanovi</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="onama.html">O nama</a></li>
+    <li><a href="nisko.html">Niskoenergetske</a></li>
+    <li><a href="projekti.html">Projekti</a></li>
+    <li><a href="novosti.html">Novosti</a></li>
+    <li><a href="njemacko.html">Njemačko tržište</a></li>
+    <li><a href="cjenik.html">Cjenik</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="nav-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <span class="lbl">Gradnja i adaptacija</span>
+  <h1 class="page-h">Vodolim Stanovi</h1>
+  <p class="page-sub">Od projektiranja i dozvola do ključa u ruke — naš stručni tim vodi vas kroz svaki korak.</p>
+</div>
+
+<!-- STANOVI CONTENT -->
+<section class="stanovi">
+  <div class="stanovi-inner reveal">
+    <div class="stanovi-img">
+      <img src="https://vodolim.hr/wp-content/uploads/2026/06/Vodolim-vila.jpg" alt="Vodolim vila" onerror="this.style.display='none'">
+      <div class="stanovi-stamp">TRADICIJA OD 1973.</div>
+    </div>
+    <div>
+      <span class="lbl">Naša ponuda</span>
+      <h2 class="h2">Gradite kuću za odmor ili obiteljsku kuću?</h2>
+      <p class="body-txt">S Vodolimom je cijeli proces jednostavniji, sigurniji i učinkovitiji. Od projektiranja i potrebne dokumentacije, preko dozvola i papirnate procedure, do kompletne gradnje, instalacija i završnih radova, naš stručni tim vodi vas kroz svaki korak realizacije.</p>
+      <p class="body-txt">S više od 50 godina iskustva i 150 zaposlenih stručnjaka, iza nas stoje znanje, pouzdanost i predanost kvaliteti. Vašu ideju pretvaramo u prostor u kojem ćete živjeti, odmarati i stvarati nove uspomene.</p>
+      <p class="body-txt"><strong>Vodolim — mala tvrtka za velike projekte.</strong></p>
+      <p class="body-txt">Kontaktirajte nas i napravite prvi korak prema svom novom domu.</p>
+      <div class="tags">
+        <span class="tag">Obiteljske kuće</span>
+        <span class="tag">Vikendice i odmorišta</span>
+        <span class="tag">Stambene zgrade</span>
+        <span class="tag">Energetska obnova</span>
+        <span class="tag">Niskoenergetska gradnja</span>
+        <span class="tag">Projektna dokumentacija</span>
+      </div>
+      <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap">
+        <a href="kontakt.html" class="btn-g">Zatražite ponudu</a>
+        <a href="portfolio.html" class="btn-ghost">Pogledaj projekte →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USLUGE -->
+<section class="usluge reveal">
+  <div class="usluge-head">
+    <span class="lbl">Što nudimo</span>
+    <h2 class="h2">Kompletna rješenja</h2>
+  </div>
+  <div class="bento">
+    <div class="bc">
+      <div class="bc-n">01</div>
+      <div class="bc-h">Projektiranje i dokumentacija</div>
+      <div class="bc-p">Idejno rješenje, glavni projekt, pribavljanje dozvola i sva papirologu do ishođenja građevinske dozvole.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">02</div>
+      <div class="bc-h">Visokogradnja</div>
+      <div class="bc-p">Kompletna izgradnja od iskopa do krova. Obiteljske kuće, stambene zgrade, poslovni objekti.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">03</div>
+      <div class="bc-h">Instalacijski radovi</div>
+      <div class="bc-p">Vodovodne instalacije, centralno grijanje, klimatizacija i ventilacija. Vodolimova osnovna djelatnost od 1973.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">04</div>
+      <div class="bc-h">Energetska obnova</div>
+      <div class="bc-p">EU sufinancirana obnova postojećih objekata — toplinska izolacija, nova stolarija, niskoenergetski sustavi grijanja.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">05</div>
+      <div class="bc-h">Završni radovi</div>
+      <div class="bc-p">Unutarnji završni radovi, keramika, parket, gips-karton, soboslikarski radovi — sve pod jednim krovom.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">06</div>
+      <div class="bc-h">Najam alata i strojeva</div>
+      <div class="bc-p">Najam građevinskih strojeva i alata za završne radove uz stručnu podršku naših tehničara.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div style="background:#3A9B4E;padding:60px 40px;text-align:center">
+  <div style="font-family:Georgia,serif;font-size:clamp(22px,3vw,34px);color:#fff;margin-bottom:12px">Kontaktirajte nas i napravite prvi korak prema svom novom domu</div>
+  <div style="font-size:14px;color:rgba(255,255,255,.65);margin-bottom:32px">vodolim@vodolim.eu · +385 (0) 49 286 596</div>
+  <a href="kontakt.html" style="display:inline-block;background:#fff;color:#3A9B4E;font-size:11.5px;letter-spacing:.1em;padding:14px 32px;border-radius:3px;font-weight:600">POŠALJI UPIT</a>
+</div>
+
+<!-- FOOTER -->
+<div class="eu-strip"><p><strong>EU projekt:</strong> Podizanje konkurentnosti kroz ulaganje u softversko rješenje — Vodolim instalacije d.o.o. · Ukupna vrijednost: 15.000 € · EU sufinanciranje: 8.400 € · 2025.–2026. · Next Generation EU · Ref. br. NPOO.C1.1.2.R3-12.01-V15.0333</p></div>
+<footer>
+  <div class="footer-top">
+    <div><div class="footer-brand">VODOLIM INSTALACIJE D.O.O.</div><div class="footer-sub">Mala tvrtka za velike projekte · Tradicija od 1973.</div></div>
+    <div class="footer-cols">
+      <div><div class="fc-t">NAVIGACIJA</div><div class="fc-links"><a href="stanovi.html">Vodolim stanovi</a><a href="portfolio.html">Portfolio</a><a href="onama.html">O nama</a><a href="nisko.html">Niskoenergetske kuće</a><a href="projekti.html">EU Projekti</a><a href="novosti.html">Novosti</a><a href="njemacko.html">Njemačko tržište</a></div></div>
+      <div><div class="fc-t">KONTAKT</div><div class="fc-links"><a href="tel:+38549286596">+385 (0) 49 286 596</a><a href="tel:+38598444156">098 444 156</a><a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a><a>Nova ulica 3A, Donja Stubica</a></div></div>
+      <div><div class="fc-t">PRAVNO</div><div class="fc-links"><a href="cjenik.html">Cjenik usluga</a><a href="#">Politika privatnosti</a><a href="#">Kolačići</a><a href="projekti.html">EU projekti</a></div></div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span class="footer-copy">© Vodolim instalacije d.o.o. 2024. Sva prava pridržana.</span>
+    <div class="footer-soc"><a href="https://www.facebook.com/vodolimkuce" target="_blank">FACEBOOK</a><a href="https://www.instagram.com/vodolim.vodolim" target="_blank">INSTAGRAM</a></div>
+  </div>
+</footer>
+<div class="gdpr" id="gdpr">
+  <div class="gdpr-txt">Koristimo kolačiće kako bismo poboljšali vaše iskustvo. <a href="#">Politika kolačića</a>.</div>
+  <div class="gdpr-btns"><button class="gdpr-decline" id="gdpr-decline">Odbij</button><button class="gdpr-accept" id="gdpr-accept">Prihvati sve</button></div>
+</div>
+<div class="float-btns">
+  <a href="https://wa.me/38598444156" target="_blank" class="float-btn float-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <a href="tel:+38549286596" class="float-btn float-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+</div>
+<button class="btt" id="btt"><svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg></button>
+<div class="sticky-bar">
+  <a href="tel:+38549286596" class="sticky-call"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>NAZOVI</a>
+  <a href="kontakt.html" class="sticky-upit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>POŠALJI UPIT</a>
+</div>
+<script>
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var h=document.getElementById('hamburger');m.classList.toggle('open');h.classList.toggle('open')}
+function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}
+(function(){var bar=document.getElementById('scroll-bar');var btt=document.getElementById('btt');window.addEventListener('scroll',function(){var st=window.scrollY||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(st/h*100):0)+'%';btt.classList.toggle('show',st>400)},{passive:true});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+(function(){var el=document.getElementById('gdpr');try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}document.getElementById('gdpr-accept').onclick=function(){try{localStorage.setItem('gdpr','1')}catch(e){}el.classList.add('gdpr-hidden')};document.getElementById('gdpr-decline').onclick=function(){try{localStorage.setItem('gdpr','0')}catch(e){}el.classList.add('gdpr-hidden')}})();
+(function(){var els=document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});els.forEach(function(el){io.observe(el)})})();
+</script>
+</body>
+</html>
