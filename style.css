@@ -178,8 +178,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 40px;d
 .de-pt{display:flex;gap:12px;align-items:flex-start}
 .dp-dot{width:5px;height:5px;border-radius:50%;background:#3A9B4E;flex-shrink:0;margin-top:10px}
 .dp-txt{font-size:15px;color:rgba(255,255,255,.38);line-height:1.7}
-.de-img{border-radius:12px;overflow:hidden;height:460px;background:#1A1A14}
-.de-img img{width:100%;height:100%;object-fit:cover;opacity:.6}
+.de-img{border-radius:12px;overflow:hidden;background:#1A1A14}
+.de-img img{width:100%;height:auto;display:block;opacity:.85}
 
 /* ── PARTNERI ── */
 .partners{padding:44px 40px;background:#EDEAE4;border-top:1px solid rgba(24,24,15,.09)}
@@ -428,7 +428,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .stat-n{font-size:28px}
   .stanovi,.onama,.eu,.kontakt,.novosti,.nisko,.de,.usluge,.portfolio{padding:56px 20px}
   .stanovi-inner,.onama-inner,.eu-inner,.kontakt-inner,.de-inner,.nisko-top{grid-template-columns:1fr;gap:36px}
-  .stanovi-img,.onama-img,.de-img{height:260px}
+  .stanovi-img,.onama-img{height:260px}
   .port-g{grid-template-columns:1fr 1fr;grid-template-rows:auto}
   .pc-a{grid-column:1/3;grid-row:auto;height:240px}
   .pc-b,.pc-c,.pc-d,.pc-e{grid-column:span 1;height:160px}
