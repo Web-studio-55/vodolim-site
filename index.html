@@ -434,7 +434,7 @@ footer{background:#18180F;padding:60px 40px 28px}
   display:flex;align-items:center;justify-content:center;
   box-shadow:0 4px 16px rgba(0,0,0,.22);
   transition:transform .2s,box-shadow .2s;
-  cursor:pointer;
+  cursor:pointer;overflow:hidden;
 }
 .float-btn:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(0,0,0,.32)}
 .float-wa{background:#25D366}
@@ -499,7 +499,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .kontakt-inner{gap:32px}
   .stanovi-img{height:220px}
   .ticker-item{padding:0 20px;font-size:10px}
-  .float-btns{right:12px;bottom:64px}
+  .float-btns{right:12px;bottom:130px}
 }
 @media(prefers-reduced-motion:reduce){
   .pc-img,.nc-img img,.btn-g,.btn-g:hover,.f-btn,.f-btn:hover,.nc,.float-btn{
@@ -636,7 +636,7 @@ html,body{overflow-x:hidden;max-width:100%}
 .timeline{max-width:800px;margin:0 auto;position:relative}
 .timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:rgba(58,155,78,.2)}
 .tl-item{display:flex;gap:32px;margin-bottom:48px;position:relative}
-.tl-dot{width:50px;height:50px;border-radius:50%;background:#1E1E14;border:2px solid #3A9B4E;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;letter-spacing:.05em;color:#3A9B4E;font-weight:600;z-index:1}
+.tl-dot{width:50px;height:50px;background:#1E1E14;border:2px solid #3A9B4E;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:#3A9B4E;font-weight:400;z-index:1;clip-path:polygon(0 0,75% 0,100% 50%,75% 100%,0 100%)}
 .tl-content{padding-top:10px}
 .tl-year{font-size:11px;letter-spacing:.15em;color:#3A9B4E;margin-bottom:6px}
 .tl-title{font-family:Georgia,serif;font-size:18px;color:#fff;margin-bottom:8px}
@@ -866,7 +866,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 
 <!-- FLOATING CONTACT BUTTONS -->
 <div class="float-btns">
-  <a href="https://wa.me/385984441 56" target="_blank" class="float-btn float-wa" title="WhatsApp">
+  <a href="https://wa.me/38598444156" target="_blank" class="float-btn float-wa" title="WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
   <a href="tel:+38549286596" class="float-btn float-tel" title="Nazovite nas">
@@ -1340,6 +1340,10 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
         <img class="eu-logo" src="https://vodolim.hr/wp-content/uploads/2021/02/okolis-lenta-300x72-1-450x148.jpg" alt="Okolis" onerror="this.outerHTML='<span style=\'font-size:13px;color:#A09D97;\'>OKOLIS</span>'">
         <img class="eu-logo" src="https://vodolim.hr/wp-content/uploads/2021/02/ESIF-Logo.png" alt="ESIF" onerror="this.outerHTML='<span style=\'font-size:13px;color:#A09D97;\'>ESIF</span>'">
       </div>
+      <a href="https://vodolim.hr/wp-content/uploads/2015/05/VODOLIM_instalacije_Web-stranica.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:12px 22px;background:#3A9B4E;color:#fff;font-size:13px;font-weight:600;letter-spacing:.06em;border-radius:8px;text-decoration:none">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12-4-4m4 4 4-4M2 17v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2"/></svg>
+        Preuzmi EU projekt (PDF)
+      </a>
     </div>
     <div class="eu-card">
       <div class="eu-card-head"><h3>EU PROJEKT — KRATKI OPIS</h3></div>
@@ -1409,57 +1413,6 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
     </div>
   </div>
 
-  <!-- Starije vijesti 2015 -->
-  <div style="margin-top:48px;border-top:1px solid rgba(24,24,15,.09);padding-top:40px">
-    <span class="lbl" style="margin-bottom:24px">ARHIVA 2015.</span>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Članstvo u klasteru "Intelligent Energy"</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Vodolim postaje član klastera za inteligentnu energiju.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Bruxelles — energetska konferencija</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Predstavljanje tvrtke na međunarodnoj energetskoj konferenciji u Bruxellesu.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Obuka zaštite na radu</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Zaposlenici prošli obuku za zaštitu na radu prema najnovijim standardima.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Proslava 42. godišnjice tvrtke</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Obilježena 42. godišnjica osnutka Vodolima uz zaposlenike i partnere.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Geberit partnerski skup</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Sudjelovanje na partnerskom skupu Geberit — jednog od ključnih partnera Vodolima.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Društvena odgovornost tvrtke</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Vodolim obilježava društvenu odgovornost kroz partnerstva i zajedničke inicijative.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Brainstorming za unapređenje tima</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Interno savjetovanje za jačanje tima i unapređenje poslovnih procesa.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Oglasi za posao</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Vodolim traži nove stručnjake za proširenje tima instalaterskih radova.</div>
-      </div>
-      <div style="padding:20px;background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:10px">
-        <div class="nc-date">2015.</div>
-        <div style="font-size:14px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:6px">Najava kompletnih usluga</div>
-        <div style="font-size:12.5px;color:#7A7870;line-height:1.7">Vodolim najavljuje potpunu paletu usluga — od projektiranja do ključa u ruke.</div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- NJEMAČKO TRŽIŠTE -->
@@ -1753,7 +1706,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
   </div>
   <div class="timeline">
     <div class="tl-item">
-      <div class="tl-dot">1973</div>
+      <div class="tl-dot">›</div>
       <div class="tl-content">
         <div class="tl-year">1973. GODINA</div>
         <div class="tl-title">Osnivanje tvrtke</div>
@@ -1761,7 +1714,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-dot">1990</div>
+      <div class="tl-dot">›</div>
       <div class="tl-content">
         <div class="tl-year">1990. GODINA</div>
         <div class="tl-title">Širenje na kompleksne objekte</div>
@@ -1769,7 +1722,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-dot">2005</div>
+      <div class="tl-dot">›</div>
       <div class="tl-content">
         <div class="tl-year">2005. GODINA</div>
         <div class="tl-title">Bolnički projekti</div>
@@ -1777,7 +1730,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-dot">2015</div>
+      <div class="tl-dot">›</div>
       <div class="tl-content">
         <div class="tl-year">2015. GODINA</div>
         <div class="tl-title">Niskoenergetska gradnja</div>
@@ -1785,7 +1738,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       </div>
     </div>
     <div class="tl-item">
-      <div class="tl-dot">2023</div>
+      <div class="tl-dot">›</div>
       <div class="tl-content">
         <div class="tl-year">2023. GODINA</div>
         <div class="tl-title">50 godina — 150+ stručnjaka</div>
