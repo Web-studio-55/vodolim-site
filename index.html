@@ -27,7 +27,7 @@ nav{
 .nav-logo{display:flex;align-items:center;gap:12px}
 .nav-logo img{height:36px;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
 .nav-links{display:flex;gap:24px;list-style:none;align-items:center}
-.nav-links a{font-size:11.5px;letter-spacing:.05em;color:rgba(255,255,255,.35);transition:color .2s}
+.nav-links a{font-size:13.5px;letter-spacing:.04em;color:rgba(255,255,255,.35);transition:color .2s}
 .nav-links a:hover{color:rgba(255,255,255,.85)}
 .nav-cta{
   background:#3A9B4E;color:#fff!important;
@@ -51,6 +51,24 @@ nav{
   background:url('https://vodolim.hr/wp-content/uploads/2015/05/Construction-Buildings-Images.jpg') center/cover no-repeat;
   filter:brightness(.38);
   transform:scale(1.03);
+}
+.hero-video-wrap{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;
+}
+.hero-yt{
+  position:absolute;
+  top:50%;left:50%;
+  width:100vw;
+  height:56.25vw;
+  min-height:100vh;
+  min-width:177.78vh;
+  transform:translate(-50%,-50%);
+  filter:brightness(.28);
+  border:none;
+  pointer-events:none;
+}
+@media(max-width:760px){
+  .hero-video-wrap{display:none}
 }
 .hero-grad{
   position:absolute;inset:0;
@@ -366,7 +384,7 @@ footer{background:#18180F;padding:60px 40px 28px}
 
 /* ── ACCESSIBILITY ── */
 .access-btn{
-  position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:300;
+  position:fixed;left:0;bottom:200px;z-index:300;
   background:#3A9B4E;width:44px;height:44px;
   border-radius:0 6px 6px 0;
   display:flex;align-items:center;justify-content:center;
@@ -377,7 +395,7 @@ footer{background:#18180F;padding:60px 40px 28px}
 .access-btn:hover{background:#2E8040;width:50px}
 .access-btn svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
 .access-panel{
-  position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:299;
+  position:fixed;left:0;bottom:200px;z-index:299;
   background:#fff;border-radius:0 12px 12px 0;
   box-shadow:4px 0 24px rgba(0,0,0,.12);
   padding:20px 20px 20px 60px;
@@ -456,6 +474,10 @@ html,body{overflow-x:hidden;max-width:100%}
   .hero-btns{flex-direction:column;align-items:flex-start;gap:12px}
   .btn-g{width:100%;text-align:center;padding:16px 20px;box-sizing:border-box}
 }
+@media(max-width:960px){
+  .access-btn{top:70px;bottom:auto;transform:none}
+  .access-panel{top:70px;bottom:auto;transform:none}
+}
 @media(max-width:520px){
   .port-g{grid-template-columns:1fr}
   .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i{grid-column:span 1;height:190px}
@@ -474,13 +496,291 @@ html,body{overflow-x:hidden;max-width:100%}
   }
   .ticker-inner{animation:none}
 }
+
+/* ── SCROLL PROGRESS ── */
+.scroll-bar{position:fixed;top:0;left:0;height:3px;background:#3A9B4E;z-index:500;width:0;transition:width .08s linear;pointer-events:none}
+
+/* ── BACK TO TOP ── */
+.btt{
+  position:fixed;right:16px;bottom:148px;z-index:300;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(24,24,15,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .2s;
+  border:1px solid rgba(255,255,255,.12);
+}
+.btt.show{opacity:1;pointer-events:auto}
+.btt:hover{transform:translateY(-3px)}
+.btt svg{width:20px;height:20px;fill:#fff}
+@media(max-width:520px){.btt{right:12px;bottom:132px}}
+
+/* ── GDPR BANNER ── */
+.gdpr{
+  position:fixed;bottom:0;left:0;right:0;z-index:400;
+  background:#18180F;border-top:1px solid rgba(255,255,255,.1);
+  padding:18px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  transform:translateY(0);transition:transform .4s;
+}
+.gdpr.gdpr-hidden{transform:translateY(110%)}
+.gdpr-txt{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;max-width:680px}
+.gdpr-txt a{color:#3A9B4E;border-bottom:1px solid rgba(58,155,78,.4)}
+.gdpr-btns{display:flex;gap:10px;flex-shrink:0}
+.gdpr-accept{background:#3A9B4E;color:#fff;border:none;font:inherit;font-size:12px;letter-spacing:.1em;padding:10px 22px;border-radius:3px;cursor:pointer;transition:background .2s}
+.gdpr-accept:hover{background:#2E8040}
+.gdpr-decline{background:transparent;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.15);font:inherit;font-size:12px;letter-spacing:.08em;padding:10px 18px;border-radius:3px;cursor:pointer;transition:all .2s}
+.gdpr-decline:hover{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)}
+@media(max-width:760px){.gdpr{flex-direction:column;padding:18px 20px;gap:14px;align-items:flex-start}.gdpr-btns{width:100%}}
+
+/* ── LIGHTBOX ── */
+.lbox{
+  position:fixed;inset:0;z-index:600;
+  background:rgba(0,0,0,.93);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.lbox.open{opacity:1;pointer-events:auto}
+.lbox-img{max-width:88vw;max-height:82vh;border-radius:6px;object-fit:contain}
+.lbox-close{
+  position:absolute;top:20px;right:20px;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:22px;line-height:1;transition:background .2s;
+}
+.lbox-close:hover{background:rgba(255,255,255,.2)}
+.lbox-info{position:absolute;bottom:24px;left:0;right:0;text-align:center}
+.lbox-name{font-family:Georgia,serif;font-size:18px;color:#fff;margin-bottom:4px}
+.lbox-loc{font-size:10px;letter-spacing:.18em;color:#3A9B4E}
+.lbox-prev,.lbox-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:20px;transition:background .2s;
+}
+.lbox-prev{left:20px}
+.lbox-next{right:20px}
+.lbox-prev:hover,.lbox-next:hover{background:rgba(255,255,255,.2)}
+@media(max-width:760px){.lbox-prev,.lbox-next{width:36px;height:36px;font-size:16px;left:8px}.lbox-next{right:8px}}
+
+/* ── CJENIK ── */
+.cjenik{padding:100px 40px;background:#18180F}
+.cjenik .lbl{color:#3A9B4E}
+.cjenik .h2{color:#fff;margin-bottom:16px}
+.cjenik-sub{font-size:15px;color:rgba(255,255,255,.3);line-height:1.8;margin-bottom:40px;max-width:600px}
+.cjenik-pdv{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(58,155,78,.3);border-radius:20px;padding:5px 14px;font-size:11px;color:#3A9B4E;margin-bottom:40px}
+.cjenik-table{width:100%;border-collapse:collapse;margin-bottom:32px}
+.cjenik-table thead tr{border-bottom:1px solid rgba(255,255,255,.1)}
+.cjenik-table th{font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.22);text-align:left;padding:0 0 14px;font-weight:500}
+.cjenik-table th:not(:first-child){text-align:right}
+.cjenik-table tbody tr{border-bottom:1px solid rgba(255,255,255,.06);transition:background .2s}
+.cjenik-table tbody tr:hover{background:rgba(255,255,255,.03)}
+.cjenik-table tbody tr:last-child{border:none}
+.cjenik-table td{padding:18px 0;vertical-align:middle}
+.cjenik-table td:not(:first-child){text-align:right}
+.cjenik-name{font-size:15px;font-weight:500;color:#fff;margin-bottom:3px}
+.cjenik-desc{font-size:12px;color:rgba(255,255,255,.28);line-height:1.6;max-width:340px}
+.cjenik-price{font-family:Georgia,serif;font-size:18px;color:#fff;white-space:nowrap}
+.cjenik-price-lo{font-size:13px;color:rgba(255,255,255,.35);white-space:nowrap;margin-top:3px}
+.cjenik-unit{font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.2);white-space:nowrap;margin-top:3px}
+.cjenik-note{font-size:12px;color:rgba(255,255,255,.2);line-height:1.85;border-top:1px solid rgba(255,255,255,.07);padding-top:24px;margin-top:8px}
+.cjenik-note strong{color:rgba(255,255,255,.4)}
+@media(max-width:960px){.cjenik{padding:56px 20px}.cjenik-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+
+/* ── BEFORE/AFTER SLIDER ── */
+.ba-section{padding:100px 40px;background:#18180F}
+.ba-wrap{max-width:900px;margin:0 auto;position:relative;user-select:none;border-radius:8px;overflow:hidden;cursor:col-resize}
+.ba-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-after{position:relative;height:520px}
+.ba-before{position:absolute;top:0;left:0;height:100%;overflow:hidden;width:50%}
+.ba-before img{position:absolute;top:0;left:0;width:900px;max-width:none;height:100%;object-fit:cover}
+.ba-handle{position:absolute;top:0;left:50%;transform:translateX(-50%);width:3px;height:100%;background:#3A9B4E;cursor:col-resize;z-index:10}
+.ba-handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#3A9B4E;border:3px solid #fff;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.ba-handle::after{content:'◀ ▶';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:10px;color:#fff;white-space:nowrap;margin-top:1px}
+.ba-label{position:absolute;bottom:16px;padding:4px 12px;border-radius:3px;font-size:10px;letter-spacing:.12em;font-weight:600;color:#fff}
+.ba-label-before{left:16px;background:rgba(0,0,0,.6)}
+.ba-label-after{right:16px;background:rgba(58,155,78,.8)}
+@media(max-width:760px){.ba-section{padding:60px 20px}.ba-after{height:260px}}
+
+/* ── 3D TILT ── */
+.tilt{transform-style:preserve-3d;transition:transform .1s ease}
+
+/* ── TESTIMONIALI ── */
+.testi{padding:100px 40px;background:#F7F5F1}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+.testi-card{background:#fff;border-radius:12px;padding:32px;border:1px solid rgba(24,24,15,.07);position:relative}
+.testi-stars{color:#3A9B4E;font-size:14px;margin-bottom:16px;letter-spacing:2px}
+.testi-text{font-size:14px;line-height:1.75;color:rgba(24,24,15,.65);margin-bottom:24px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:#3A9B4E;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff;flex-shrink:0}
+.testi-name{font-size:13px;font-weight:600;color:#18180F}
+.testi-role{font-size:11px;color:rgba(24,24,15,.4);letter-spacing:.05em}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.testi{padding:60px 20px}}
+
+/* ── TIMELINE ── */
+.timeline-section{padding:100px 40px;background:#18180F}
+.timeline{max-width:800px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:rgba(58,155,78,.2)}
+.tl-item{display:flex;gap:32px;margin-bottom:48px;position:relative}
+.tl-dot{width:50px;height:50px;border-radius:50%;background:#1E1E14;border:2px solid #3A9B4E;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;letter-spacing:.05em;color:#3A9B4E;font-weight:600;z-index:1}
+.tl-content{padding-top:10px}
+.tl-year{font-size:11px;letter-spacing:.15em;color:#3A9B4E;margin-bottom:6px}
+.tl-title{font-family:Georgia,serif;font-size:18px;color:#fff;margin-bottom:8px}
+.tl-desc{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7}
+@media(max-width:760px){.timeline-section{padding:60px 20px}.tl-item{gap:20px}}
+
+/* ── STICKY MOBILE BAR ── */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:350;background:#18180F;border-top:1px solid rgba(255,255,255,.08);padding:10px 16px;gap:10px}
+@media(max-width:760px){.sticky-bar{display:flex}}
+.sticky-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-decoration:none}
+.sticky-call{background:#3A9B4E;color:#fff}
+.sticky-upit{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12)}
+
+/* ── FAQ ── */
+.faq{padding:100px 40px;background:#F7F5F1}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(24,24,15,.1)}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 0;cursor:pointer;gap:20px;
+  font-size:16px;font-weight:600;color:#18180F;line-height:1.5;
+  border:none;background:none;width:100%;text-align:left;transition:color .2s;
+}
+.faq-q:hover{color:#3A9B4E}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;background:#3A9B4E;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:transform .3s,background .2s;
+}
+.faq-icon svg{width:14px;height:14px;fill:#fff;transition:transform .3s}
+.faq-item.open .faq-icon{background:#18180F}
+.faq-item.open .faq-icon svg{transform:rotate(45deg)}
+.faq-a{font-size:15px;color:#6B6860;line-height:1.9;max-height:0;overflow:hidden;transition:max-height .4s ease,padding-bottom .4s}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:22px}
+
+/* ── KALKULATOR ── */
+.kalk{padding:100px 40px;background:#EDEAE4}
+.kalk-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.kalk-form-wrap{display:flex;flex-direction:column;gap:22px}
+.kalk-lbl{font-size:9.5px;letter-spacing:.16em;color:#A09D97;display:block;margin-bottom:8px}
+.kalk-sel{
+  width:100%;padding:13px 16px;
+  border:1px solid rgba(24,24,15,.13);border-radius:6px;
+  font:inherit;font-size:15px;color:#18180F;background:#fff;
+  outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A09D97' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
+}
+.kalk-sel:focus{border-color:#3A9B4E}
+.kalk-slider-wrap{display:flex;align-items:center;gap:14px}
+.kalk-slider{flex:1;accent-color:#3A9B4E;height:4px;cursor:pointer}
+.kalk-val{font-size:14px;font-weight:600;color:#18180F;min-width:60px;text-align:right}
+.kalk-result{background:#18180F;border-radius:14px;padding:44px 40px;position:sticky;top:80px}
+.kalk-result-lbl{font-size:9.5px;letter-spacing:.18em;color:rgba(255,255,255,.3);margin-bottom:8px}
+.kalk-price{font-family:Georgia,serif;font-size:clamp(32px,4vw,52px);color:#fff;letter-spacing:-.04em;line-height:1;margin-bottom:4px}
+.kalk-range-txt{font-size:13px;color:rgba(255,255,255,.28);margin-bottom:32px}
+.kalk-items{display:flex;flex-direction:column;gap:0;margin-bottom:24px}
+.kalk-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.kalk-row:last-child{border:none}
+.kalk-row-k{font-size:13px;color:rgba(255,255,255,.32)}
+.kalk-row-v{font-size:13px;font-weight:600;color:#3A9B4E}
+.kalk-disc{font-size:11.5px;color:rgba(255,255,255,.18);line-height:1.8;margin-top:20px;border-top:1px solid rgba(255,255,255,.06);padding-top:18px}
+.kalk-cta{display:inline-block;background:#3A9B4E;color:#fff;font-size:11.5px;letter-spacing:.1em;padding:13px 26px;border-radius:3px;transition:background .2s;margin-top:20px}
+.kalk-cta:hover{background:#2E8040}
+@media(max-width:960px){.kalk-inner{grid-template-columns:1fr;gap:36px}.kalk-result{position:static}}
+@media(max-width:520px){.kalk{padding:56px 20px}.faq{padding:56px 20px}}
+
+/* ── GOOGLE MAPS ── */
+.maps-wrap{border-radius:12px;overflow:hidden;height:220px;margin-top:32px;border:1px solid rgba(24,24,15,.08)}
+.maps-wrap iframe{width:100%;height:100%;border:none;display:block}
+
+/* ── HAMBURGER MENU ── */
+.hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:36px;height:36px;cursor:pointer;background:none;border:none;padding:4px;
+}
+.hamburger span{
+  display:block;height:1.5px;background:rgba(255,255,255,.7);
+  border-radius:2px;transition:transform .3s,opacity .3s,width .3s;
+}
+.hamburger span:nth-child(2){width:70%}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;width:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{
+  position:fixed;inset:0;top:60px;z-index:190;
+  background:rgba(8,8,6,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  pointer-events:none;
+}
+.mobile-menu.open{transform:translateX(0);pointer-events:auto}
+.mobile-menu a{
+  font-family:Georgia,serif;font-size:clamp(22px,6vw,32px);color:rgba(255,255,255,.5);
+  letter-spacing:-.02em;transition:color .2s;padding:8px 0;
+}
+.mobile-menu a:hover{color:#fff}
+.mobile-menu .m-cta{
+  margin-top:16px;background:#3A9B4E;color:#fff!important;
+  font-family:-apple-system,system-ui,sans-serif;font-size:13px;letter-spacing:.1em;
+  padding:14px 36px;border-radius:3px;font-style:normal;
+}
+.mobile-menu .m-lang{display:flex;gap:20px;margin-top:12px}
+.mobile-menu .m-lang a{font-family:-apple-system,system-ui,sans-serif;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.25);font-style:normal}
+.mobile-menu .m-lang a.on{color:rgba(255,255,255,.6)}
+@media(max-width:960px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-l{
+  opacity:0;transform:translateX(-32px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal-l.in{opacity:1;transform:translateX(0)}
+.reveal-r{
+  opacity:0;transform:translateX(32px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal-r.in{opacity:1;transform:translateX(0)}
+.reveal-s{
+  opacity:0;transform:scale(.96);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.reveal-s.in{opacity:1;transform:scale(1)}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-l,.reveal-r,.reveal-s{opacity:1;transform:none;transition:none}
+}
 </style>
 </head>
 <body>
 
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-bar" id="scroll-bar"></div>
+
+<!-- LIGHTBOX -->
+<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Pregled slike">
+  <button class="lbox-close" id="lbox-close" aria-label="Zatvori">×</button>
+  <button class="lbox-prev" id="lbox-prev" aria-label="Prethodni">‹</button>
+  <img class="lbox-img" id="lbox-img" src="" alt="">
+  <button class="lbox-next" id="lbox-next" aria-label="Sljedeći">›</button>
+  <div class="lbox-info">
+    <div class="lbox-name" id="lbox-name"></div>
+    <div class="lbox-loc" id="lbox-loc"></div>
+  </div>
+</div>
+
 <!-- ACCESSIBILITY -->
 <button class="access-btn" onclick="document.querySelector('.access-panel').classList.toggle('open')" aria-label="Pristupačnost" title="Pristupačnost">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="4" r="2"/><path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26L6 8.03V13h2V9.5l2.12-.56L8 20h2l1.07-4h2.86L15 20h2l-1.54-8.83c1.21 1.2 3.08 1.85 5 1.83z"/></svg>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="4" r="2"/><path d="M16.5 20.5c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-6.5 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm7-8.5h-5l-1.5-4H8V6H5v2h2.5l2 5.5H15v4h2v-5.5z"/></svg>
 </button>
 <div class="access-panel">
   <h4>Accessibility Tools</h4>
@@ -548,6 +848,11 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 })();
 </script>
 
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" title="Natrag na vrh" aria-label="Natrag na vrh">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
 <!-- FLOATING CONTACT BUTTONS -->
 <div class="float-btns">
   <a href="https://wa.me/385984441 56" target="_blank" class="float-btn float-wa" title="WhatsApp">
@@ -556,6 +861,25 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
   <a href="tel:+38549286596" class="float-btn float-tel" title="Nazovite nas">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
   </a>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="closeMobileMenu()">Naslovnica</a>
+  <a href="#stanovi" onclick="closeMobileMenu()">Stanovi</a>
+  <a href="#portfolio" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="#onama" onclick="closeMobileMenu()">O nama</a>
+  <a href="#nisko" onclick="closeMobileMenu()">Niskoenergetske kuće</a>
+  <a href="#projekti" onclick="closeMobileMenu()">EU Projekti</a>
+  <a href="#novosti" onclick="closeMobileMenu()">Novosti</a>
+  <a href="#njemacko" onclick="closeMobileMenu()">Njemačko tržište</a>
+  <a href="#cjenik" onclick="closeMobileMenu()">Cjenik</a>
+  <a href="#kontakt" class="m-cta" onclick="closeMobileMenu()">Kontakt</a>
+  <div class="m-lang">
+    <a href="#" class="on">HR</a>
+    <a href="#">EN</a>
+    <a href="#">DE</a>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -572,6 +896,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
     <li><a href="#projekti">Projekti</a></li>
     <li><a href="#novosti">Novosti</a></li>
     <li><a href="#njemacko">Njemačko tržište</a></li>
+    <li><a href="#cjenik">Cjenik</a></li>
     <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
   </ul>
   <div class="nav-r">
@@ -580,12 +905,23 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       <a href="#">EN</a>
       <a href="#">DE</a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="Izbornik" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div class="hero-video-wrap">
+    <iframe class="hero-yt"
+      src="https://www.youtube-nocookie.com/embed/xZxrZw1dpBQ?autoplay=1&mute=1&loop=1&playlist=xZxrZw1dpBQ&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=30&enablejsapi=1&cc_load_policy=0&iv_load_policy=3&disablekb=1"
+      allow="autoplay; encrypted-media"
+      title="Vodolim video"
+      aria-hidden="true">
+    </iframe>
+  </div>
   <div class="hero-grad"></div>
   <div class="hero-content">
     <div>
@@ -654,7 +990,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 <!-- STANOVI -->
 <section id="stanovi" class="stanovi">
   <div class="stanovi-inner">
-    <div class="stanovi-img">
+    <div class="stanovi-img reveal-l">
       <img src="https://vodolim.hr/wp-content/uploads/2021/09/OBITELJSKAKUCA-DONJA-STBICA-700x420.jpg" alt="Vodolim stanovi" onerror="this.style.display='none'">
       <div class="stanovi-stamp">KLJUČ U RUKE</div>
     </div>
@@ -678,7 +1014,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 
 <!-- PORTFOLIO -->
 <section id="portfolio" class="portfolio">
-  <div class="port-head">
+  <div class="port-head reveal">
     <div>
       <span class="lbl">Naš rad</span>
       <h2 class="h2">Odabrani projekti</h2>
@@ -778,7 +1114,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
   <div style="margin-top:56px;background:#fff;border:1px solid rgba(24,24,15,.08);border-radius:12px;overflow:hidden">
     <div style="padding:18px 28px;border-bottom:1px solid rgba(24,24,15,.07);display:flex;justify-content:space-between;align-items:center">
       <span style="font-size:10px;letter-spacing:.18em;color:#3A9B4E">RECENTNI PROJEKTI 2022–2026</span>
-      <a href="https://vodolim.hr/projekti/" target="_blank" style="font-size:11px;color:#3A9B4E;border-bottom:1px solid #3A9B4E;padding-bottom:1px;letter-spacing:.08em">Online portfolio →</a>
+      <a href="#portfolio" style="font-size:11px;color:#3A9B4E;border-bottom:1px solid #3A9B4E;padding-bottom:1px;letter-spacing:.08em">Svi projekti →</a>
     </div>
     <table style="width:100%;border-collapse:collapse">
       <thead>
@@ -847,19 +1183,15 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       <div class="bc-h">Unutarnji radovi</div>
       <div class="bc-p">Žbukanje, oblaganje, keramika, parket, sanitarni čvorovi — kompletna priprema interijera.</div>
     </div>
-    <div class="bc bc-wide">
-      <div class="bc-inner">
-        <div>
-          <div class="bc-n">04</div>
-          <div class="bc-h">MEP instalacije</div>
-          <div class="bc-p">Vodovodne, kanalizacijske, toplinske i mehaničke instalacije za sve vrste objekata.</div>
-        </div>
-        <div>
-          <div class="bc-n">05</div>
-          <div class="bc-h">Energetska obnova</div>
-          <div class="bc-p">Modernizacija objekata, smanjenje potrošnje energije uz mogućnost EU sufinanciranja.</div>
-        </div>
-      </div>
+    <div class="bc">
+      <div class="bc-n">04</div>
+      <div class="bc-h">MEP instalacije</div>
+      <div class="bc-p">Vodovodne, kanalizacijske, toplinske i mehaničke instalacije za sve vrste objekata.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">05</div>
+      <div class="bc-h">Energetska obnova</div>
+      <div class="bc-p">Modernizacija objekata, smanjenje potrošnje energije uz mogućnost EU sufinanciranja.</div>
     </div>
     <div class="bc">
       <div class="bc-n">06</div>
@@ -993,7 +1325,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 <section id="novosti" class="novosti">
   <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
     <div><span class="lbl">Iz kompanije</span><h2 class="h2">Novosti</h2></div>
-    <a href="https://vodolim.hr/novosti/" target="_blank" class="s-lnk">Sve vijesti →</a>
+    <a href="#novosti" class="s-lnk">Sve vijesti →</a>
   </div>
   <div class="news-g">
     <div class="nc">
@@ -1120,6 +1452,197 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
   </div>
 </section>
 
+<!-- KALKULATOR -->
+<section class="kalk" id="kalkulator">
+  <div style="margin-bottom:52px">
+    <span class="lbl">Okvirna procjena</span>
+    <h2 class="h2">Kalkulator troškova gradnje</h2>
+  </div>
+  <div class="kalk-inner">
+    <div class="kalk-form-wrap">
+      <div>
+        <label class="kalk-lbl" for="k-tip">VRSTA PROJEKTA</label>
+        <select class="kalk-sel" id="k-tip">
+          <option value="kuca">Obiteljska kuća</option>
+          <option value="zgrada">Stambena zgrada</option>
+          <option value="poslovni">Poslovni objekt</option>
+          <option value="obnova">Energetska obnova</option>
+        </select>
+      </div>
+      <div>
+        <label class="kalk-lbl" for="k-m2">POVRŠINA</label>
+        <div class="kalk-slider-wrap">
+          <input class="kalk-slider" type="range" id="k-m2" min="50" max="500" value="150" step="10">
+          <span class="kalk-val" id="k-m2-out">150 m²</span>
+        </div>
+      </div>
+      <div>
+        <label class="kalk-lbl" for="k-kval">KVALITETA IZVEDBE</label>
+        <select class="kalk-sel" id="k-kval">
+          <option value="std">Standardna</option>
+          <option value="visa">Viša</option>
+          <option value="lux">Luksuzna</option>
+        </select>
+      </div>
+      <p style="font-size:13.5px;color:#7A7870;line-height:1.8;margin-top:8px">Unesite parametre projekta i dobijte okvirnu procjenu troška. Za preciznu ponudu kontaktirajte nas — svaki projekt je jedinstven.</p>
+    </div>
+    <div class="kalk-result">
+      <div class="kalk-result-lbl">OKVIRNA CIJENA</div>
+      <div class="kalk-price" id="k-min">150.000 €</div>
+      <div class="kalk-range-txt" id="k-range">– 210.000 €</div>
+      <div class="kalk-items">
+        <div class="kalk-row"><span class="kalk-row-k">Površina</span><span class="kalk-row-v" id="k-r-m2">150 m²</span></div>
+        <div class="kalk-row"><span class="kalk-row-k">Cijena po m²</span><span class="kalk-row-v" id="k-r-m2c">1.000–1.400 €</span></div>
+        <div class="kalk-row"><span class="kalk-row-k">Vrsta projekta</span><span class="kalk-row-v" id="k-r-tip">Obiteljska kuća</span></div>
+        <div class="kalk-row"><span class="kalk-row-k">Kvaliteta</span><span class="kalk-row-v" id="k-r-kval">Standardna</span></div>
+      </div>
+      <a href="#kontakt" class="kalk-cta">Zatražite preciznu ponudu</a>
+      <div class="kalk-disc">* Procjena je okvirna i ne uključuje troškove projektne dokumentacije, komunalnih priključaka ni dozvola. Konačna cijena ovisi o specifičnostima projekta.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CJENIK -->
+<section class="cjenik" id="cjenik">
+  <span class="lbl">Transparentnost cijena</span>
+  <h2 class="h2">Cjenik usluga</h2>
+  <p class="cjenik-sub">Okvirne cijene naših usluga za fizičke osobe. Svaki projekt je jedinstven — konačna cijena ovisi o opsegu radova, materijalu i lokaciji. Kontaktirajte nas za preciznu ponudu.</p>
+  <div class="cjenik-pdv">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#3A9B4E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+    Sve cijene su bez PDV-a (PDV 25% se obračunava zasebno)
+  </div>
+  <table class="cjenik-table">
+    <thead>
+      <tr>
+        <th>USLUGA</th>
+        <th>CIJENA OD</th>
+        <th>CIJENA DO</th>
+        <th>JEDINICA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="cjenik-name">Gradnja obiteljske kuće</div>
+          <div class="cjenik-desc">Kompletna gradnja ključ u ruke — temelji, konstrukcija, krov, fasada, instalacije, završni radovi</div>
+        </td>
+        <td><div class="cjenik-price">1.000 €</div></td>
+        <td><div class="cjenik-price">2.800 €</div></td>
+        <td><div class="cjenik-unit">PO m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Stambena zgrada</div>
+          <div class="cjenik-desc">Višestambene zgrade, blokovi stanova — od temelja do predaje</div>
+        </td>
+        <td><div class="cjenik-price">800 €</div></td>
+        <td><div class="cjenik-price">2.200 €</div></td>
+        <td><div class="cjenik-unit">PO m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Energetska obnova</div>
+          <div class="cjenik-desc">Toplinska izolacija, zamjena prozora i vrata, fasada, krov — sukladno EU standardima</div>
+        </td>
+        <td><div class="cjenik-price">350 €</div></td>
+        <td><div class="cjenik-price">1.000 €</div></td>
+        <td><div class="cjenik-unit">PO m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Niskoenergetska kuća</div>
+          <div class="cjenik-desc">Gradnja s toplinskim pumpama, solarnim panelima i geotermalnim sustavom</div>
+        </td>
+        <td><div class="cjenik-price">1.200 €</div></td>
+        <td><div class="cjenik-price">3.200 €</div></td>
+        <td><div class="cjenik-unit">PO m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Instalacije (VIK, grijanje, hlađenje)</div>
+          <div class="cjenik-desc">Vodovodne, instalacije grijanja i hlađenja — za nove i postojeće objekte</div>
+        </td>
+        <td><div class="cjenik-price">200 €</div></td>
+        <td><div class="cjenik-price">500 €</div></td>
+        <td><div class="cjenik-unit">PO m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Unutarnji radovi</div>
+          <div class="cjenik-desc">Žbukanje, keramika, parket, slikanje, gips, stolarija</div>
+        </td>
+        <td><div class="cjenik-price">150 €</div></td>
+        <td><div class="cjenik-price">450 €</div></td>
+        <td><div class="cjenik-unit">PO m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Projektna dokumentacija</div>
+          <div class="cjenik-desc">Idejno rješenje, glavni projekt, ishođenje dozvola i papirologije</div>
+        </td>
+        <td><div class="cjenik-price">2.000 €</div></td>
+        <td><div class="cjenik-price">15.000 €</div></td>
+        <td><div class="cjenik-unit">PO PROJEKTU</div></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cjenik-note">
+    <strong>Napomena:</strong> Prikazane cijene su orijentacijske i mogu varirati ovisno o specifičnostima projekta, odabranim materijalima, lokaciji i tržišnim uvjetima u trenutku sklapanja ugovora. Objavljeno sukladno Odluci o objavi cjenika proizvoda i usluga na mrežnim stranicama (NN 101/2026). Cjenik vrijedi od 1. listopada 2026. Zadnja izmjena: rujan 2026. Za preciznu ponudu <a href="#kontakt" style="color:#3A9B4E;border-bottom:1px solid rgba(58,155,78,.3)">kontaktirajte nas</a>.
+  </div>
+  <div style="margin-top:28px;text-align:center">
+    <a href="cjenik.csv" download="Vodolim-cjenik-2026.csv" style="display:inline-flex;align-items:center;gap:10px;background:transparent;border:1.5px solid rgba(58,155,78,.5);color:#3A9B4E;padding:12px 28px;border-radius:4px;font-size:14px;font-weight:500;letter-spacing:.03em;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(58,155,78,.08)';this.style.borderColor='#3A9B4E'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(58,155,78,.5)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Preuzmi cjenik (.CSV) — sukladno NN 101/2026
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="lbl">Česta pitanja</span>
+    <h2 class="h2">Imate pitanja? Imamo odgovore.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Koliko traje izgradnja obiteljske kuće?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Ovisno o veličini i složenosti projekta, izgradnja obiteljske kuće traje 10–18 mjeseci od ishođenja građevinske dozvole. Naš tim radi paralelno na više faza pa skraćujemo rokove koliko je god moguće. Točan rok uvijek definiramo ugovorom.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Dajete li garanciju na izvedene radove?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Da. Na sve izvedene radove dajemo zakonsku garanciju od 2 godine, a na konstrukciju objekta 10 godina sukladno Zakonu o gradnji. Posjedujemo certifikate ISO 9001, ISO 14001 i ISO 45001 koji jamče kvalitetu naših procesa.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Izvodite li radove energetske obnove starih zgrada?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Apsolutno. Energetska obnova stambenih i poslovnih zgrada jedna je od naših ključnih djelatnosti. Radimo toplinsku izolaciju, zamjenu prozora i vrata, instalaciju solarnih panela i toplinskih pumpi, te sve potrebne instalacije. Možemo vam pomoći i s prijavom na EU fondove za sufinanciranje obnove.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Radite li i u Njemačkoj?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Da, aktivno smo prisutni na njemačkom tržištu već 6 godina, surađujući isključivo s njemačkim investitorima. Ako se bavite instalacijama i tražite pouzdanog partnera za rad u Njemačkoj, kontaktirajte nas — nudimo osiguran smještaj i stabilno poslovanje.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Postoji li minimalna veličina projekta za suradnju?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Ne postoji strogi minimum — radimo od obiteljskih kuća do bolnica i poslovnih kompleksa. Međutim, naša snaga leži u složenim i velikim projektima gdje se može iskoristiti puni kapacitet naših 150+ stručnjaka. Za manje projekte možemo preporučiti suradnike iz naše mreže.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Kako mogu dobiti ponudu?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Ispunite kontakt formu na ovoj stranici ili nas nazovite na +385 (0) 49 286 596. Dogovaramo besplatnu konzultaciju na kojoj razgovaramo o vašem projektu, rokovima i okvirnom budžetu. Na temelju tog razgovora izrađujemo preciznu ponudu.</div>
+    </div>
+  </div>
+</section>
+
 <!-- PARTNERI -->
 <div class="partners">
   <div class="partners-row">
@@ -1137,6 +1660,122 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
   </div>
 </div>
 
+<!-- BEFORE/AFTER SLIDER -->
+<section class="ba-section reveal">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="lbl" style="color:rgba(255,255,255,.3)">Energetska obnova</span>
+    <h2 class="h2" style="color:#fff">Vidite razliku na djelu</h2>
+    <p style="color:rgba(255,255,255,.35);font-size:14px;margin-top:12px">Povucite klizač i pogledajte transformaciju objekta</p>
+  </div>
+  <div class="ba-wrap" id="ba-wrap">
+    <div class="ba-after">
+      <img src="https://vodolim.hr/wp-content/uploads/2015/05/Construction-Buildings-Images.jpg" alt="Nakon obnove">
+      <div class="ba-label ba-label-after">POSLIJE</div>
+    </div>
+    <div class="ba-before" id="ba-before">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Prije obnove">
+      <div class="ba-label ba-label-before">PRIJE</div>
+    </div>
+    <div class="ba-handle" id="ba-handle"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALI -->
+<section class="testi reveal">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="lbl">Recenzije klijenata</span>
+    <h2 class="h2">Što kažu naši klijenti</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Vodolim je izgradio našu obiteljsku kuću od temelja do ključa. Profesionalan tim, točno u dogovorenom roku i budžetu. Preporučujem svima."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MK</div>
+        <div><div class="testi-name">Marko Kovačević</div><div class="testi-role">OBITELJSKA KUĆA, ZAPREŠIĆ</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Energetska obnova naše stambene zgrade završena je brže nego smo očekivali. Računi za grijanje smanjeni za 40%. Odličan posao!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AH</div>
+        <div><div class="testi-name">Ana Horvatić</div><div class="testi-role">STAMBENA ZGRADA, ZAGREB</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Surađujemo s Vodolimom već 10 godina na svim instalacijskim radovima. Pouzdani, stručni, uvijek na raspolaganju. Pravi partner za projekte."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">IP</div>
+        <div><div class="testi-name">Ivan Petrović</div><div class="testi-role">POSLOVNI OBJEKT, KRAPINA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section reveal">
+  <div style="text-align:center;margin-bottom:64px">
+    <span class="lbl" style="color:rgba(255,255,255,.3)">Naša priča</span>
+    <h2 class="h2" style="color:#fff">50 godina tradicije</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">1973</div>
+      <div class="tl-content">
+        <div class="tl-year">1973. GODINA</div>
+        <div class="tl-title">Osnivanje tvrtke</div>
+        <div class="tl-desc">Leopold Brundula osniva Vodolim kao obrtničku radionicu za instalacijske radove u Donjoj Stubici. Počeci skromni, vizija velika.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">1990</div>
+      <div class="tl-content">
+        <div class="tl-year">1990. GODINA</div>
+        <div class="tl-title">Širenje na kompleksne objekte</div>
+        <div class="tl-desc">Vodolim počinje surađivati na većim stambenim zgradama i poslovnim objektima. Tim raste na 20+ stručnjaka.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2005</div>
+      <div class="tl-content">
+        <div class="tl-year">2005. GODINA</div>
+        <div class="tl-title">Bolnički projekti</div>
+        <div class="tl-desc">Povjereni nam prvi bolnički i javni projekti — najzahtjevniji tehnički standardi postaju naša svakodnevica.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2015</div>
+      <div class="tl-content">
+        <div class="tl-year">2015. GODINA</div>
+        <div class="tl-title">Niskoenergetska gradnja</div>
+        <div class="tl-desc">Uvođenje niskoenergetskih i pasivnih rješenja u portfolio. Certificirani za EU standarde energetske učinkovitosti.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2023</div>
+      <div class="tl-content">
+        <div class="tl-year">2023. GODINA</div>
+        <div class="tl-title">50 godina — 150+ stručnjaka</div>
+        <div class="tl-desc">Jubilej poluvijeka rada. Tim od 150+ stručnjaka, 24+ aktivnih projekata, partnerstva s vodećim europskim brandovima.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar">
+  <a href="tel:+38549286596" class="sticky-call">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    NAZOVI
+  </a>
+  <a href="#kontakt" class="sticky-upit">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    POŠALJI UPIT
+  </a>
+</div>
+
 <!-- KONTAKT -->
 <section id="kontakt" class="kontakt">
   <div class="kontakt-inner">
@@ -1149,6 +1788,9 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
         <div><div class="k-lbl">MOBITEL</div><div class="k-val"><a href="tel:+385984441 56">098 444 156</a></div></div>
         <div><div class="k-lbl">EMAIL</div><div class="k-val"><a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a></div></div>
         <div><div class="k-lbl">PRATITE NAS</div><div class="k-val" style="display:flex;gap:20px"><a href="https://www.facebook.com/vodolimkuce" target="_blank" style="color:#3A9B4E">Facebook</a><a href="https://www.instagram.com/vodolim.vodolim" target="_blank" style="color:#3A9B4E">Instagram</a></div></div>
+      </div>
+      <div class="maps-wrap">
+        <iframe src="https://maps.google.com/maps?q=Nova+ulica+3A,+Donja+Stubica,+Hrvatska&output=embed&z=15" allowfullscreen loading="lazy" title="Lokacija Vodolim"></iframe>
       </div>
     </div>
     <form onsubmit="return false">
@@ -1198,6 +1840,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       <div>
         <div class="fc-t">PRAVNO</div>
         <div class="fc-links">
+          <a href="#cjenik">Cjenik usluga</a>
           <a href="#">Politika privatnosti</a>
           <a href="#">Kolačići</a>
           <a href="#">EU projekti</a>
@@ -1213,6 +1856,259 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
     </div>
   </div>
 </footer>
+
+<!-- GDPR COOKIE BANNER -->
+<div class="gdpr" id="gdpr">
+  <div class="gdpr-txt">
+    Koristimo kolačiće kako bismo poboljšali vaše iskustvo na stranici i analizirali promet. Možete prihvatiti sve kolačiće ili odbiti neobavezne. Više informacija u našoj <a href="#">Politici kolačića</a>.
+  </div>
+  <div class="gdpr-btns">
+    <button class="gdpr-decline" id="gdpr-decline">Odbij</button>
+    <button class="gdpr-accept" id="gdpr-accept">Prihvati sve</button>
+  </div>
+</div>
+
+<script>
+/* ── SCROLL PROGRESS + BACK TO TOP ── */
+(function(){
+  var bar=document.getElementById('scroll-bar');
+  var btt=document.getElementById('btt');
+  window.addEventListener('scroll',function(){
+    var st=window.scrollY||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(st/h*100):0)+'%';
+    btt.classList.toggle('show',st>400);
+  },{passive:true});
+  btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+
+/* ── GDPR ── */
+(function(){
+  var el=document.getElementById('gdpr');
+  try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}
+  document.getElementById('gdpr-accept').onclick=function(){
+    try{localStorage.setItem('gdpr','1')}catch(e){}
+    el.classList.add('gdpr-hidden');
+  };
+  document.getElementById('gdpr-decline').onclick=function(){
+    try{localStorage.setItem('gdpr','0')}catch(e){}
+    el.classList.add('gdpr-hidden');
+  };
+})();
+
+/* ── LIGHTBOX ── */
+(function(){
+  var lb=document.getElementById('lbox');
+  var lbImg=document.getElementById('lbox-img');
+  var lbName=document.getElementById('lbox-name');
+  var lbLoc=document.getElementById('lbox-loc');
+  var cards=[];
+  var cur=0;
+
+  document.querySelectorAll('.pc').forEach(function(card,i){
+    var imgEl=card.querySelector('.pc-img');
+    var nameEl=card.querySelector('.pc-name');
+    var locEl=card.querySelector('.pc-loc');
+    var bg=imgEl?imgEl.style.backgroundImage:'';
+    var url=bg.replace(/url\(['"]?([^'"]+)['"]?\)/,'$1');
+    if(!url||url===bg)return;
+    var entry={url:url,name:nameEl?nameEl.textContent:'',loc:locEl?locEl.textContent:''};
+    var idx=cards.length;
+    cards.push(entry);
+    card.style.cursor='zoom-in';
+    card.addEventListener('click',function(){open(idx)});
+  });
+
+  function open(i){
+    cur=i;
+    var c=cards[i];
+    lbImg.src=c.url;
+    lbImg.alt=c.name;
+    lbName.textContent=c.name;
+    lbLoc.textContent=c.loc;
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+    lbImg.src='';
+  }
+  document.getElementById('lbox-close').onclick=close;
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.getElementById('lbox-prev').onclick=function(){open((cur-1+cards.length)%cards.length)};
+  document.getElementById('lbox-next').onclick=function(){open((cur+1)%cards.length)};
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')open((cur-1+cards.length)%cards.length);
+    if(e.key==='ArrowRight')open((cur+1)%cards.length);
+  });
+})();
+
+/* ── FAQ ── */
+(function(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+      if(!open)item.classList.add('open');
+    });
+  });
+})();
+
+/* ── HAMBURGER MENU ── */
+function toggleMobileMenu(){
+  var m=document.getElementById('mobile-menu');
+  var h=document.getElementById('hamburger');
+  var open=m.classList.toggle('open');
+  h.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeMobileMenu(){
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  var autoTargets=[
+    '.usluge-head','.bento .bc',
+    '.onama-inner > *','.nisko-top > *','.nisko-kpis',
+    '.eu-inner > *','.news-g .nc','.de-inner > *',
+    '.faq-item','.kalk-inner > *','.kontakt-inner > *',
+    '.partners-row','.port-g .pc'
+  ];
+  autoTargets.forEach(function(s){
+    document.querySelectorAll(s).forEach(function(el,i){
+      if(!el.classList.contains('reveal')&&!el.classList.contains('reveal-l')&&!el.classList.contains('reveal-r')){
+        el.classList.add('reveal');
+        el.style.transitionDelay=(i*0.06)+'s';
+      }
+    });
+  });
+  function check(){
+    var wh=window.innerHeight;
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s').forEach(function(el){
+      if(el.getBoundingClientRect().top<wh*0.92)el.classList.add('in');
+    });
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+
+/* ── ANIMATED COUNTERS ── */
+(function(){
+  var done=false;
+  var data=[{target:50,sfx:'+'},{target:150,sfx:'+'},{target:24,sfx:'+'}];
+  var els=document.querySelectorAll('.stat-n');
+  function animCount(el,target,sfx){
+    var dur=2000,interval=16,steps=dur/interval,step=0;
+    var ease=function(t){return t<.5?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1};
+    var t=setInterval(function(){
+      step++;
+      var val=Math.round(target*ease(step/steps));
+      if(step>=steps){val=target;clearInterval(t)}
+      el.innerHTML=val+'<sup>'+sfx+'</sup>';
+    },interval);
+  }
+  function checkHero(){
+    if(done||!els.length)return;
+    if(els[0].getBoundingClientRect().top<window.innerHeight){
+      done=true;
+      data.forEach(function(d,i){if(els[i])animCount(els[i],d.target,d.sfx)});
+    }
+  }
+  window.addEventListener('scroll',checkHero,{passive:true});
+  setTimeout(checkHero,400);
+})();
+
+/* ── BEFORE/AFTER SLIDER ── */
+(function(){
+  var wrap=document.getElementById('ba-wrap');
+  var before=document.getElementById('ba-before');
+  var handle=document.getElementById('ba-handle');
+  if(!wrap)return;
+  var dragging=false;
+  function setPos(x){
+    var rect=wrap.getBoundingClientRect();
+    var pct=Math.min(Math.max((x-rect.left)/rect.width*100,2),98);
+    before.style.width=pct+'%';
+    handle.style.left=pct+'%';
+  }
+  handle.addEventListener('mousedown',function(e){dragging=true;e.preventDefault()});
+  wrap.addEventListener('touchstart',function(e){dragging=true},{passive:true});
+  document.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX)});
+  document.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX)},{passive:true});
+  document.addEventListener('mouseup',function(){dragging=false});
+  document.addEventListener('touchend',function(){dragging=false});
+  wrap.addEventListener('click',function(e){setPos(e.clientX)});
+})();
+
+/* ── 3D TILT ── */
+(function(){
+  document.querySelectorAll('.bc,.testi-card').forEach(function(el){
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5;
+      var y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform='perspective(600px) rotateY('+(x*10)+'deg) rotateX('+(-y*10)+'deg) scale(1.02)';
+    });
+    el.addEventListener('mouseleave',function(){
+      el.style.transform='perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  });
+})();
+
+/* ── KALKULATOR ── */
+(function(){
+  var tipSel=document.getElementById('k-tip');
+  var kvalSel=document.getElementById('k-kval');
+  var m2Inp=document.getElementById('k-m2');
+  var m2Out=document.getElementById('k-m2-out');
+
+  var prices={
+    kuca:{std:[1000,1400],visa:[1400,1900],lux:[1900,2800]},
+    zgrada:{std:[800,1100],visa:[1100,1500],lux:[1500,2200]},
+    poslovni:{std:[900,1200],visa:[1200,1700],lux:[1700,2500]},
+    obnova:{std:[350,500],visa:[500,700],lux:[700,1000]}
+  };
+  var tipNames={kuca:'Obiteljska kuća',zgrada:'Stambena zgrada',poslovni:'Poslovni objekt',obnova:'Energetska obnova'};
+  var kvalNames={std:'Standardna',visa:'Viša',lux:'Luksuzna'};
+
+  function fmt(n){return n.toLocaleString('hr-HR')+'&nbsp;€'}
+  function calc(){
+    var tip=tipSel.value,kval=kvalSel.value,m2=parseInt(m2Inp.value,10);
+    var rng=prices[tip][kval];
+    var lo=rng[0]*m2,hi=rng[1]*m2;
+    m2Out.textContent=m2+' m²';
+    document.getElementById('k-min').innerHTML=fmt(lo);
+    document.getElementById('k-range').innerHTML='– '+fmt(hi);
+    document.getElementById('k-r-m2').textContent=m2+' m²';
+    document.getElementById('k-r-m2c').textContent=rng[0].toLocaleString('hr-HR')+'–'+rng[1].toLocaleString('hr-HR')+' €/m²';
+    document.getElementById('k-r-tip').textContent=tipNames[tip];
+    document.getElementById('k-r-kval').textContent=kvalNames[kval];
+  }
+  tipSel.addEventListener('change',calc);
+  kvalSel.addEventListener('change',calc);
+  m2Inp.addEventListener('input',function(){m2Out.textContent=m2Inp.value+' m²';calc()});
+  calc();
+})();
+</script>
+
+<!-- TAWK.TO LIVE CHAT -->
+<script>
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67ef4a5b16b7a5190f7bd3c7/1inuk7gal';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
 </body>
 </html>
