@@ -49,8 +49,11 @@
 </div>
 
 <section class="novosti">
-  <div class="news-g reveal">
-    <!-- 1 -->
+  <!-- Firebase novosti (dinamičke) — prikazuju se kad Vodolim doda nešto u admin -->
+  <div class="news-g reveal" id="firebase-news" style="display:none"></div>
+
+  <!-- Statičke novosti — fallback dok nema Firebase podataka -->
+  <div class="news-g reveal" id="static-news">
     <div class="nc">
       <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/07/WhatsApp-Image-2026-06-27-at-11.19.28-700x420.jpeg" alt="Radničke igre 2026" onerror="this.closest('.nc-img').style.background='#EDEAE4'"></div>
       <div class="nc-body">
@@ -60,17 +63,15 @@
         <a href="https://vodolim.hr/radnicke-igre-2026/" target="_blank" rel="noopener" class="nc-read">Pročitaj više →</a>
       </div>
     </div>
-    <!-- 2 -->
     <div class="nc">
       <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/06/706813813_1641579977575636_8497993175470067808_n-700x420.jpg" alt="Team building Bolfan" onerror="this.closest('.nc-img').style.background='#EDEAE4'"></div>
       <div class="nc-body">
         <div class="nc-date">11. LIPNJA 2026.</div>
         <div class="nc-h">Team building Vodolima u Bolfanu: Jačanje timskog duha kroz sport i zajedničke vrijednosti</div>
-        <div class="nc-p">Tvrtka Vodolim organizirala je team building za djelatnike u prekrasnom okruženju Bolfana na Vinskom Vrhu...</div>
+        <div class="nc-p">U suradnji s partnerom Tim Novak d.o.o. posjetili smo tvornicu jednog od vodećih europskih proizvođača instalaterskog materijala...</div>
         <a href="https://vodolim.hr/team-building-bolfan/" target="_blank" rel="noopener" class="nc-read">Pročitaj više →</a>
       </div>
     </div>
-    <!-- 3 -->
     <div class="nc">
       <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/04/653711293_1585015586565409_378279913576056762_n-1-700x420.jpg" alt="Vrtić Marija Gorica" onerror="this.closest('.nc-img').style.background='#EDEAE4'"></div>
       <div class="nc-body">
@@ -80,7 +81,6 @@
         <a href="https://vodolim.hr/vrtic-marija-gorica/" target="_blank" rel="noopener" class="nc-read">Pročitaj više →</a>
       </div>
     </div>
-    <!-- 4 -->
     <div class="nc">
       <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/03/643371864_1566636511736650_2180135527392484269_n-700x420.jpg" alt="Stručno usavršavanje Italija" onerror="this.closest('.nc-img').style.background='#EDEAE4'"></div>
       <div class="nc-body">
@@ -90,7 +90,6 @@
         <a href="https://vodolim.hr/strucno-usavrsavanje-italija/" target="_blank" rel="noopener" class="nc-read">Pročitaj više →</a>
       </div>
     </div>
-    <!-- 5 -->
     <div class="nc">
       <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2025/02/20240718_121244-700x420.jpg" alt="Poslovna zgrada Prečko" onerror="this.closest('.nc-img').style.background='#EDEAE4'"></div>
       <div class="nc-body">
@@ -100,7 +99,6 @@
         <a href="https://vodolim.hr/poslovna-zgrada-precko/" target="_blank" rel="noopener" class="nc-read">Pročitaj više →</a>
       </div>
     </div>
-    <!-- 6 -->
     <div class="nc">
       <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2025/09/Black-and-Beige-Simple-Book-Mockup-Instagram-Post-700x420.png" alt="Novi broj Vodoritma" onerror="this.closest('.nc-img').style.background='#EDEAE4'"></div>
       <div class="nc-body">
@@ -112,7 +110,6 @@
     </div>
   </div>
 
-  <!-- Sve vijesti link -->
   <div style="text-align:center;margin-top:56px">
     <a href="https://vodolim.hr/novosti/" target="_blank" class="btn-g">Sve vijesti na vodolim.hr →</a>
   </div>
@@ -130,7 +127,7 @@
     </div>
   </div>
   <div class="footer-bot">
-    <span class="footer-copy">© Vodolim instalacije d.o.o. 2024. Sva prava pridržana.</span>
+    <span class="footer-copy">© Vodolim instalacije d.o.o. 2026. Sva prava pridržana. · Web dizajn: <a href="https://amelodesign.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,.35);text-decoration:none">Amelo Design</a></span>
     <div class="footer-soc"><a href="https://www.facebook.com/vodolimkuce" target="_blank">FACEBOOK</a><a href="https://www.instagram.com/vodolim.vodolim" target="_blank">INSTAGRAM</a></div>
   </div>
 </footer>
@@ -153,6 +150,58 @@ function closeMobileMenu(){document.getElementById('mobile-menu').classList.remo
 (function(){var bar=document.getElementById('scroll-bar');var btt=document.getElementById('btt');window.addEventListener('scroll',function(){var st=window.scrollY||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(st/h*100):0)+'%';btt.classList.toggle('show',st>400)},{passive:true});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 (function(){var el=document.getElementById('gdpr');try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}document.getElementById('gdpr-accept').onclick=function(){try{localStorage.setItem('gdpr','1')}catch(e){}el.classList.add('gdpr-hidden')};document.getElementById('gdpr-decline').onclick=function(){try{localStorage.setItem('gdpr','0')}catch(e){}el.classList.add('gdpr-hidden')}})();
 (function(){var els=document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});els.forEach(function(el){io.observe(el)})})();
+</script>
+
+<!-- Firebase — dinamičke novosti -->
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getFirestore, collection, getDocs, orderBy, query } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDkHVcoy_zrcTrk8mZAEhwD-PrGXJJKRfA",
+  authDomain: "vodolim-95375.firebaseapp.com",
+  projectId: "vodolim-95375",
+  storageBucket: "vodolim-95375.firebasestorage.app",
+  messagingSenderId: "179727639113",
+  appId: "1:179727639113:web:1faa9dfe67c693eefe9598"
+};
+
+const HR_MONTHS = ['siječnja','veljače','ožujka','travnja','svibnja','lipnja','srpnja','kolovoza','rujna','listopada','studenog','prosinca'];
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return `${d.getDate()}. ${HR_MONTHS[d.getMonth()].toUpperCase()} ${d.getFullYear()}.`;
+}
+
+try {
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const q = query(collection(db, 'novosti'), orderBy('createdAt', 'desc'));
+  const snap = await getDocs(q);
+
+  if (!snap.empty) {
+    const fbGrid = document.getElementById('firebase-news');
+    snap.forEach(d => {
+      const n = d.data();
+      fbGrid.innerHTML += `
+        <div class="nc">
+          <div class="nc-img">${n.img
+            ? `<img src="${n.img}" alt="${n.title}" onerror="this.closest('.nc-img').style.background='#EDEAE4'">`
+            : ''}</div>
+          <div class="nc-body">
+            <div class="nc-date">${formatDate(n.date)}</div>
+            <div class="nc-h">${n.title}</div>
+            <div class="nc-p">${n.desc}</div>
+            ${n.link ? `<a href="${n.link}" target="_blank" rel="noopener" class="nc-read">Pročitaj više →</a>` : ''}
+          </div>
+        </div>`;
+    });
+    fbGrid.style.display = '';
+    document.getElementById('static-news').style.display = 'none';
+  }
+} catch(e) {
+  // Firebase nedostupan — statičke novosti ostaju vidljive
+}
 </script>
 </body>
 </html>

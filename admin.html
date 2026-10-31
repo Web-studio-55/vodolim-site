@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — Vodolim Novosti</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Helvetica,Arial,sans-serif;background:#F7F6F3;min-height:100vh}
+.login{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-box{background:#fff;padding:48px;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.08);width:100%;max-width:360px}
+.login-box h1{font-size:20px;color:#1a1a14;margin-bottom:8px}
+.login-box p{font-size:13px;color:#888;margin-bottom:28px}
+.admin{display:none;max-width:860px;margin:0 auto;padding:40px 20px}
+.admin-header{background:#3A9B4E;color:#fff;padding:16px 24px;border-radius:10px;margin-bottom:32px;display:flex;justify-content:space-between;align-items:center}
+.admin-header h1{font-size:18px}
+.admin-header button{background:rgba(255,255,255,.15);color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px}
+.card{background:#fff;border-radius:10px;padding:32px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card h2{font-size:15px;color:#3A9B4E;letter-spacing:.1em;margin-bottom:20px;text-transform:uppercase}
+label{display:block;font-size:12px;color:#666;margin-bottom:4px;margin-top:16px;font-weight:600;letter-spacing:.05em}
+label:first-of-type{margin-top:0}
+input,textarea{width:100%;padding:10px 12px;border:1px solid #e0ddd8;border-radius:7px;font-size:14px;color:#1a1a14;outline:none;transition:border .2s}
+input:focus,textarea:focus{border-color:#3A9B4E}
+textarea{min-height:100px;resize:vertical}
+.btn{background:#3A9B4E;color:#fff;border:none;padding:12px 28px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;margin-top:20px;transition:background .2s}
+.btn:hover{background:#2d7a3d}
+.btn-del{background:#b45252;padding:6px 12px;font-size:12px;margin-top:0;margin-left:8px}
+.btn-del:hover{background:#8b3a3a}
+.msg{padding:10px 14px;border-radius:7px;font-size:13px;margin-top:12px;display:none}
+.msg.ok{background:#edf7ef;color:#2d7a3d}
+.msg.err{background:#fdf2f2;color:#b45252}
+.news-list{margin-top:8px}
+.news-item{border:1px solid #e0ddd8;border-radius:8px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.news-item img{width:72px;height:48px;object-fit:cover;border-radius:5px;flex-shrink:0}
+.news-item-body{flex:1;min-width:0}
+.news-item-date{font-size:11px;color:#999;margin-bottom:3px}
+.news-item-title{font-size:13px;font-weight:600;color:#1a1a14;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.news-item-actions{display:flex;align-items:center;flex-shrink:0}
+.empty{color:#aaa;font-size:13px;text-align:center;padding:20px}
+.preview-img{max-width:200px;height:120px;object-fit:cover;border-radius:7px;margin-top:8px;display:none;border:1px solid #e0ddd8}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div class="login" id="loginScreen">
+  <div class="login-box">
+    <h1>Vodolim Admin</h1>
+    <p>Upravljanje novostima web stranice</p>
+    <label>Lozinka</label>
+    <input type="password" id="pwInput" placeholder="Unesite lozinku" onkeydown="if(event.key==='Enter')doLogin()">
+    <button class="btn" style="width:100%;margin-top:16px" onclick="doLogin()">Prijava</button>
+    <div class="msg err" id="loginErr">Pogrešna lozinka.</div>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div class="admin" id="adminScreen">
+  <div class="admin-header">
+    <h1>Vodolim — Upravljanje novostima</h1>
+    <button onclick="doLogout()">Odjava</button>
+  </div>
+
+  <!-- NOVA NOVOST -->
+  <div class="card">
+    <h2>Dodaj novu novost</h2>
+    <label>Naslov *</label>
+    <input type="text" id="fTitle" placeholder="npr. Vodolim završio projekt u Zaboku">
+    <label>Datum *</label>
+    <input type="date" id="fDate">
+    <label>Kratki opis (1-2 rečenice) *</label>
+    <textarea id="fDesc" placeholder="Kratki opis koji se prikazuje na kartici..."></textarea>
+    <label>URL slike (link na fotografiju)</label>
+    <input type="url" id="fImg" placeholder="https://..." oninput="previewImg(this.value)">
+    <img id="imgPreview" class="preview-img" alt="preview">
+    <label>Link na članak (opcionalno)</label>
+    <input type="url" id="fLink" placeholder="https://vodolim.hr/clanak/...">
+    <br>
+    <button class="btn" onclick="addNews()">Objavi novost</button>
+    <div class="msg ok" id="addOk">✓ Novost objavljena!</div>
+    <div class="msg err" id="addErr">Greška. Pokušajte ponovo.</div>
+  </div>
+
+  <!-- POPIS NOVOSTI -->
+  <div class="card">
+    <h2>Objavljene novosti</h2>
+    <div class="news-list" id="newsList"><div class="empty">Učitavanje...</div></div>
+  </div>
+</div>
+
+<!-- Firebase -->
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, orderBy, query } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+
+const PASS = 'vodolim2026';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDkHVcoy_zrcTrk8mZAEhwD-PrGXJJKRfA",
+  authDomain: "vodolim-95375.firebaseapp.com",
+  projectId: "vodolim-95375",
+  storageBucket: "vodolim-95375.firebasestorage.app",
+  messagingSenderId: "179727639113",
+  appId: "1:179727639113:web:1faa9dfe67c693eefe9598",
+  measurementId: "G-XRR50C2EW5"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.doLogin = function() {
+  const pw = document.getElementById('pwInput').value;
+  if (pw === PASS) {
+    sessionStorage.setItem('vAdmin', '1');
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('adminScreen').style.display = 'block';
+    loadNews();
+  } else {
+    const e = document.getElementById('loginErr');
+    e.style.display = 'block';
+    setTimeout(() => e.style.display = 'none', 3000);
+  }
+};
+
+window.doLogout = function() {
+  sessionStorage.removeItem('vAdmin');
+  location.reload();
+};
+
+window.previewImg = function(url) {
+  const img = document.getElementById('imgPreview');
+  if (url) { img.src = url; img.style.display = 'block'; }
+  else img.style.display = 'none';
+};
+
+const HR_MONTHS = ['siječnja','veljače','ožujka','travnja','svibnja','lipnja','srpnja','kolovoza','rujna','listopada','studenog','prosinca'];
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return `${d.getDate()}. ${HR_MONTHS[d.getMonth()].toUpperCase()} ${d.getFullYear()}.`;
+}
+
+window.addNews = async function() {
+  const title = document.getElementById('fTitle').value.trim();
+  const date  = document.getElementById('fDate').value;
+  const desc  = document.getElementById('fDesc').value.trim();
+  const img   = document.getElementById('fImg').value.trim();
+  const link  = document.getElementById('fLink').value.trim();
+
+  if (!title || !date || !desc) {
+    const e = document.getElementById('addErr');
+    e.textContent = 'Molimo ispunite naslov, datum i opis.';
+    e.style.display = 'block';
+    setTimeout(() => e.style.display = 'none', 3000);
+    return;
+  }
+
+  try {
+    await addDoc(collection(db, 'novosti'), {
+      title, date, desc, img, link,
+      createdAt: Date.now()
+    });
+    document.getElementById('fTitle').value = '';
+    document.getElementById('fDate').value = '';
+    document.getElementById('fDesc').value = '';
+    document.getElementById('fImg').value = '';
+    document.getElementById('fLink').value = '';
+    document.getElementById('imgPreview').style.display = 'none';
+    const ok = document.getElementById('addOk');
+    ok.style.display = 'block';
+    setTimeout(() => ok.style.display = 'none', 3000);
+    loadNews();
+  } catch(e) {
+    document.getElementById('addErr').style.display = 'block';
+    setTimeout(() => document.getElementById('addErr').style.display = 'none', 3000);
+  }
+};
+
+async function loadNews() {
+  const list = document.getElementById('newsList');
+  list.innerHTML = '<div class="empty">Učitavanje...</div>';
+  try {
+    const q = query(collection(db, 'novosti'), orderBy('createdAt', 'desc'));
+    const snap = await getDocs(q);
+    if (snap.empty) { list.innerHTML = '<div class="empty">Nema objavljenih novosti.</div>'; return; }
+    list.innerHTML = '';
+    snap.forEach(d => {
+      const n = d.data();
+      list.innerHTML += `
+        <div class="news-item">
+          ${n.img ? `<img src="${n.img}" onerror="this.style.display='none'">` : ''}
+          <div class="news-item-body">
+            <div class="news-item-date">${formatDate(n.date)}</div>
+            <div class="news-item-title">${n.title}</div>
+          </div>
+          <div class="news-item-actions">
+            <button class="btn btn-del" onclick="delNews('${d.id}')">Obriši</button>
+          </div>
+        </div>`;
+    });
+  } catch(e) {
+    list.innerHTML = '<div class="empty">Greška pri učitavanju.</div>';
+  }
+}
+
+window.delNews = async function(id) {
+  if (!confirm('Obrisati ovu novost?')) return;
+  await deleteDoc(doc(db, 'novosti', id));
+  loadNews();
+};
+
+// Auto-login ako je već prijavljen
+if (sessionStorage.getItem('vAdmin') === '1') {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('adminScreen').style.display = 'block';
+  loadNews();
+}
+</script>
+</body>
+</html>
