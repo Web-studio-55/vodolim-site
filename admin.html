@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Admin — Vodolim Novosti</title>
+<title>Admin — Vodolim</title>
 <meta name="robots" content="noindex,nofollow">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -12,33 +12,54 @@ body{font-family:Helvetica,Arial,sans-serif;background:#F7F6F3;min-height:100vh}
 .login-box{background:#fff;padding:48px;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,.08);width:100%;max-width:360px}
 .login-box h1{font-size:20px;color:#1a1a14;margin-bottom:8px}
 .login-box p{font-size:13px;color:#888;margin-bottom:28px}
-.admin{display:none;max-width:860px;margin:0 auto;padding:40px 20px}
-.admin-header{background:#3A9B4E;color:#fff;padding:16px 24px;border-radius:10px;margin-bottom:32px;display:flex;justify-content:space-between;align-items:center}
+.admin{display:none;max-width:900px;margin:0 auto;padding:40px 20px}
+.admin-header{background:#3A9B4E;color:#fff;padding:16px 24px;border-radius:10px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center}
 .admin-header h1{font-size:18px}
 .admin-header button{background:rgba(255,255,255,.15);color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px}
-.card{background:#fff;border-radius:10px;padding:32px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.card h2{font-size:15px;color:#3A9B4E;letter-spacing:.1em;margin-bottom:20px;text-transform:uppercase}
-label{display:block;font-size:12px;color:#666;margin-bottom:4px;margin-top:16px;font-weight:600;letter-spacing:.05em}
+/* TABS */
+.tabs{display:flex;gap:4px;margin-bottom:24px;background:#fff;padding:6px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.tab{flex:1;padding:10px;border:none;border-radius:7px;background:transparent;cursor:pointer;font-size:13px;font-weight:600;color:#888;transition:all .2s}
+.tab.active{background:#3A9B4E;color:#fff}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+/* CARDS */
+.card{background:#fff;border-radius:10px;padding:28px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card h2{font-size:13px;color:#3A9B4E;letter-spacing:.1em;margin-bottom:18px;text-transform:uppercase}
+label{display:block;font-size:12px;color:#666;margin-bottom:4px;margin-top:14px;font-weight:600;letter-spacing:.05em}
 label:first-of-type{margin-top:0}
-input,textarea{width:100%;padding:10px 12px;border:1px solid #e0ddd8;border-radius:7px;font-size:14px;color:#1a1a14;outline:none;transition:border .2s}
-input:focus,textarea:focus{border-color:#3A9B4E}
-textarea{min-height:100px;resize:vertical}
-.btn{background:#3A9B4E;color:#fff;border:none;padding:12px 28px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;margin-top:20px;transition:background .2s}
+input,textarea,select{width:100%;padding:10px 12px;border:1px solid #e0ddd8;border-radius:7px;font-size:14px;color:#1a1a14;outline:none;transition:border .2s;font-family:inherit}
+input:focus,textarea:focus,select:focus{border-color:#3A9B4E}
+textarea{min-height:90px;resize:vertical}
+.btn{background:#3A9B4E;color:#fff;border:none;padding:11px 24px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;margin-top:16px;transition:background .2s}
 .btn:hover{background:#2d7a3d}
-.btn-del{background:#b45252;padding:6px 12px;font-size:12px;margin-top:0;margin-left:8px}
+.btn-sec{background:#f0f0ec;color:#333;border:1px solid #e0ddd8}
+.btn-sec:hover{background:#e4e4de}
+.btn-del{background:#b45252;padding:6px 12px;font-size:12px;margin-top:0;margin-left:4px}
 .btn-del:hover{background:#8b3a3a}
-.msg{padding:10px 14px;border-radius:7px;font-size:13px;margin-top:12px;display:none}
+.btn-pin{background:#e8a020;padding:6px 12px;font-size:12px;margin-top:0}
+.btn-pin:hover{background:#c07a10}
+.btn-pin.pinned{background:#3A9B4E}
+.msg{padding:10px 14px;border-radius:7px;font-size:13px;margin-top:10px;display:none}
 .msg.ok{background:#edf7ef;color:#2d7a3d}
 .msg.err{background:#fdf2f2;color:#b45252}
-.news-list{margin-top:8px}
-.news-item{border:1px solid #e0ddd8;border-radius:8px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
-.news-item img{width:72px;height:48px;object-fit:cover;border-radius:5px;flex-shrink:0}
+/* NEWS LIST */
+.news-list{margin-top:4px}
+.news-item{border:1px solid #e0ddd8;border-radius:8px;padding:12px 14px;margin-bottom:8px;display:flex;gap:10px;align-items:flex-start}
+.news-item.pinned-item{border-color:#e8a020;background:#fffdf5}
+.news-item img{width:64px;height:44px;object-fit:cover;border-radius:5px;flex-shrink:0}
 .news-item-body{flex:1;min-width:0}
-.news-item-date{font-size:11px;color:#999;margin-bottom:3px}
+.news-item-date{font-size:11px;color:#999;margin-bottom:2px}
 .news-item-title{font-size:13px;font-weight:600;color:#1a1a14;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.news-item-actions{display:flex;align-items:center;flex-shrink:0}
+.news-item-actions{display:flex;gap:4px;align-items:center;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
 .empty{color:#aaa;font-size:13px;text-align:center;padding:20px}
-.preview-img{max-width:200px;height:120px;object-fit:cover;border-radius:7px;margin-top:8px;display:none;border:1px solid #e0ddd8}
+.preview-img{max-width:180px;height:110px;object-fit:cover;border-radius:7px;margin-top:8px;display:none;border:1px solid #e0ddd8}
+.pin-badge{font-size:10px;background:#e8a020;color:#fff;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+/* UPLOAD */
+.upload-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:4px}
+.upload-lbl{display:inline-flex;align-items:center;gap:6px;background:#f0f0ec;border:1px solid #e0ddd8;padding:8px 14px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:600;color:#444;white-space:nowrap}
+.upload-lbl:hover{background:#e4e4de}
+/* EDIT MODE */
+.edit-banner{background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:10px 14px;font-size:13px;color:#856404;margin-bottom:14px;display:none}
 </style>
 </head>
 <body>
@@ -47,7 +68,7 @@ textarea{min-height:100px;resize:vertical}
 <div class="login" id="loginScreen">
   <div class="login-box">
     <h1>Vodolim Admin</h1>
-    <p>Upravljanje novostima web stranice</p>
+    <p>Upravljanje web stranicom</p>
     <label>Lozinka</label>
     <input type="password" id="pwInput" placeholder="Unesite lozinku" onkeydown="if(event.key==='Enter')doLogin()">
     <button class="btn" style="width:100%;margin-top:16px" onclick="doLogin()">Prijava</button>
@@ -58,49 +79,129 @@ textarea{min-height:100px;resize:vertical}
 <!-- ADMIN -->
 <div class="admin" id="adminScreen">
   <div class="admin-header">
-    <h1>Vodolim — Upravljanje novostima</h1>
+    <h1>Vodolim — Admin</h1>
     <button onclick="doLogout()">Odjava</button>
   </div>
 
-  <!-- NOVA NOVOST -->
-  <div class="card">
-    <h2>Dodaj novu novost</h2>
-    <label>Naslov *</label>
-    <input type="text" id="fTitle" placeholder="npr. Vodolim završio projekt u Zaboku">
-    <label>Datum *</label>
-    <input type="date" id="fDate">
-    <label>Kratki opis (1-2 rečenice) *</label>
-    <textarea id="fDesc" placeholder="Kratki opis koji se prikazuje na kartici..."></textarea>
-    <label>Fotografija</label>
-    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:4px">
-      <label for="fImgFile" style="margin:0;display:inline-flex;align-items:center;gap:6px;background:#f0f0ec;border:1px solid #e0ddd8;padding:8px 14px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:600;color:#444;white-space:nowrap">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        Uploadaj sliku
-      </label>
-      <input type="file" id="fImgFile" accept="image/*" style="display:none" onchange="handleImgFile(this)">
-      <span id="uploadStatus" style="font-size:12px;color:#888"></span>
-    </div>
-    <input type="url" id="fImg" placeholder="ili zalijepi URL slike..." oninput="previewImg(this.value)" style="margin-top:8px">
-    <img id="imgPreview" class="preview-img" alt="preview">
-    <label>Link na članak (opcionalno)</label>
-    <input type="url" id="fLink" placeholder="https://vodolim.hr/clanak/...">
-    <br>
-    <button class="btn" onclick="addNews()">Objavi novost</button>
-    <div class="msg ok" id="addOk">✓ Novost objavljena!</div>
-    <div class="msg err" id="addErr">Greška. Pokušajte ponovo.</div>
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('novosti',this)">📰 Novosti</button>
+    <button class="tab" onclick="switchTab('onama',this)">🏢 O nama</button>
+    <button class="tab" onclick="switchTab('kontakt',this)">📞 Kontakt</button>
   </div>
 
-  <!-- POPIS NOVOSTI -->
-  <div class="card">
-    <h2>Objavljene novosti</h2>
-    <div class="news-list" id="newsList"><div class="empty">Učitavanje...</div></div>
+  <!-- TAB: NOVOSTI -->
+  <div class="tab-pane active" id="tab-novosti">
+
+    <!-- FORMA -->
+    <div class="card">
+      <h2 id="formTitle">Dodaj novu novost</h2>
+      <div class="edit-banner" id="editBanner">✏️ Uređuješ postojeću novost. <button class="btn btn-sec" style="padding:4px 10px;font-size:12px;margin-top:0;margin-left:8px" onclick="cancelEdit()">Odustani</button></div>
+      <input type="hidden" id="editId">
+      <label>Naslov *</label>
+      <input type="text" id="fTitle" placeholder="npr. Vodolim završio projekt u Zaboku">
+      <label>Datum *</label>
+      <input type="date" id="fDate">
+      <label>Kratki opis *</label>
+      <textarea id="fDesc" placeholder="Kratki opis koji se prikazuje na kartici..."></textarea>
+      <label>Fotografija</label>
+      <div class="upload-row">
+        <label for="fImgFile" class="upload-lbl">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Uploadaj sliku
+        </label>
+        <input type="file" id="fImgFile" accept="image/*" style="display:none" onchange="handleImgFile(this)">
+        <span id="uploadStatus" style="font-size:12px;color:#888"></span>
+      </div>
+      <input type="url" id="fImg" placeholder="ili zalijepi URL slike..." oninput="previewImg(this.value)" style="margin-top:8px">
+      <img id="imgPreview" class="preview-img" alt="preview">
+      <label>Link na članak (opcionalno)</label>
+      <input type="url" id="fLink" placeholder="https://vodolim.hr/clanak/...">
+      <br>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn" onclick="saveNews()" id="saveBtn">Objavi novost</button>
+        <button class="btn btn-sec" onclick="cancelEdit()" id="cancelBtn" style="display:none">Odustani</button>
+      </div>
+      <div class="msg ok" id="addOk">✓ Novost spremljena!</div>
+      <div class="msg err" id="addErr">Greška. Pokušajte ponovo.</div>
+    </div>
+
+    <!-- POPIS -->
+    <div class="card">
+      <h2>Objavljene novosti</h2>
+      <div class="news-list" id="newsList"><div class="empty">Učitavanje...</div></div>
+    </div>
   </div>
+
+  <!-- TAB: O NAMA -->
+  <div class="tab-pane" id="tab-onama">
+    <div class="card">
+      <h2>Kratki opis tvrtke</h2>
+      <p style="font-size:12px;color:#999;margin-bottom:16px">Prikazuje se na "O nama" stranici ispod naslova. Max 3-4 rečenice.</p>
+      <label>Opis tvrtke</label>
+      <textarea id="onamaText" rows="5" placeholder="Vodolim je građevinsko poduzeće..."></textarea>
+      <br>
+      <button class="btn" onclick="saveOnama()">Spremi opis</button>
+      <div class="msg ok" id="onamaOk">✓ Opis spremljen!</div>
+      <div class="msg err" id="onamaErr">Greška. Pokušajte ponovo.</div>
+    </div>
+    <div class="card">
+      <h2>Ključni podaci (brojevi)</h2>
+      <p style="font-size:12px;color:#999;margin-bottom:16px">Prikazuju se na naslovnici kao statistike.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div>
+          <label>Broj zaposlenika</label>
+          <input type="text" id="statZaposlenici" placeholder="150+">
+        </div>
+        <div>
+          <label>Godina osnivanja</label>
+          <input type="text" id="statGodina" placeholder="1973.">
+        </div>
+        <div>
+          <label>Projekata godišnje</label>
+          <input type="text" id="statProjekti" placeholder="200+">
+        </div>
+        <div>
+          <label>Inženjera</label>
+          <input type="text" id="statInzenjeri" placeholder="14">
+        </div>
+      </div>
+      <br>
+      <button class="btn" onclick="saveStats()">Spremi podatke</button>
+      <div class="msg ok" id="statsOk">✓ Podaci spremljeni!</div>
+      <div class="msg err" id="statsErr">Greška. Pokušajte ponovo.</div>
+    </div>
+  </div>
+
+  <!-- TAB: KONTAKT -->
+  <div class="tab-pane" id="tab-kontakt">
+    <div class="card">
+      <h2>Kontakt informacije</h2>
+      <p style="font-size:12px;color:#999;margin-bottom:16px">Ažuriraj podatke koji se prikazuju na Kontakt stranici.</p>
+      <label>Telefon 1</label>
+      <input type="text" id="kTel1" placeholder="+385 (0) 49 286 596">
+      <label>Telefon 2 (opcionalno)</label>
+      <input type="text" id="kTel2" placeholder="+385 (0) 49 287 755">
+      <label>Mobitel</label>
+      <input type="text" id="kMob" placeholder="098 444 156">
+      <label>E-mail</label>
+      <input type="email" id="kEmail" placeholder="vodolim@vodolim.eu">
+      <label>Adresa</label>
+      <input type="text" id="kAdresa" placeholder="Nova ulica 3A, Donja Stubica">
+      <label>Radno vrijeme</label>
+      <input type="text" id="kRadnoVrijeme" placeholder="Pon–Pet 7:00–16:00">
+      <br>
+      <button class="btn" onclick="saveKontakt()">Spremi kontakt</button>
+      <div class="msg ok" id="kontaktOk">✓ Kontakt podaci spremljeni!</div>
+      <div class="msg err" id="kontaktErr">Greška. Pokušajte ponovo.</div>
+    </div>
+  </div>
+
 </div>
 
-<!-- Firebase -->
 <script type="module">
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
-import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, orderBy, query } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import { getFirestore, collection, addDoc, getDocs, deleteDoc, doc, updateDoc, orderBy, query, setDoc, getDoc } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js';
 
 const PASS = 'vodolim2026';
@@ -111,14 +212,20 @@ const firebaseConfig = {
   projectId: "vodolim-95375",
   storageBucket: "vodolim-95375.firebasestorage.app",
   messagingSenderId: "179727639113",
-  appId: "1:179727639113:web:1faa9dfe67c693eefe9598",
-  measurementId: "G-XRR50C2EW5"
+  appId: "1:179727639113:web:1faa9dfe67c693eefe9598"
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const storage = getStorage(app);
 
+const HR_MONTHS = ['siječnja','veljače','ožujka','travnja','svibnja','lipnja','srpnja','kolovoza','rujna','listopada','studenog','prosinca'];
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return `${d.getDate()}. ${HR_MONTHS[d.getMonth()].toUpperCase()} ${d.getFullYear()}.`;
+}
+
+// LOGIN
 window.doLogin = function() {
   const pw = document.getElementById('pwInput').value;
   if (pw === PASS) {
@@ -126,6 +233,7 @@ window.doLogin = function() {
     document.getElementById('loginScreen').style.display = 'none';
     document.getElementById('adminScreen').style.display = 'block';
     loadNews();
+    loadSettings();
   } else {
     const e = document.getElementById('loginErr');
     e.style.display = 'block';
@@ -138,6 +246,15 @@ window.doLogout = function() {
   location.reload();
 };
 
+// TABS
+window.switchTab = function(name, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+};
+
+// IMAGE
 window.previewImg = function(url) {
   const img = document.getElementById('imgPreview');
   if (url) { img.src = url; img.style.display = 'block'; }
@@ -152,28 +269,53 @@ window.handleImgFile = function(input) {
   const storageRef = ref(storage, 'novosti/' + Date.now() + '_' + file.name);
   const task = uploadBytesResumable(storageRef, file);
   task.on('state_changed',
-    snap => {
-      const pct = Math.round(snap.bytesTransferred / snap.totalBytes * 100);
-      status.textContent = pct + '%';
-    },
-    err => { status.textContent = 'Greška pri uploadu.'; },
+    snap => { status.textContent = Math.round(snap.bytesTransferred / snap.totalBytes * 100) + '%'; },
+    () => { status.textContent = 'Greška pri uploadu.'; },
     async () => {
       const url = await getDownloadURL(task.snapshot.ref);
       document.getElementById('fImg').value = url;
       previewImg(url);
-      status.textContent = '✓ Slika uploadana';
+      status.textContent = '✓ Uploadano';
     }
   );
 };
 
-const HR_MONTHS = ['siječnja','veljače','ožujka','travnja','svibnja','lipnja','srpnja','kolovoza','rujna','listopada','studenog','prosinca'];
+// EDIT MODE
+let editingId = null;
 
-function formatDate(dateStr) {
-  const d = new Date(dateStr);
-  return `${d.getDate()}. ${HR_MONTHS[d.getMonth()].toUpperCase()} ${d.getFullYear()}.`;
-}
+window.startEdit = function(id, title, date, desc, img, link) {
+  editingId = id;
+  document.getElementById('editId').value = id;
+  document.getElementById('fTitle').value = title;
+  document.getElementById('fDate').value = date;
+  document.getElementById('fDesc').value = desc;
+  document.getElementById('fImg').value = img || '';
+  document.getElementById('fLink').value = link || '';
+  previewImg(img);
+  document.getElementById('formTitle').textContent = 'Uredi novost';
+  document.getElementById('editBanner').style.display = 'block';
+  document.getElementById('saveBtn').textContent = 'Spremi izmjene';
+  document.getElementById('cancelBtn').style.display = 'inline-block';
+  document.querySelector('.card').scrollIntoView({behavior:'smooth'});
+};
 
-window.addNews = async function() {
+window.cancelEdit = function() {
+  editingId = null;
+  document.getElementById('fTitle').value = '';
+  document.getElementById('fDate').value = '';
+  document.getElementById('fDesc').value = '';
+  document.getElementById('fImg').value = '';
+  document.getElementById('fLink').value = '';
+  document.getElementById('imgPreview').style.display = 'none';
+  document.getElementById('uploadStatus').textContent = '';
+  document.getElementById('formTitle').textContent = 'Dodaj novu novost';
+  document.getElementById('editBanner').style.display = 'none';
+  document.getElementById('saveBtn').textContent = 'Objavi novost';
+  document.getElementById('cancelBtn').style.display = 'none';
+};
+
+// SAVE NEWS (add or update)
+window.saveNews = async function() {
   const title = document.getElementById('fTitle').value.trim();
   const date  = document.getElementById('fDate').value;
   const desc  = document.getElementById('fDesc').value.trim();
@@ -181,32 +323,32 @@ window.addNews = async function() {
   const link  = document.getElementById('fLink').value.trim();
 
   if (!title || !date || !desc) {
-    const e = document.getElementById('addErr');
-    e.textContent = 'Molimo ispunite naslov, datum i opis.';
-    e.style.display = 'block';
-    setTimeout(() => e.style.display = 'none', 3000);
+    showMsg('addErr', 'Molimo ispunite naslov, datum i opis.');
     return;
   }
-
   try {
-    await addDoc(collection(db, 'novosti'), {
-      title, date, desc, img, link,
-      createdAt: Date.now()
-    });
-    document.getElementById('fTitle').value = '';
-    document.getElementById('fDate').value = '';
-    document.getElementById('fDesc').value = '';
-    document.getElementById('fImg').value = '';
-    document.getElementById('fLink').value = '';
-    document.getElementById('imgPreview').style.display = 'none';
-    const ok = document.getElementById('addOk');
-    ok.style.display = 'block';
-    setTimeout(() => ok.style.display = 'none', 3000);
+    if (editingId) {
+      await updateDoc(doc(db, 'novosti', editingId), { title, date, desc, img, link });
+    } else {
+      await addDoc(collection(db, 'novosti'), { title, date, desc, img, link, pinned: false, createdAt: Date.now() });
+    }
+    cancelEdit();
+    showMsg('addOk', null);
     loadNews();
   } catch(e) {
-    document.getElementById('addErr').style.display = 'block';
-    setTimeout(() => document.getElementById('addErr').style.display = 'none', 3000);
+    showMsg('addErr', 'Greška. Pokušajte ponovo.');
   }
+};
+
+window.delNews = async function(id) {
+  if (!confirm('Obrisati ovu novost?')) return;
+  await deleteDoc(doc(db, 'novosti', id));
+  loadNews();
+};
+
+window.togglePin = async function(id, current) {
+  await updateDoc(doc(db, 'novosti', id), { pinned: !current });
+  loadNews();
 };
 
 async function loadNews() {
@@ -217,17 +359,22 @@ async function loadNews() {
     const snap = await getDocs(q);
     if (snap.empty) { list.innerHTML = '<div class="empty">Nema objavljenih novosti.</div>'; return; }
     list.innerHTML = '';
-    snap.forEach(d => {
-      const n = d.data();
+    const items = [];
+    snap.forEach(d => items.push({id: d.id, ...d.data()}));
+    // pinned first
+    items.sort((a,b) => (b.pinned?1:0)-(a.pinned?1:0));
+    items.forEach(n => {
       list.innerHTML += `
-        <div class="news-item">
+        <div class="news-item${n.pinned?' pinned-item':''}">
           ${n.img ? `<img src="${n.img}" onerror="this.style.display='none'">` : ''}
           <div class="news-item-body">
-            <div class="news-item-date">${formatDate(n.date)}</div>
+            <div class="news-item-date">${formatDate(n.date)}${n.pinned?'<span class="pin-badge">📌 Istaknuto</span>':''}</div>
             <div class="news-item-title">${n.title}</div>
           </div>
           <div class="news-item-actions">
-            <button class="btn btn-del" onclick="delNews('${d.id}')">Obriši</button>
+            <button class="btn btn-pin${n.pinned?' pinned':''}" onclick="togglePin('${n.id}',${!!n.pinned})" title="${n.pinned?'Makni s vrha':'Istakni na vrh'}">${n.pinned?'📌':'📌'}</button>
+            <button class="btn" style="padding:6px 12px;font-size:12px;margin-top:0" onclick="startEdit('${n.id}','${n.title.replace(/'/g,"\\'")}','${n.date}','${(n.desc||'').replace(/'/g,"\\'")}','${n.img||''}','${n.link||''}')">Uredi</button>
+            <button class="btn btn-del" onclick="delNews('${n.id}')">Obriši</button>
           </div>
         </div>`;
     });
@@ -236,17 +383,73 @@ async function loadNews() {
   }
 }
 
-window.delNews = async function(id) {
-  if (!confirm('Obrisati ovu novost?')) return;
-  await deleteDoc(doc(db, 'novosti', id));
-  loadNews();
+// SETTINGS
+async function loadSettings() {
+  try {
+    const snap = await getDoc(doc(db, 'postavke', 'opcenito'));
+    if (snap.exists()) {
+      const d = snap.data();
+      if (d.onamaText) document.getElementById('onamaText').value = d.onamaText;
+      if (d.statZaposlenici) document.getElementById('statZaposlenici').value = d.statZaposlenici;
+      if (d.statGodina) document.getElementById('statGodina').value = d.statGodina;
+      if (d.statProjekti) document.getElementById('statProjekti').value = d.statProjekti;
+      if (d.statInzenjeri) document.getElementById('statInzenjeri').value = d.statInzenjeri;
+      if (d.kTel1) document.getElementById('kTel1').value = d.kTel1;
+      if (d.kTel2) document.getElementById('kTel2').value = d.kTel2;
+      if (d.kMob) document.getElementById('kMob').value = d.kMob;
+      if (d.kEmail) document.getElementById('kEmail').value = d.kEmail;
+      if (d.kAdresa) document.getElementById('kAdresa').value = d.kAdresa;
+      if (d.kRadnoVrijeme) document.getElementById('kRadnoVrijeme').value = d.kRadnoVrijeme;
+    }
+  } catch(e) {}
+}
+
+window.saveOnama = async function() {
+  try {
+    await setDoc(doc(db, 'postavke', 'opcenito'), { onamaText: document.getElementById('onamaText').value.trim() }, { merge: true });
+    showMsg('onamaOk', null);
+  } catch(e) { showMsg('onamaErr', null); }
 };
 
-// Auto-login ako je već prijavljen
+window.saveStats = async function() {
+  try {
+    await setDoc(doc(db, 'postavke', 'opcenito'), {
+      statZaposlenici: document.getElementById('statZaposlenici').value.trim(),
+      statGodina: document.getElementById('statGodina').value.trim(),
+      statProjekti: document.getElementById('statProjekti').value.trim(),
+      statInzenjeri: document.getElementById('statInzenjeri').value.trim()
+    }, { merge: true });
+    showMsg('statsOk', null);
+  } catch(e) { showMsg('statsErr', null); }
+};
+
+window.saveKontakt = async function() {
+  try {
+    await setDoc(doc(db, 'postavke', 'opcenito'), {
+      kTel1: document.getElementById('kTel1').value.trim(),
+      kTel2: document.getElementById('kTel2').value.trim(),
+      kMob: document.getElementById('kMob').value.trim(),
+      kEmail: document.getElementById('kEmail').value.trim(),
+      kAdresa: document.getElementById('kAdresa').value.trim(),
+      kRadnoVrijeme: document.getElementById('kRadnoVrijeme').value.trim()
+    }, { merge: true });
+    showMsg('kontaktOk', null);
+  } catch(e) { showMsg('kontaktErr', null); }
+};
+
+function showMsg(id, txt) {
+  const el = document.getElementById(id);
+  if (txt) el.textContent = txt;
+  el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 3000);
+}
+
+// Auto-login
 if (sessionStorage.getItem('vAdmin') === '1') {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('adminScreen').style.display = 'block';
   loadNews();
+  loadSettings();
 }
 </script>
 </body>
