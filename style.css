@@ -7,15 +7,15 @@ img{display:block;max-width:100%}
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(12,12,10,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
 .nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo img{height:36px;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+.nav-logo img{height:44px;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
 .nav-links{display:flex;gap:24px;list-style:none;align-items:center}
 .nav-links a{font-size:13.5px;letter-spacing:.04em;color:rgba(255,255,255,.75);transition:color .2s}
 .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,.85)}
 .nav-cta{background:#3A9B4E;color:#fff!important;font-size:11px!important;letter-spacing:.1em!important;padding:8px 18px;border-radius:3px;transition:background .2s!important}
 .nav-cta:hover{background:#2E8040!important}
 .nav-lang{display:flex;gap:8px}
-.nav-lang a{font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.2);transition:color .2s}
-.nav-lang a:hover,.nav-lang a.on{color:rgba(255,255,255,.55)}
+.nav-lang a{font-size:12px;letter-spacing:.1em;color:rgba(255,255,255,.45);transition:color .2s;font-weight:500}
+.nav-lang a:hover,.nav-lang a.on{color:#fff}
 .nav-r{display:flex;align-items:center;gap:20px}
 
 /* ── PAGE HERO ── */
@@ -478,12 +478,13 @@ html,body{overflow-x:hidden;max-width:100%}
   .tl-item{gap:20px}
   .lbox-prev,.lbox-next{width:36px;height:36px;font-size:16px;left:8px}
   .lbox-next{right:8px}
-  .float-btns{right:12px;bottom:130px}
-  .btt{right:12px;bottom:258px}
+  .float-btns{display:none}
+  .btt{right:12px;bottom:76px}
 }
+@media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}}
 @media(max-width:520px){
   .port-g{grid-template-columns:1fr}
-  .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i{grid-column:span 1;height:190px}
+  .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i,.pc-j,.pc-k,.pc-l{grid-column:span 1!important;height:190px!important}
   .hero-stats{flex-direction:column}
   .hero-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:14px 16px}
   .hero-stat:last-child{border:none}
