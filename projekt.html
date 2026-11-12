@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Projekt — Vodolim</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="style.css">
+<style>
+.proj-nav{display:flex;border:1px solid rgba(24,24,15,.1);border-radius:8px;overflow:hidden;margin-bottom:32px;background:#fff}
+.proj-nav a{display:flex;align-items:center;gap:8px;padding:14px 24px;font-size:12px;letter-spacing:.1em;color:#18180F;text-decoration:none;transition:background .18s;font-weight:500}
+.proj-nav a:hover{background:#F7F5F1}
+.proj-nav .pn-back{flex:1;border-right:1px solid rgba(24,24,15,.1)}
+.proj-nav .pn-prev{border-right:1px solid rgba(24,24,15,.1)}
+.proj-nav svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
+.proj-body{display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start}
+.proj-img{width:100%;border-radius:12px;overflow:hidden;background:#EDEAE4;aspect-ratio:4/3}
+.proj-img img{width:100%;height:100%;object-fit:cover;display:block}
+.proj-sidebar{display:flex;flex-direction:column;gap:20px}
+.proj-search{display:flex;border:1px solid rgba(24,24,15,.12);border-radius:8px;overflow:hidden;background:#fff}
+.proj-search input{flex:1;padding:12px 16px;border:none;outline:none;font-size:14px;font-family:inherit;color:#18180F;background:transparent}
+.proj-search button{padding:12px 14px;background:#fff;border:none;cursor:pointer;color:#A09D97}
+.proj-search button:hover{color:#3A9B4E}
+.proj-map{border-radius:8px;overflow:hidden;border:1px solid rgba(24,24,15,.1)}
+.proj-map iframe{width:100%;height:280px;display:block;border:none}
+.proj-info{background:#fff;border:1px solid rgba(24,24,15,.08);border-radius:12px;padding:24px}
+.proj-info h1{font-size:22px;font-weight:700;color:#18180F;margin-bottom:6px;font-family:'Playfair Display',serif}
+.proj-info .pi-loc{font-size:12px;letter-spacing:.12em;color:#A09D97;margin-bottom:16px}
+.proj-info .pi-cat{display:inline-block;background:#3A9B4E;color:#fff;font-size:9px;letter-spacing:.16em;padding:4px 10px;border-radius:3px;margin-bottom:16px}
+.proj-info .pi-desc{font-size:14px;color:#6B6860;line-height:1.75}
+@media(max-width:768px){
+  .proj-body{grid-template-columns:1fr}
+  .proj-nav a{padding:12px 16px;font-size:11px}
+}
+</style>
+</head>
+<body>
+<div class="scroll-bar" id="scroll-bar"></div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMobileMenu()">Naslovnica</a>
+  <a href="stanovi.html" onclick="closeMobileMenu()">Stanovi</a>
+  <a href="portfolio.html" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="onama.html" onclick="closeMobileMenu()">O nama</a>
+  <a href="nisko.html" onclick="closeMobileMenu()">Niskoenergetske kuće</a>
+  <a href="projekti.html" onclick="closeMobileMenu()">EU Projekti</a>
+  <a href="novosti.html" onclick="closeMobileMenu()">Novosti</a>
+  <a href="njemacko.html" onclick="closeMobileMenu()">Njemačko tržište</a>
+  <a href="cjenik.html" onclick="closeMobileMenu()">Cjenik</a>
+  <a href="kontakt.html" class="m-cta" onclick="closeMobileMenu()">Kontakt</a>
+  <div class="m-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+</div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Vodolim"></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Naslovnica</a></li>
+    <li><a href="stanovi.html">Stanovi</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="onama.html">O nama</a></li>
+    <li><a href="nisko.html">Niskoenergetske</a></li>
+    <li><a href="projekti.html">Projekti</a></li>
+    <li><a href="novosti.html">Novosti</a></li>
+    <li><a href="njemacko.html">Njemačko tržište</a></li>
+    <li><a href="cjenik.html">Cjenik</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="nav-lang"><a href="#" class="on">HR</a><a href="#">EN</a><a href="#">DE</a></div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section style="padding:40px 40px 60px;background:#F7F5F1;min-height:80vh">
+  <!-- NAVIGACIJA -->
+  <div class="proj-nav">
+    <a href="portfolio.html" class="pn-back">
+      <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Natrag na Portfolio
+    </a>
+    <a href="#" class="pn-prev" id="btn-prev">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      Prethodni
+    </a>
+    <a href="#" class="pn-next" id="btn-next">
+      Sljedeći
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
+  </div>
+
+  <!-- SADRŽAJ -->
+  <div class="proj-body">
+    <div>
+      <div class="proj-img">
+        <img id="proj-img" src="" alt="">
+      </div>
+    </div>
+    <div class="proj-sidebar">
+      <div class="proj-info">
+        <span class="pi-cat" id="proj-cat"></span>
+        <h1 id="proj-name"></h1>
+        <div class="pi-loc" id="proj-loc"></div>
+        <p class="pi-desc" id="proj-desc"></p>
+      </div>
+      <div class="proj-search">
+        <input type="text" placeholder="Pretraži projekte..." id="proj-search-inp">
+        <button onclick="searchProj()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      </div>
+      <div class="proj-map">
+        <iframe id="proj-map" src="" loading="lazy" allowfullscreen title="Lokacija projekta"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="eu-strip"><p><strong>EU projekt:</strong> Podizanje konkurentnosti kroz ulaganje u softversko rješenje — Vodolim instalacije d.o.o. · Ukupna vrijednost: 15.000 € · EU sufinanciranje: 8.400 € · 2025.–2026. · Next Generation EU · Ref. br. NPOO.C1.1.2.R3-12.01-V15.0333</p></div>
+<footer>
+  <div class="footer-top">
+    <div><div class="footer-brand">VODOLIM INSTALACIJE D.O.O.</div><div class="footer-sub">Mala tvrtka za velike projekte · Tradicija od 1973.</div></div>
+    <div class="footer-cols">
+      <div><div class="fc-t">NAVIGACIJA</div><div class="fc-links"><a href="stanovi.html">Vodolim stanovi</a><a href="portfolio.html">Portfolio</a><a href="onama.html">O nama</a><a href="nisko.html">Niskoenergetske kuće</a><a href="projekti.html">EU Projekti</a><a href="novosti.html">Novosti</a></div></div>
+      <div><div class="fc-t">KONTAKT</div><div class="fc-links"><a href="tel:+38549286596">+385 (0) 49 286 596</a><a href="tel:+38598444156">098 444 156</a><a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a></div></div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span class="footer-copy">© Vodolim instalacije d.o.o. 2024. Sva prava pridržana.</span>
+  </div>
+</footer>
+
+<div class="gdpr" id="gdpr">
+  <div class="gdpr-txt">Koristimo kolačiće kako bismo poboljšali vaše iskustvo. <a href="#">Politika kolačića</a>.</div>
+  <div class="gdpr-btns"><button class="gdpr-decline" id="gdpr-decline">Odbij</button><button class="gdpr-accept" id="gdpr-accept">Prihvati sve</button></div>
+</div>
+<div class="float-btns">
+  <a href="https://wa.me/38598444156" target="_blank" class="float-btn float-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+  <a href="tel:+38549286596" class="float-btn float-tel"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></a>
+</div>
+<button class="btt" id="btt"><svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg></button>
+
+<script>
+var PROJEKTI=[
+  {name:'Bolnica Merkur',cat:'ZDRAVSTVO',loc:'Zagreb',img:'https://vodolim.hr/wp-content/uploads/2015/05/porfolio-3-700x420-1.jpg',desc:'Kompletni instalacijski i građevinski radovi na rekonstrukciji Bolnice Merkur u Zagrebu.',map:'https://maps.google.com/maps?q=Bolnica+Merkur+Zagreb&output=embed&z=14'},
+  {name:'Dom za starije — Lobor',cat:'SOCIJALNA SKRB',loc:'Lobor',img:'https://vodolim.hr/wp-content/uploads/2024/10/staracki-Lobor_003-3-1-700x420.jpg',desc:'Instalacijski i završni radovi na domu za starije osobe u Loboru.',map:'https://maps.google.com/maps?q=Lobor,+Hrvatska&output=embed&z=14'},
+  {name:'Petram kompleks',cat:'TURIZAM',loc:'Savudrija',img:'https://vodolim.hr/wp-content/uploads/2021/09/TURISTICKI-KOMPLEPKS-PETRAM-SAVUDRIJA-700x420.jpg',desc:'Instalacijski radovi i opremanje turističkog kompleksa Petram u Savudriji.',map:'https://maps.google.com/maps?q=Savudrija,+Hrvatska&output=embed&z=13'},
+  {name:'Centar za soc. skrb',cat:'SOCIJALNA SKRB',loc:'Novi Marof',img:'https://vodolim.hr/wp-content/uploads/2021/09/CENTAR-ZA-SOCIJALNU-SKRB-NOVI-MAROV-700x420.jpg',desc:'Adaptacija i instalacijski radovi na Centru za socijalnu skrb Novi Marof.',map:'https://maps.google.com/maps?q=Novi+Marof,+Hrvatska&output=embed&z=14'},
+  {name:'Energetska obnova',cat:'ENERGETSKA OBNOVA',loc:'Jakovlje',img:'https://vodolim.hr/wp-content/uploads/2021/09/ENERGETKA-OBNOVA-JAKOVLJE-700x420.jpg',desc:'EU sufinancirana energetska obnova obiteljske kuće u Jakovlju.',map:'https://maps.google.com/maps?q=Jakovlje,+Hrvatska&output=embed&z=14'},
+  {name:'Vrtić Omišalj',cat:'OBRAZOVANJE',loc:'Omišalj',img:'https://vodolim.hr/wp-content/uploads/2015/05/4-700x420.jpg',desc:'Gradnja i opremanje dječjeg vrtića u Omišlju na otoku Krku.',map:'https://maps.google.com/maps?q=Omišalj,+Hrvatska&output=embed&z=14'},
+  {name:'Stambena zgrada',cat:'STAMBENA GRADNJA',loc:'Donja Stubica',img:'https://vodolim.hr/wp-content/uploads/2021/09/STAMBENA-ZGRADA-DONJA-STUBICA-700x420.jpg',desc:'Kompletna gradnja i instalacijski radovi na stambenoj zgradi u Donjoj Stubici.',map:'https://maps.google.com/maps?q=Donja+Stubica,+Hrvatska&output=embed&z=14'},
+  {name:'Svetice zgrada',cat:'STAMBENA GRADNJA',loc:'Zagreb',img:'https://vodolim.hr/wp-content/uploads/2025/02/20250130_095539-1-700x420.jpg',desc:'Kompletni instalacijski radovi na stambenoj zgradi Svetice u Zagrebu.',map:'https://maps.google.com/maps?q=Svetice+Zagreb,+Hrvatska&output=embed&z=14'},
+  {name:'Proizvodni pogon',cat:'INDUSTRIJA',loc:'Krapina',img:'https://vodolim.hr/wp-content/uploads/2021/09/FB_IMG_1630730910255-700x420.jpg',desc:'Instalacijski radovi na industrijskom pogonu u Krapini.',map:'https://maps.google.com/maps?q=Krapina,+Hrvatska&output=embed&z=14'}
+];
+
+function getIdx(){return parseInt(new URLSearchParams(location.search).get('id'))||0;}
+
+function load(idx){
+  if(idx<0)idx=0;
+  if(idx>=PROJEKTI.length)idx=PROJEKTI.length-1;
+  var p=PROJEKTI[idx];
+  document.getElementById('page-title').textContent=p.name+' — Vodolim';
+  document.getElementById('proj-name').textContent=p.name;
+  document.getElementById('proj-cat').textContent=p.cat;
+  document.getElementById('proj-loc').textContent=p.loc;
+  document.getElementById('proj-desc').textContent=p.desc;
+  document.getElementById('proj-img').src=p.img;
+  document.getElementById('proj-img').alt=p.name;
+  document.getElementById('proj-map').src=p.map;
+  document.getElementById('btn-prev').href=idx>0?'projekt.html?id='+(idx-1):'portfolio.html';
+  document.getElementById('btn-next').href=idx<PROJEKTI.length-1?'projekt.html?id='+(idx+1):'portfolio.html';
+}
+
+function searchProj(){
+  var q=document.getElementById('proj-search-inp').value.toLowerCase().trim();
+  if(!q)return;
+  var found=PROJEKTI.findIndex(function(p){return p.name.toLowerCase().includes(q)||p.loc.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)});
+  if(found>=0)location.href='projekt.html?id='+found;
+}
+document.getElementById('proj-search-inp').addEventListener('keydown',function(e){if(e.key==='Enter')searchProj()});
+
+load(getIdx());
+
+function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var h=document.getElementById('hamburger');m.classList.toggle('open');h.classList.toggle('open')}
+function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}
+(function(){var bar=document.getElementById('scroll-bar');var btt=document.getElementById('btt');window.addEventListener('scroll',function(){var st=window.scrollY||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(st/h*100):0)+'%';btt.classList.toggle('show',st>400)},{passive:true});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
+(function(){var el=document.getElementById('gdpr');try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}document.getElementById('gdpr-accept').onclick=function(){try{localStorage.setItem('gdpr','1')}catch(e){}el.classList.add('gdpr-hidden')};document.getElementById('gdpr-decline').onclick=function(){try{localStorage.setItem('gdpr','0')}catch(e){}el.classList.add('gdpr-hidden')}})();
+</script>
+</body>
+</html>

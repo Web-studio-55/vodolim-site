@@ -80,51 +80,53 @@
   <div class="port-head reveal">
     <div><span class="lbl">Naš rad</span><h2 class="h2">Odabrani projekti</h2></div>
   </div>
-  <div class="port-g">
-    <div class="pc pc-a">
+  <!-- FILTER GUMBI -->
+  <div id="pf-filters" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px"></div>
+  <div class="port-g" id="port-g">
+    <div class="pc pc-a" data-cat="VELIKI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2015/05/porfolio-3-700x420-1.jpg');background-color:#1e2a1e"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">ZDRAVSTVO</span><div class="pc-name">Bolnica Merkur</div><div class="pc-loc">ZAGREB</div></div>
     </div>
-    <div class="pc pc-b">
+    <div class="pc pc-b" data-cat="VELIKI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2024/10/staracki-Lobor_003-3-1-700x420.jpg');background-color:#1e1e2a"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">SOCIJALNA SKRB</span><div class="pc-name">Dom za starije — Lobor</div><div class="pc-loc">LOBOR</div></div>
     </div>
-    <div class="pc pc-c">
-      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/TURISTICKI-KOMPLEPKS-PETRAM-SAVUDRIJA-700x420.jpg');background-color:#1e2620"></div>
+    <div class="pc pc-c" data-cat="TURIZAM">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/TURISTICKI-KOMPLEPKS-SAVUDRIJA-700x420.jpg');background-color:#1e2620"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">TURIZAM</span><div class="pc-name">Petram kompleks</div><div class="pc-loc">SAVUDRIJA</div></div>
     </div>
-    <div class="pc pc-d">
+    <div class="pc pc-d" data-cat="VELIKI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/CENTAR-ZA-SOCIJALNU-SKRB-NOVI-MAROV-700x420.jpg');background-color:#221e22"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">SOCIJALNA SKRB</span><div class="pc-name">Centar za soc. skrb</div><div class="pc-loc">NOVI MAROF</div></div>
     </div>
-    <div class="pc pc-e">
+    <div class="pc pc-e" data-cat="NISKOENERGETSKE KUĆE">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/ENERGETKA-OBNOVA-JAKOVLJE-700x420.jpg');background-color:#1e2418"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">ENERGETSKA OBNOVA</span><div class="pc-name">Energetska obnova</div><div class="pc-loc">JAKOVLJE</div></div>
     </div>
-    <div class="pc pc-f">
+    <div class="pc pc-f" data-cat="VELIKI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2015/05/4-700x420.jpg');background-color:#1e261e"></div>
       <div class="pc-veil"></div>
-      <div class="pc-info"><div class="pc-name">Vrtić Omišalj</div><div class="pc-loc">OMIŠALJ</div></div>
+      <div class="pc-info"><span class="pc-cat">OBRAZOVANJE</span><div class="pc-name">Vrtić Omišalj</div><div class="pc-loc">OMIŠALJ</div></div>
     </div>
-    <div class="pc pc-g">
+    <div class="pc pc-g" data-cat="STAMBENA GRADNJA">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/STAMBENA-ZGRADA-DONJA-STUBICA-700x420.jpg');background-color:#1e221e"></div>
       <div class="pc-veil"></div>
-      <div class="pc-info"><div class="pc-name">Stambena zgrada</div><div class="pc-loc">DONJA STUBICA</div></div>
+      <div class="pc-info"><span class="pc-cat">STAMBENA GRADNJA</span><div class="pc-name">Stambena zgrada</div><div class="pc-loc">DONJA STUBICA</div></div>
     </div>
-    <div class="pc pc-h">
+    <div class="pc pc-h" data-cat="ZADNJI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2025/02/20250130_095539-1-700x420.jpg');background-color:#1e1e26"></div>
       <div class="pc-veil"></div>
-      <div class="pc-info"><div class="pc-name">Svetice zgrada</div><div class="pc-loc">ZAGREB</div></div>
+      <div class="pc-info"><span class="pc-cat">STAMBENA GRADNJA</span><div class="pc-name">Svetice zgrada</div><div class="pc-loc">ZAGREB</div></div>
     </div>
-    <div class="pc pc-i">
+    <div class="pc pc-i" data-cat="INDUSTRIJA">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/FB_IMG_1630730910255-700x420.jpg');background-color:#261e1e"></div>
       <div class="pc-veil"></div>
-      <div class="pc-info"><div class="pc-name">Proizvodni pogon</div><div class="pc-loc">KRAPINA</div></div>
+      <div class="pc-info"><span class="pc-cat">INDUSTRIJA</span><div class="pc-name">Proizvodni pogon</div><div class="pc-loc">KRAPINA</div></div>
     </div>
   </div>
 
@@ -252,6 +254,31 @@
 #ref-search:focus{border-color:#3A9B4E;box-shadow:0 0 0 3px rgba(58,155,78,.1)}
 </style>
 <script>
+/* ── PORTFOLIO FILTER ── */
+(function(){
+  var CATS=['SHOW ALL','NISKOENERGETSKE KUĆE','STAMBENA GRADNJA','VELIKI PROJEKTI','TURIZAM','INDUSTRIJA','ZADNJI PROJEKTI'];
+  var container=document.getElementById('pf-filters');
+  if(!container)return;
+  var active='SHOW ALL';
+  CATS.forEach(function(c){
+    var b=document.createElement('button');
+    b.className='yf-btn'+(c==='SHOW ALL'?' active':'');
+    b.innerHTML=c==='SHOW ALL'?'<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>SHOW ALL':c;
+    b.onclick=function(){
+      active=c;
+      container.querySelectorAll('.yf-btn').forEach(function(x){x.classList.remove('active')});
+      b.classList.add('active');
+      document.querySelectorAll('.pc[data-cat]').forEach(function(card){
+        card.style.display=(active==='SHOW ALL'||card.dataset.cat===active)?'':'none';
+      });
+      var extra=document.querySelectorAll('.port-g ~ div .pc, #port-g ~ div .pc');
+      extra.forEach(function(card){
+        card.style.display=(active==='SHOW ALL'||card.dataset.cat===active)?'':'none';
+      });
+    };
+    container.appendChild(b);
+  });
+})();
 /* ── REFERENTNA LISTA FILTER ── */
 (function(){
   var rows=document.querySelectorAll('#ref-tbody tr');
