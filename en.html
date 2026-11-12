@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vodolim — A small company for big projects</title>
+<meta name="description" content="Vodolim instalacije d.o.o. — 50 years of experience in construction of family homes, residential buildings and energy renovation. Donja Stubica, Croatia.">
+<meta property="og:title" content="Vodolim — A small company for big projects">
+<meta property="og:description" content="50 years of experience in construction and installations. From a family home to a hospital — all in one place.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80&auto=format&fit=crop">
+<meta property="og:url" content="https://vodolim.amelodesign.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://vodolim.amelodesign.com">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,'Segoe UI',system-ui,sans-serif;
+  background:#F7F5F1;color:#18180F;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:60px;padding:0 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(12,12,10,.92);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{height:36px;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{font-size:13.5px;letter-spacing:.04em;color:rgba(255,255,255,.35);transition:color .2s}
+.nav-links a:hover{color:rgba(255,255,255,.85)}
+.nav-cta{
+  background:#3A9B4E;color:#fff!important;
+  font-size:11px!important;letter-spacing:.1em!important;
+  padding:8px 18px;border-radius:3px;transition:background .2s!important;
+}
+.nav-cta:hover{background:#2E8040!important}
+.nav-lang{display:flex;gap:8px}
+.nav-lang a{font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.2);transition:color .2s}
+.nav-lang a:hover,.nav-lang a.on{color:rgba(255,255,255,.55)}
+.nav-r{display:flex;align-items:center;gap:20px}
+
+/* ── HERO (full bleed) ── */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1920&q=85&auto=format&fit=crop') center/cover no-repeat;
+  filter:brightness(.38);
+  transform:scale(1.03);
+}
+.hero-video-wrap{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;
+}
+.hero-yt{
+  position:absolute;
+  top:50%;left:50%;
+  width:100vw;
+  height:56.25vw;
+  min-height:100vh;
+  min-width:177.78vh;
+  transform:translate(-50%,-50%);
+  filter:brightness(.45);
+  border:none;
+  pointer-events:none;
+}
+@media(max-width:760px){
+  .hero-video-wrap{display:none}
+}
+.hero-grad{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(8,8,6,.98) 0%,rgba(8,8,6,.55) 50%,rgba(8,8,6,.18) 100%);
+}
+.hero-content{
+  position:relative;
+  width:100%;padding:0 40px 72px;
+  display:grid;grid-template-columns:1fr auto;
+  align-items:flex-end;gap:48px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  border:1px solid rgba(58,155,78,.35);border-radius:20px;
+  padding:5px 14px 5px 8px;margin-bottom:28px;width:fit-content;
+}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#3A9B4E;flex-shrink:0}
+.hero-badge span{font-size:10.5px;letter-spacing:.14em;color:rgba(255,255,255,.4)}
+.hero-h{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(52px,7.5vw,110px);
+  font-weight:400;line-height:.95;letter-spacing:-.04em;
+  color:#fff;margin-bottom:28px;
+}
+.hero-h em{color:#3A9B4E;font-style:normal}
+.hero-sub{
+  font-size:15px;color:rgba(255,255,255,.3);
+  line-height:1.85;max-width:360px;margin-bottom:40px;
+}
+.hero-btns{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-g{
+  background:#3A9B4E;color:#fff;
+  font-size:11.5px;letter-spacing:.1em;
+  padding:14px 28px;border-radius:3px;
+  transition:background .2s,transform .15s;display:inline-block;
+}
+.btn-g:hover{background:#2E8040;transform:translateY(-1px)}
+.btn-ghost{
+  font-size:11.5px;letter-spacing:.08em;
+  color:rgba(255,255,255,.3);
+  border-bottom:1px solid rgba(255,255,255,.15);padding-bottom:2px;
+  transition:color .2s,border-color .2s;
+}
+.btn-ghost:hover{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.4)}
+.hero-stats{
+  display:flex;flex-direction:column;gap:0;
+  border:1px solid rgba(255,255,255,.08);border-radius:8px;
+  overflow:hidden;min-width:160px;flex-shrink:0;
+}
+.hero-stat{
+  padding:22px 24px;border-bottom:1px solid rgba(255,255,255,.07);
+}
+.hero-stat:last-child{border:none}
+.stat-n{
+  font-family:Georgia,serif;font-size:38px;color:#fff;
+  letter-spacing:-.04em;line-height:1;margin-bottom:5px;
+}
+.stat-n sup{font-size:18px;color:#3A9B4E;vertical-align:super}
+.stat-l{font-size:9.5px;letter-spacing:.16em;color:rgba(255,255,255,.22)}
+
+/* ── MARQUEE TICKER ── */
+.ticker{
+  background:#3A9B4E;padding:12px 0;overflow:hidden;
+  border-top:none;
+}
+.ticker-inner{
+  display:flex;gap:0;width:max-content;
+  animation:ticker 24s linear infinite;
+}
+.ticker-item{
+  font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.7);
+  padding:0 40px;white-space:nowrap;
+}
+.ticker-sep{color:rgba(255,255,255,.3);margin-right:0}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── STANOVI ── */
+.stanovi{padding:100px 40px;background:#F7F5F1}
+.stanovi-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.stanovi-img{
+  position:relative;border-radius:12px;overflow:hidden;
+  height:520px;background:#E8E5DF;
+}
+.stanovi-img img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
+.stanovi-stamp{
+  position:absolute;bottom:20px;right:20px;
+  background:#3A9B4E;color:#fff;
+  font-size:10px;letter-spacing:.16em;
+  padding:10px 16px;border-radius:3px;
+}
+.lbl{font-size:10px;letter-spacing:.2em;color:#3A9B4E;margin-bottom:14px;display:block}
+.h2{font-family:Georgia,serif;font-size:clamp(28px,3vw,42px);font-weight:400;line-height:1.15;letter-spacing:-.02em;color:#18180F;margin-bottom:20px}
+.body-txt{font-size:16px;color:#6B6860;line-height:1.9;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tag{
+  font-size:11.5px;padding:6px 14px;border-radius:20px;
+  border:1px solid rgba(24,24,15,.12);color:#7A7870;
+  transition:border-color .2s,color .2s;
+}
+.tag:hover{border-color:#3A9B4E;color:#3A9B4E}
+
+/* ── PORTFOLIO ── */
+.portfolio{padding:100px 40px;background:#EDEAE4}
+.port-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+.s-lnk{font-size:11px;letter-spacing:.1em;color:#3A9B4E;border-bottom:1px solid #3A9B4E;padding-bottom:1px}
+/* Bento portfolio */
+.port-g{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto;gap:14px}
+.pc{
+  position:relative;border-radius:10px;overflow:hidden;
+  background:#1E1E18;cursor:pointer;
+}
+.pc-img{
+  position:absolute;inset:0;
+  background-size:cover;background-position:center;
+  transition:transform .65s cubic-bezier(.25,.46,.45,.94);
+  will-change:transform;
+}
+.pc:hover .pc-img{transform:scale(1.07)}
+.pc-veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,6,4,.9) 0%,rgba(6,6,4,.2) 55%,transparent 100%);
+}
+.pc-info{position:absolute;bottom:0;left:0;right:0;padding:18px 20px}
+.pc-cat{
+  display:inline-block;
+  font-size:9px;letter-spacing:.14em;color:#3A9B4E;
+  background:rgba(58,155,78,.13);border:1px solid rgba(58,155,78,.25);
+  padding:3px 9px;border-radius:20px;margin-bottom:8px;
+}
+.pc-name{font-family:Georgia,serif;font-weight:400;color:#fff;line-height:1.3}
+.pc-loc{font-size:10px;color:rgba(255,255,255,.32);letter-spacing:.08em;margin-top:3px}
+/* grid placement */
+.pc-a{grid-column:1/6;grid-row:1/3;height:480px}
+.pc-b{grid-column:6/9;grid-row:1;height:228px}
+.pc-c{grid-column:9/13;grid-row:1;height:228px}
+.pc-d{grid-column:6/9;grid-row:2;height:228px}
+.pc-e{grid-column:9/13;grid-row:2;height:228px}
+.pc-f{grid-column:1/4;height:170px}
+.pc-g{grid-column:4/7;height:170px}
+.pc-h{grid-column:7/10;height:170px}
+.pc-i{grid-column:10/13;height:170px}
+.pc-a .pc-name{font-size:26px}
+.pc-b .pc-name,.pc-c .pc-name,.pc-d .pc-name,.pc-e .pc-name{font-size:15px}
+.pc-f .pc-name,.pc-g .pc-name,.pc-h .pc-name,.pc-i .pc-name{font-size:12px}
+
+/* ── USLUGE (bento) ── */
+.usluge{padding:100px 40px;background:#18180F}
+.usluge-head{margin-bottom:52px}
+.usluge-head .lbl{color:#3A9B4E}
+.usluge-head .h2{color:#fff}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.bc{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:12px;padding:36px 32px;
+  transition:background .25s,border-color .25s;
+}
+.bc:hover{background:rgba(255,255,255,.07);border-color:rgba(58,155,78,.25)}
+.bc-n{
+  font-family:Georgia,serif;font-size:56px;
+  color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.1);
+  line-height:1;margin-bottom:20px;
+}
+.bc-h{font-size:17px;font-weight:600;color:#fff;margin-bottom:10px}
+.bc-p{font-size:14px;color:rgba(255,255,255,.33);line-height:1.8}
+.bc-wide{grid-column:span 2}
+.bc-wide .bc-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+
+/* ── O NAMA ── */
+.onama{padding:100px 40px;background:#F7F5F1}
+.onama-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.onama-img-wrap{position:relative}
+.onama-img{border-radius:12px;overflow:hidden;height:500px;background:#E8E5DF}
+.onama-img img{width:100%;height:100%;object-fit:cover}
+.onama-yr{
+  position:absolute;bottom:20px;left:20px;
+  background:#18180F;color:#fff;
+  font-family:Georgia,serif;font-size:54px;line-height:1;
+  padding:14px 20px;border-radius:6px;letter-spacing:-.04em;
+}
+.onama-yr span{color:#3A9B4E}
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:32px}
+.tl-item{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid rgba(24,24,15,.07)}
+.tl-item:last-child{border:none}
+.tl-yr{font-size:12px;letter-spacing:.08em;color:#3A9B4E;width:48px;flex-shrink:0;padding-top:2px}
+.tl-txt{font-size:14px;color:#7A7870;line-height:1.7}
+.tl-txt strong{color:#18180F;font-weight:600}
+
+/* ── NISKOENERGETSKE (dark) ── */
+.nisko{padding:100px 40px;background:#18180F}
+.nisko-top{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;margin-bottom:64px}
+.nisko .lbl{color:#3A9B4E}
+.nisko .h2{color:#fff}
+.nisko-desc{font-size:16px;color:rgba(255,255,255,.32);line-height:1.9;margin-top:16px}
+.nisko-steps{display:flex;flex-direction:column;gap:18px;padding-top:8px}
+.nisko-step{display:flex;gap:14px;align-items:flex-start}
+.ns-dot{width:6px;height:6px;border-radius:50%;background:#3A9B4E;flex-shrink:0;margin-top:9px}
+.ns-txt{font-size:14.5px;color:rgba(255,255,255,.4);line-height:1.75}
+.nisko-kpis{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.07);border-radius:12px;overflow:hidden}
+.kpi{padding:52px 40px;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.kpi:last-child{border:none}
+.kpi-n{font-family:Georgia,serif;font-size:68px;color:#fff;line-height:1;letter-spacing:-.04em}
+.kpi-n sup{font-size:32px;color:#3A9B4E;vertical-align:super}
+.kpi-l{font-size:14px;color:rgba(255,255,255,.4);margin-top:12px}
+.kpi-s{font-size:9.5px;letter-spacing:.14em;color:rgba(255,255,255,.18);margin-top:5px}
+
+/* ── EU PROJEKTI ── */
+.eu{padding:100px 40px;background:#EDEAE4}
+.eu-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.eu-txt .body-txt{color:#6B6860}
+.eu-card{
+  background:#fff;border:1px solid rgba(24,24,15,.08);
+  border-radius:12px;overflow:hidden;
+  box-shadow:0 4px 24px rgba(0,0,0,.04);
+}
+.eu-card-head{background:#3A9B4E;padding:18px 24px}
+.eu-card-head h3{font-size:11px;letter-spacing:.14em;color:#fff;font-weight:600}
+.eu-row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 24px;border-bottom:1px solid rgba(24,24,15,.06);gap:16px}
+.eu-row:last-child{border:none}
+.eu-k{font-size:12.5px;color:#A09D97;white-space:nowrap}
+.eu-v{font-size:13px;font-weight:600;color:#18180F;text-align:right;line-height:1.5}
+.eu-v.g{color:#3A9B4E}
+.eu-logos{display:flex;gap:0;align-items:center;flex-wrap:wrap;margin-top:32px;background:#fff;border-radius:10px;padding:16px 24px;border:1px solid rgba(24,24,15,.09)}
+.eu-logo{height:44px;opacity:1;object-fit:contain;filter:none;padding:0 16px;border-right:1px solid rgba(24,24,15,.08)}
+.eu-logo:last-of-type{border-right:none}
+
+/* ── NOVOSTI ── */
+.novosti{padding:100px 40px;background:#F7F5F1}
+.news-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.nc{
+  background:#fff;border:1px solid rgba(24,24,15,.07);
+  border-radius:12px;overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+}
+.nc:hover{transform:translateY(-5px);box-shadow:0 24px 56px rgba(0,0,0,.1)}
+.nc-img{height:210px;overflow:hidden;background:#EDEAE4}
+.nc-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.nc:hover .nc-img img{transform:scale(1.06)}
+.nc-body{padding:24px 24px 28px}
+.nc-date{font-size:9.5px;letter-spacing:.14em;color:#A09D97;margin-bottom:10px}
+.nc-h{font-size:15px;font-weight:600;color:#18180F;line-height:1.5;margin-bottom:9px}
+.nc-p{font-size:13px;color:#7A7870;line-height:1.8}
+
+/* ── NJEMAČKO TRŽIŠTE ── */
+.de{padding:100px 40px;background:#18180F}
+.de-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.de .h2{color:#fff}
+.de .lbl{color:#3A9B4E}
+.de-desc{font-size:16px;color:rgba(255,255,255,.32);line-height:1.9;margin-bottom:14px;margin-top:16px}
+.de-pts{display:flex;flex-direction:column;gap:14px;margin:28px 0}
+.de-pt{display:flex;gap:12px;align-items:flex-start}
+.dp-dot{width:5px;height:5px;border-radius:50%;background:#3A9B4E;flex-shrink:0;margin-top:10px}
+.dp-txt{font-size:15px;color:rgba(255,255,255,.38);line-height:1.7}
+.de-img{border-radius:12px;overflow:hidden;height:460px;background:#1A1A14}
+.de-img img{width:100%;height:100%;object-fit:cover;opacity:.6}
+
+/* ── PARTNERI ── */
+.partners{padding:48px 40px;background:#F7F5F1;border-top:1px solid rgba(24,24,15,.09)}
+.partners-lbl{font-size:9.5px;letter-spacing:.2em;color:#A09D97;text-align:center;display:block;margin-bottom:28px}
+.p-logos{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
+.p-logo-card{background:#fff;border:1px solid rgba(24,24,15,.09);border-radius:10px;padding:16px 24px;display:flex;align-items:center;justify-content:center;height:80px;min-width:130px;transition:box-shadow .2s,border-color .2s}
+.p-logo-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:rgba(24,24,15,.15)}
+.p-logo-card img{height:36px;max-width:110px;object-fit:contain;filter:grayscale(1);opacity:.7;transition:opacity .25s,filter .25s}
+.p-logo-card:hover img{filter:grayscale(0);opacity:1}
+.p-name{font-size:13.5px;color:#B0ADA7;letter-spacing:.04em}
+
+/* ── KONTAKT ── */
+.kontakt{padding:100px 40px;background:#F7F5F1;border-top:1px solid rgba(24,24,15,.09)}
+.kontakt-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.kontakt .h2{margin-bottom:40px}
+.k-items{display:flex;flex-direction:column;gap:26px}
+.k-lbl{font-size:9.5px;letter-spacing:.18em;color:#A09D97;margin-bottom:4px}
+.k-val{font-size:16px;color:#18180F}
+.k-val a{transition:color .2s}
+.k-val a:hover{color:#3A9B4E}
+form{display:flex;flex-direction:column;gap:14px}
+.f-lbl{font-size:9.5px;letter-spacing:.14em;color:#A09D97;display:block;margin-bottom:7px}
+input,textarea{
+  width:100%;padding:13px 16px;
+  border:1px solid rgba(24,24,15,.13);border-radius:6px;
+  font:inherit;font-size:15px;color:#18180F;background:#fff;
+  outline:none;transition:border-color .2s,box-shadow .2s;
+}
+input:focus,textarea:focus{border-color:#3A9B4E;box-shadow:0 0 0 3px rgba(58,155,78,.1)}
+textarea{min-height:130px;resize:vertical}
+.f-btn{
+  background:#3A9B4E;color:#fff;
+  font:inherit;font-size:11.5px;letter-spacing:.12em;
+  padding:15px 32px;border-radius:3px;border:none;cursor:pointer;
+  align-self:flex-start;transition:background .2s,transform .15s;
+}
+.f-btn:hover{background:#2E8040;transform:translateY(-1px)}
+
+/* ── EU STRIP ── */
+.eu-strip{background:#EDEAE4;border-top:1px solid rgba(24,24,15,.09);padding:16px 40px}
+.eu-strip p{font-size:11.5px;color:#7A7870;line-height:1.7}
+.eu-strip strong{color:#18180F}
+
+/* ── FOOTER ── */
+footer{background:#18180F;padding:60px 40px 28px}
+.footer-top{display:flex;justify-content:space-between;gap:48px;margin-bottom:60px}
+.footer-brand{font-size:13px;letter-spacing:.15em;color:rgba(255,255,255,.5);margin-bottom:6px}
+.footer-sub{font-size:12px;color:rgba(255,255,255,.18)}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.fc-t{font-size:9.5px;letter-spacing:.18em;color:rgba(255,255,255,.22);margin-bottom:18px}
+.fc-links{display:flex;flex-direction:column;gap:10px}
+.fc-links a{font-size:13px;color:rgba(255,255,255,.32);transition:color .2s}
+.fc-links a:hover{color:rgba(255,255,255,.8)}
+.footer-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.16)}
+.footer-soc{display:flex;gap:20px}
+.footer-soc a{font-size:10.5px;letter-spacing:.1em;color:rgba(255,255,255,.2);transition:color .2s}
+.footer-soc a:hover{color:rgba(255,255,255,.6)}
+
+/* ── ACCESSIBILITY ── */
+.access-btn{
+  position:fixed;left:0;bottom:200px;z-index:300;
+  background:#3A9B4E;width:44px;height:44px;
+  border-radius:0 6px 6px 0;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:2px 2px 12px rgba(0,0,0,.2);
+  transition:width .2s,background .2s;
+  cursor:pointer;
+}
+.access-btn:hover{background:#2E8040;width:50px}
+.access-btn svg{width:26px;height:26px;fill:#fff;flex-shrink:0}
+.access-panel{
+  position:fixed;left:0;bottom:200px;z-index:299;
+  background:#fff;border-radius:0 12px 12px 0;
+  box-shadow:4px 0 24px rgba(0,0,0,.12);
+  padding:20px 20px 20px 60px;
+  width:220px;
+  display:none;flex-direction:column;gap:10px;
+}
+.access-panel.open{display:flex}
+.access-panel h4{font-size:11px;letter-spacing:.14em;color:#A09D97;margin-bottom:4px}
+.access-opt{
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;color:#18180F;cursor:pointer;
+  padding:8px 10px;border-radius:6px;border:1px solid rgba(24,24,15,.1);
+  transition:background .15s,border-color .15s;background:#F7F5F1;
+}
+.access-opt:hover{background:#EDEAE4;border-color:#3A9B4E}
+.access-opt svg{width:18px;height:18px;fill:#3A9B4E;flex-shrink:0}
+
+/* ── FLOATING BUTTONS ── */
+.float-btns{
+  position:fixed;right:16px;bottom:80px;z-index:300;
+  display:flex;flex-direction:column;gap:10px;
+}
+.float-btn{
+  width:50px;height:50px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,.22);
+  transition:transform .2s,box-shadow .2s;
+  cursor:pointer;overflow:hidden;
+}
+.float-btn:hover{transform:scale(1.1);box-shadow:0 6px 24px rgba(0,0,0,.32)}
+.float-wa{background:#25D366}
+.float-tel{background:#3A9B4E}
+.float-btn svg{width:24px;height:24px;fill:#fff}
+
+/* ── MOBILE ── */
+html,body{overflow-x:hidden;max-width:100%}
+@media(max-width:960px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hero-content{grid-template-columns:1fr;padding:0 20px 60px}
+  .hero-stats{flex-direction:row;border-radius:10px;min-width:0;width:100%}
+  .hero-stat{flex:1;padding:12px 10px;border-bottom:none;border-right:1px solid rgba(255,255,255,.07)}
+  .hero-stat:last-child{border:none}
+  .stat-n{font-size:28px}
+  .stanovi,.onama,.eu,.kontakt,.novosti,.nisko,.de,.usluge,.portfolio{padding:56px 20px}
+  .stanovi-inner,.onama-inner,.eu-inner,.kontakt-inner,.de-inner,.nisko-top{grid-template-columns:1fr;gap:36px}
+  .stanovi-img,.onama-img,.de-img{height:260px}
+  .port-g{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .pc-a{grid-column:1/3;grid-row:auto;height:240px}
+  .pc-b,.pc-c,.pc-d,.pc-e{grid-column:span 1;height:160px}
+  .pc-f,.pc-g,.pc-h,.pc-i{grid-column:span 1;height:130px}
+  .bento{grid-template-columns:1fr}
+  .bc-wide{grid-column:span 1}
+  .bc-wide .bc-inner{grid-template-columns:1fr}
+  .news-g{grid-template-columns:1fr}
+  .nisko-kpis{grid-template-columns:1fr}
+  .kpi{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:36px 24px}
+  .kpi:last-child{border:none}
+  .kpi-n{font-size:52px}
+  .p-logo-card{min-width:100px;padding:12px 16px;height:68px}
+  .p-logos{gap:20px;justify-content:center}
+  .p-logo{height:36px}
+  .footer-top{flex-direction:column}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .footer-bot{flex-direction:column;gap:12px;text-align:center}
+  .partners{padding:36px 20px}
+  .eu-strip{padding:16px 20px}
+  .hero-h{font-size:clamp(38px,10vw,60px)}
+  .h2{font-size:clamp(24px,6vw,36px)}
+  .onama-yr{font-size:36px;padding:10px 14px}
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .eu-logos{justify-content:flex-start}
+  .tags{gap:6px}
+  .tag{font-size:10.5px;padding:5px 11px}
+  .hero-btns{flex-direction:column;align-items:flex-start;gap:12px}
+  .btn-g{width:100%;text-align:center;padding:16px 20px;box-sizing:border-box}
+}
+@media(max-width:960px){
+  .access-btn{top:70px;bottom:auto;transform:none}
+  .access-panel{top:70px;bottom:auto;transform:none}
+}
+@media(max-width:520px){
+  .port-g{grid-template-columns:1fr}
+  .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i{grid-column:span 1;height:190px}
+  .hero-stats{flex-direction:column}
+  .hero-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:14px 16px}
+  .hero-stat:last-child{border:none}
+  .footer-cols{grid-template-columns:1fr}
+  .kontakt-inner{gap:32px}
+  .stanovi-img{height:220px}
+  .ticker-item{padding:0 20px;font-size:10px}
+  .float-btns{right:12px;bottom:130px}
+}
+@media(prefers-reduced-motion:reduce){
+  .pc-img,.nc-img img,.btn-g,.btn-g:hover,.f-btn,.f-btn:hover,.nc,.float-btn{
+    transition:none;transform:none!important;
+  }
+  .ticker-inner{animation:none}
+}
+
+/* ── SCROLL PROGRESS ── */
+.scroll-bar{position:fixed;top:0;left:0;height:3px;background:#3A9B4E;z-index:500;width:0;transition:width .08s linear;pointer-events:none}
+
+/* ── BACK TO TOP ── */
+.btt{
+  position:fixed;right:16px;bottom:148px;z-index:300;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(24,24,15,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .2s;
+  border:1px solid rgba(255,255,255,.12);
+}
+.btt.show{opacity:1;pointer-events:auto}
+.btt:hover{transform:translateY(-3px)}
+.btt svg{width:20px;height:20px;fill:#fff}
+@media(max-width:520px){.btt{right:12px;bottom:132px}}
+
+/* ── GDPR BANNER ── */
+.gdpr{
+  position:fixed;bottom:0;left:0;right:0;z-index:400;
+  background:#18180F;border-top:1px solid rgba(255,255,255,.1);
+  padding:18px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  transform:translateY(0);transition:transform .4s;
+}
+.gdpr.gdpr-hidden{transform:translateY(110%)}
+.gdpr-txt{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;max-width:680px}
+.gdpr-txt a{color:#3A9B4E;border-bottom:1px solid rgba(58,155,78,.4)}
+.gdpr-btns{display:flex;gap:10px;flex-shrink:0}
+.gdpr-accept{background:#3A9B4E;color:#fff;border:none;font:inherit;font-size:12px;letter-spacing:.1em;padding:10px 22px;border-radius:3px;cursor:pointer;transition:background .2s}
+.gdpr-accept:hover{background:#2E8040}
+.gdpr-decline{background:transparent;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.15);font:inherit;font-size:12px;letter-spacing:.08em;padding:10px 18px;border-radius:3px;cursor:pointer;transition:all .2s}
+.gdpr-decline:hover{color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3)}
+@media(max-width:760px){.gdpr{flex-direction:column;padding:18px 20px;gap:14px;align-items:flex-start}.gdpr-btns{width:100%}}
+
+/* ── LIGHTBOX ── */
+.lbox{
+  position:fixed;inset:0;z-index:600;
+  background:rgba(0,0,0,.93);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.lbox.open{opacity:1;pointer-events:auto}
+.lbox-img{max-width:88vw;max-height:82vh;border-radius:6px;object-fit:contain}
+.lbox-close{
+  position:absolute;top:20px;right:20px;
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:22px;line-height:1;transition:background .2s;
+}
+.lbox-close:hover{background:rgba(255,255,255,.2)}
+.lbox-info{position:absolute;bottom:24px;left:0;right:0;text-align:center}
+.lbox-name{font-family:Georgia,serif;font-size:18px;color:#fff;margin-bottom:4px}
+.lbox-loc{font-size:10px;letter-spacing:.18em;color:#3A9B4E}
+.lbox-prev,.lbox-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:20px;transition:background .2s;
+}
+.lbox-prev{left:20px}
+.lbox-next{right:20px}
+.lbox-prev:hover,.lbox-next:hover{background:rgba(255,255,255,.2)}
+@media(max-width:760px){.lbox-prev,.lbox-next{width:36px;height:36px;font-size:16px;left:8px}.lbox-next{right:8px}}
+
+/* ── CJENIK ── */
+.cjenik{padding:100px 40px;background:#18180F}
+.cjenik .lbl{color:#3A9B4E}
+.cjenik .h2{color:#fff;margin-bottom:16px}
+.cjenik-sub{font-size:15px;color:rgba(255,255,255,.3);line-height:1.8;margin-bottom:40px;max-width:600px}
+.cjenik-pdv{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(58,155,78,.3);border-radius:20px;padding:5px 14px;font-size:11px;color:#3A9B4E;margin-bottom:40px}
+.cjenik-table{width:100%;border-collapse:collapse;margin-bottom:32px}
+.cjenik-table thead tr{border-bottom:1px solid rgba(255,255,255,.1)}
+.cjenik-table th{font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.22);text-align:left;padding:0 0 14px;font-weight:500}
+.cjenik-table th:not(:first-child){text-align:right}
+.cjenik-table tbody tr{border-bottom:1px solid rgba(255,255,255,.06);transition:background .2s}
+.cjenik-table tbody tr:hover{background:rgba(255,255,255,.03)}
+.cjenik-table tbody tr:last-child{border:none}
+.cjenik-table td{padding:18px 0;vertical-align:middle}
+.cjenik-table td:not(:first-child){text-align:right}
+.cjenik-name{font-size:15px;font-weight:500;color:#fff;margin-bottom:3px}
+.cjenik-desc{font-size:12px;color:rgba(255,255,255,.28);line-height:1.6;max-width:340px}
+.cjenik-price{font-family:Georgia,serif;font-size:18px;color:#fff;white-space:nowrap}
+.cjenik-price-lo{font-size:13px;color:rgba(255,255,255,.35);white-space:nowrap;margin-top:3px}
+.cjenik-unit{font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.2);white-space:nowrap;margin-top:3px}
+.cjenik-note{font-size:12px;color:rgba(255,255,255,.2);line-height:1.85;border-top:1px solid rgba(255,255,255,.07);padding-top:24px;margin-top:8px}
+.cjenik-note strong{color:rgba(255,255,255,.4)}
+@media(max-width:960px){.cjenik{padding:56px 20px}.cjenik-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+
+/* ── BEFORE/AFTER SLIDER ── */
+.ba-section{padding:100px 40px;background:#18180F}
+.ba-wrap{max-width:900px;margin:0 auto;position:relative;user-select:none;border-radius:8px;overflow:hidden;cursor:col-resize}
+.ba-wrap img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba-after{position:relative;height:520px}
+.ba-before{position:absolute;top:0;left:0;height:100%;overflow:hidden;width:50%}
+.ba-before img{position:absolute;top:0;left:0;width:900px;max-width:none;height:100%;object-fit:cover}
+.ba-handle{position:absolute;top:0;left:50%;transform:translateX(-50%);width:3px;height:100%;background:#3A9B4E;cursor:col-resize;z-index:10}
+.ba-handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#3A9B4E;border:3px solid #fff;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.ba-handle::after{content:'◀ ▶';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:10px;color:#fff;white-space:nowrap;margin-top:1px}
+.ba-label{position:absolute;bottom:16px;padding:4px 12px;border-radius:3px;font-size:10px;letter-spacing:.12em;font-weight:600;color:#fff}
+.ba-label-before{left:16px;background:rgba(0,0,0,.6)}
+.ba-label-after{right:16px;background:rgba(58,155,78,.8)}
+@media(max-width:760px){.ba-section{padding:60px 20px}.ba-after{height:260px}}
+
+/* ── 3D TILT ── */
+.tilt{transform-style:preserve-3d;transition:transform .1s ease}
+
+/* ── TESTIMONIALI ── */
+.testi{padding:100px 40px;background:#F7F5F1}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+.testi-card{background:#fff;border-radius:12px;padding:32px;border:1px solid rgba(24,24,15,.07);position:relative}
+.testi-stars{color:#3A9B4E;font-size:14px;margin-bottom:16px;letter-spacing:2px}
+.testi-text{font-size:14px;line-height:1.75;color:rgba(24,24,15,.65);margin-bottom:24px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:#3A9B4E;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff;flex-shrink:0}
+.testi-name{font-size:13px;font-weight:600;color:#18180F}
+.testi-role{font-size:11px;color:rgba(24,24,15,.4);letter-spacing:.05em}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.testi{padding:60px 20px}}
+
+/* ── TIMELINE ── */
+.timeline-section{padding:100px 40px;background:#18180F}
+.timeline{max-width:800px;margin:0 auto;position:relative}
+.timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:rgba(58,155,78,.2)}
+.tl-item{display:flex;gap:32px;margin-bottom:48px;position:relative}
+.tl-dot{width:50px;height:50px;background:#1E1E14;border:2px solid #3A9B4E;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;color:#3A9B4E;font-weight:400;z-index:1;clip-path:polygon(0 0,75% 0,100% 50%,75% 100%,0 100%)}
+.tl-content{padding-top:10px}
+.tl-year{font-size:11px;letter-spacing:.15em;color:#3A9B4E;margin-bottom:6px}
+.tl-title{font-family:Georgia,serif;font-size:18px;color:#fff;margin-bottom:8px}
+.tl-desc{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7}
+@media(max-width:760px){.timeline-section{padding:60px 20px}.tl-item{gap:20px}}
+
+/* ── STICKY MOBILE BAR ── */
+.sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:350;background:#18180F;border-top:1px solid rgba(255,255,255,.08);padding:10px 16px;gap:10px}
+@media(max-width:760px){.sticky-bar{display:flex}}
+.sticky-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-decoration:none}
+.sticky-call{background:#3A9B4E;color:#fff}
+.sticky-upit{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12)}
+
+/* ── FAQ ── */
+.faq{padding:100px 40px;background:#F7F5F1}
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(24,24,15,.1)}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 0;cursor:pointer;gap:20px;
+  font-size:16px;font-weight:600;color:#18180F;line-height:1.5;
+  border:none;background:none;width:100%;text-align:left;transition:color .2s;
+}
+.faq-q:hover{color:#3A9B4E}
+.faq-icon{
+  width:28px;height:28px;border-radius:50%;background:#3A9B4E;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:transform .3s,background .2s;
+}
+.faq-icon svg{width:14px;height:14px;fill:#fff;transition:transform .3s}
+.faq-item.open .faq-icon{background:#18180F}
+.faq-item.open .faq-icon svg{transform:rotate(45deg)}
+.faq-a{font-size:15px;color:#6B6860;line-height:1.9;max-height:0;overflow:hidden;transition:max-height .4s ease,padding-bottom .4s}
+.faq-item.open .faq-a{max-height:400px;padding-bottom:22px}
+
+/* ── KALKULATOR ── */
+.kalk{padding:100px 40px;background:#EDEAE4}
+.kalk-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.kalk-form-wrap{display:flex;flex-direction:column;gap:22px}
+.kalk-lbl{font-size:9.5px;letter-spacing:.16em;color:#A09D97;display:block;margin-bottom:8px}
+.kalk-sel{
+  width:100%;padding:13px 16px;
+  border:1px solid rgba(24,24,15,.13);border-radius:6px;
+  font:inherit;font-size:15px;color:#18180F;background:#fff;
+  outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23A09D97' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;
+}
+.kalk-sel:focus{border-color:#3A9B4E}
+.kalk-slider-wrap{display:flex;align-items:center;gap:14px}
+.kalk-slider{flex:1;accent-color:#3A9B4E;height:4px;cursor:pointer}
+.kalk-val{font-size:14px;font-weight:600;color:#18180F;min-width:60px;text-align:right}
+.kalk-result{background:#18180F;border-radius:14px;padding:44px 40px;position:sticky;top:80px}
+.kalk-result-lbl{font-size:9.5px;letter-spacing:.18em;color:rgba(255,255,255,.3);margin-bottom:8px}
+.kalk-price{font-family:Georgia,serif;font-size:clamp(32px,4vw,52px);color:#fff;letter-spacing:-.04em;line-height:1;margin-bottom:4px}
+.kalk-range-txt{font-size:13px;color:rgba(255,255,255,.28);margin-bottom:32px}
+.kalk-items{display:flex;flex-direction:column;gap:0;margin-bottom:24px}
+.kalk-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.kalk-row:last-child{border:none}
+.kalk-row-k{font-size:13px;color:rgba(255,255,255,.32)}
+.kalk-row-v{font-size:13px;font-weight:600;color:#3A9B4E}
+.kalk-disc{font-size:11.5px;color:rgba(255,255,255,.18);line-height:1.8;margin-top:20px;border-top:1px solid rgba(255,255,255,.06);padding-top:18px}
+.kalk-cta{display:inline-block;background:#3A9B4E;color:#fff;font-size:11.5px;letter-spacing:.1em;padding:13px 26px;border-radius:3px;transition:background .2s;margin-top:20px}
+.kalk-cta:hover{background:#2E8040}
+@media(max-width:960px){.kalk-inner{grid-template-columns:1fr;gap:36px}.kalk-result{position:static}}
+@media(max-width:520px){.kalk{padding:56px 20px}.faq{padding:56px 20px}}
+
+/* ── GOOGLE MAPS ── */
+.maps-wrap{border-radius:12px;overflow:hidden;height:220px;margin-top:32px;border:1px solid rgba(24,24,15,.08)}
+.maps-wrap iframe{width:100%;height:100%;border:none;display:block}
+
+/* ── HAMBURGER MENU ── */
+.hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:36px;height:36px;cursor:pointer;background:none;border:none;padding:4px;
+}
+.hamburger span{
+  display:block;height:1.5px;background:rgba(255,255,255,.7);
+  border-radius:2px;transition:transform .3s,opacity .3s,width .3s;
+}
+.hamburger span:nth-child(2){width:70%}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;width:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-menu{
+  position:fixed;inset:0;top:60px;z-index:190;
+  background:rgba(8,8,6,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;
+  transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+  pointer-events:none;
+}
+.mobile-menu.open{transform:translateX(0);pointer-events:auto}
+.mobile-menu a{
+  font-family:Georgia,serif;font-size:clamp(22px,6vw,32px);color:rgba(255,255,255,.5);
+  letter-spacing:-.02em;transition:color .2s;padding:8px 0;
+}
+.mobile-menu a:hover{color:#fff}
+.mobile-menu .m-cta{
+  margin-top:16px;background:#3A9B4E;color:#fff!important;
+  font-family:-apple-system,system-ui,sans-serif;font-size:13px;letter-spacing:.1em;
+  padding:14px 36px;border-radius:3px;font-style:normal;
+}
+.mobile-menu .m-lang{display:flex;gap:20px;margin-top:12px}
+.mobile-menu .m-lang a{font-family:-apple-system,system-ui,sans-serif;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.25);font-style:normal}
+.mobile-menu .m-lang a.on{color:rgba(255,255,255,.6)}
+@media(max-width:960px){
+  .hamburger{display:flex}
+  .nav-links{display:none}
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-l{
+  opacity:0;transform:translateX(-32px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal-l.in{opacity:1;transform:translateX(0)}
+.reveal-r{
+  opacity:0;transform:translateX(32px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal-r.in{opacity:1;transform:translateX(0)}
+.reveal-s{
+  opacity:0;transform:scale(.96);
+  transition:opacity .6s ease,transform .6s ease;
+}
+.reveal-s.in{opacity:1;transform:scale(1)}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal-l,.reveal-r,.reveal-s{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div class="scroll-bar" id="scroll-bar"></div>
+
+<!-- LIGHTBOX -->
+<div class="lbox" id="lbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <button class="lbox-close" id="lbox-close" aria-label="Close">×</button>
+  <button class="lbox-prev" id="lbox-prev" aria-label="Previous">‹</button>
+  <img class="lbox-img" id="lbox-img" src="" alt="">
+  <button class="lbox-next" id="lbox-next" aria-label="Next">›</button>
+  <div class="lbox-info">
+    <div class="lbox-name" id="lbox-name"></div>
+    <div class="lbox-loc" id="lbox-loc"></div>
+  </div>
+</div>
+
+<!-- ACCESSIBILITY -->
+<button class="access-btn" onclick="document.querySelector('.access-panel').classList.toggle('open')" aria-label="Accessibility" title="Accessibility">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="4" r="2"/><path d="M16.5 20.5c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-6.5 0c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm7-8.5h-5l-1.5-4H8V6H5v2h2.5l2 5.5H15v4h2v-5.5z"/></svg>
+</button>
+<div class="access-panel">
+  <h4>Accessibility Tools</h4>
+  <div class="access-opt" id="ac-inc">
+    <svg viewBox="0 0 24 24"><path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"/></svg>
+    Increase Text
+  </div>
+  <div class="access-opt" id="ac-dec">
+    <svg viewBox="0 0 24 24"><path d="M18 7h-5V4H6v3H3v3h3v7h3v-7h5v7h3v-7h3V7z"/></svg>
+    Decrease Text
+  </div>
+  <div class="access-opt" id="ac-gray">
+    <svg viewBox="0 0 24 24"><path d="M3 3h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2zM3 7h2v2H3zm16 0h2v2h-2zM3 11h2v2H3zm16 0h2v2h-2zM3 15h2v2H3zm16 0h2v2h-2zM3 19h2v2H3zm4 0h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+    Grayscale
+  </div>
+  <div class="access-opt" id="ac-hi">
+    <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16V5c3.86 0 7 3.14 7 7s-3.14 7-7 7z"/></svg>
+    High Contrast
+  </div>
+  <div class="access-opt" id="ac-neg">
+    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+    Negative Contrast
+  </div>
+  <div class="access-opt" id="ac-light">
+    <svg viewBox="0 0 24 24"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.8-1.41-1.41-1.79 1.8z"/></svg>
+    Light Background
+  </div>
+  <div class="access-opt" id="ac-links">
+    <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+    Links Underline
+  </div>
+  <div class="access-opt" id="ac-font">
+    <svg viewBox="0 0 24 24"><path d="M9 4v3h5v12h3V7h5V4H9zm-6 8h3v7h3v-7h3V9H3v3z"/></svg>
+    Readable Font
+  </div>
+  <div class="access-opt" id="ac-reset">
+    <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+    Reset
+  </div>
+</div>
+<style>
+body.ac-gray{filter:grayscale(1)}
+body.ac-hi{filter:contrast(2) brightness(.8)}
+body.ac-neg{filter:invert(1) hue-rotate(180deg)}
+body.ac-light{background:#fff!important}
+body.ac-links a{text-decoration:underline!important}
+body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacing:.03em!important;line-height:1.8!important}
+</style>
+<script>
+(function(){
+  var fs=16;
+  function tog(cls){document.body.classList.toggle(cls)}
+  document.getElementById('ac-inc').onclick=function(){fs=Math.min(fs+2,24);document.documentElement.style.fontSize=fs+'px'};
+  document.getElementById('ac-dec').onclick=function(){fs=Math.max(fs-2,12);document.documentElement.style.fontSize=fs+'px'};
+  document.getElementById('ac-gray').onclick=function(){['ac-hi','ac-neg'].forEach(function(c){document.body.classList.remove(c)});tog('ac-gray')};
+  document.getElementById('ac-hi').onclick=function(){['ac-gray','ac-neg'].forEach(function(c){document.body.classList.remove(c)});tog('ac-hi')};
+  document.getElementById('ac-neg').onclick=function(){['ac-gray','ac-hi'].forEach(function(c){document.body.classList.remove(c)});tog('ac-neg')};
+  document.getElementById('ac-light').onclick=function(){tog('ac-light')};
+  document.getElementById('ac-links').onclick=function(){tog('ac-links')};
+  document.getElementById('ac-font').onclick=function(){tog('ac-font')};
+  document.getElementById('ac-reset').onclick=function(){
+    fs=16;document.documentElement.style.fontSize='16px';
+    ['ac-gray','ac-hi','ac-neg','ac-light','ac-links','ac-font'].forEach(function(c){document.body.classList.remove(c)});
+  };
+})();
+</script>
+
+<!-- BACK TO TOP -->
+<button class="btt" id="btt" title="Back to top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="float-btns">
+  <a href="https://wa.me/38598444156" target="_blank" class="float-btn float-wa" title="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="tel:+38549286596" class="float-btn float-tel" title="Call us">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+  </a>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="stanovi.html" onclick="closeMobileMenu()">Apartments</a>
+  <a href="portfolio.html" onclick="closeMobileMenu()">Portfolio</a>
+  <a href="onama.html" onclick="closeMobileMenu()">About us</a>
+  <a href="nisko.html" onclick="closeMobileMenu()">Low-energy homes</a>
+  <a href="projekti.html" onclick="closeMobileMenu()">EU Projects</a>
+  <a href="novosti.html" onclick="closeMobileMenu()">News</a>
+  <a href="njemacko.html" onclick="closeMobileMenu()">German market</a>
+  <a href="cjenik.html" onclick="closeMobileMenu()">Pricing</a>
+  <a href="kontakt.html" class="m-cta" onclick="closeMobileMenu()">Contact</a>
+  <div class="m-lang">
+    <a href="index.html">HR</a>
+    <a href="en.html" class="on">EN</a>
+    <a href="de.html">DE</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Vodolim">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="stanovi.html">Apartments</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="onama.html">About us</a></li>
+    <li><a href="nisko.html">Low-energy</a></li>
+    <li><a href="projekti.html">Projects</a></li>
+    <li><a href="novosti.html">News</a></li>
+    <li><a href="njemacko.html">German market</a></li>
+    <li><a href="cjenik.html">Pricing</a></li>
+    <li><a href="kontakt.html" class="nav-cta">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <div class="nav-lang">
+      <a href="index.html">HR</a>
+      <a href="en.html" class="on">EN</a>
+      <a href="de.html">DE</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobileMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-video-wrap">
+    <iframe class="hero-yt"
+      src="https://www.youtube-nocookie.com/embed/xZxrZw1dpBQ?autoplay=1&mute=1&loop=1&playlist=xZxrZw1dpBQ&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&start=114&enablejsapi=1&cc_load_policy=0&iv_load_policy=3&disablekb=1&cc_lang_pref=none&hl=en"
+      allow="autoplay; encrypted-media"
+      title="Vodolim video"
+      aria-hidden="true">
+    </iframe>
+  </div>
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-dot"></span>
+        <span>TRADITION SINCE 1973</span>
+      </div>
+      <h1 class="hero-h">Your partner<br>in <em>construction</em></h1>
+      <p class="hero-sub">Installations, construction and energy renovation. From a family home to a hospital — all in one place.</p>
+      <div class="hero-btns">
+        <a href="portfolio.html" class="btn-g">View projects</a>
+        <a href="kontakt.html" class="btn-ghost">Request a quote</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="stat-n">50<sup>+</sup></div>
+        <div class="stat-l">YEARS OF EXPERIENCE</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">150<sup>+</sup></div>
+        <div class="stat-l">EXPERTS</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-n">24<sup>+</sup></div>
+        <div class="stat-l">PROJECTS</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">CONSTRUCTION</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">INSTALLATIONS</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">ENERGY RENOVATION</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">LOW-ENERGY HOUSES</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">GERMAN MARKET</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">DESIGN &amp; PLANNING</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">TURNKEY</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">CONSTRUCTION</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">INSTALLATIONS</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">ENERGY RENOVATION</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">LOW-ENERGY HOUSES</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">GERMAN MARKET</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">DESIGN &amp; PLANNING</span>
+    <span class="ticker-item">✦</span>
+    <span class="ticker-item">TURNKEY</span>
+    <span class="ticker-item">✦</span>
+  </div>
+</div>
+
+<!-- STANOVI -->
+<section id="stanovi" class="stanovi">
+  <div class="stanovi-inner">
+    <div class="stanovi-img reveal-l">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=85&auto=format&fit=crop" alt="Vodolim stanovi">
+      <div class="stanovi-stamp">TURNKEY</div>
+    </div>
+    <div>
+      <span class="lbl">Vodolim Apartments</span>
+      <h2 class="h2">Building a holiday home or family house?</h2>
+      <p class="body-txt">With Vodolim the entire process is simpler, safer and more efficient. From design and documentation, through permits, to full construction, installations and finishing works.</p>
+      <p class="body-txt">All in one place — you just watch your home grow.</p>
+      <div class="tags">
+        <span class="tag">Project documentation</span>
+        <span class="tag">Permits &amp; paperwork</span>
+        <span class="tag">Construction</span>
+        <span class="tag">Installations</span>
+        <span class="tag">Finishing works</span>
+      </div>
+      <br><br>
+      <a href="kontakt.html" class="btn-g">Request a quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+  <div class="port-head reveal">
+    <div>
+      <span class="lbl">Our work</span>
+      <h2 class="h2">Selected projects</h2>
+    </div>
+    <a href="https://online.fliphtml5.com/igbtf/wnlq/" target="_blank" rel="noopener" class="s-lnk">View catalogue →</a>
+  </div>
+  <div class="port-g">
+    <!-- A: large -->
+    <div class="pc pc-a">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2015/05/porfolio-3-700x420-1.jpg');background-color:#1e2a1e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">HEALTHCARE</span>
+        <div class="pc-name">Merkur Hospital</div>
+        <div class="pc-loc">ZAGREB</div>
+      </div>
+    </div>
+    <!-- B -->
+    <div class="pc pc-b">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2024/10/staracki-Lobor_003-3-1-700x420.jpg');background-color:#1e1e2a"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">SOCIAL CARE</span>
+        <div class="pc-name">Care Home — Lobor</div>
+        <div class="pc-loc">LOBOR</div>
+      </div>
+    </div>
+    <!-- C -->
+    <div class="pc pc-c">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/TURISTICKI-KOMPLEPKS-PETRAM-SAVUDRIJA-700x420.jpg');background-color:#1e2620"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">TOURISM</span>
+        <div class="pc-name">Petram complex</div>
+        <div class="pc-loc">SAVUDRIJA</div>
+      </div>
+    </div>
+    <!-- D -->
+    <div class="pc pc-d">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/CENTAR-ZA-SOCIJALNU-SKRB-NOVI-MAROV-700x420.jpg');background-color:#221e22"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">SOCIAL CARE</span>
+        <div class="pc-name">Social Care Centre</div>
+        <div class="pc-loc">NOVI MAROF</div>
+      </div>
+    </div>
+    <!-- E -->
+    <div class="pc pc-e">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/ENERGETKA-OBNOVA-JAKOVLJE-700x420.jpg');background-color:#1e2418"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info">
+        <span class="pc-cat">ENERGY RENOVATION</span>
+        <div class="pc-name">Energy renovation</div>
+        <div class="pc-loc">JAKOVLJE</div>
+      </div>
+    </div>
+    <!-- F–I small -->
+    <div class="pc pc-f">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2015/05/4-700x420.jpg');background-color:#1e261e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Kindergarten Omišalj</div><div class="pc-loc">OMIŠALJ</div></div>
+    </div>
+    <div class="pc pc-g">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/STAMBENA-ZGRADA-DONJA-STUBICA-700x420.jpg');background-color:#1e221e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Residential building</div><div class="pc-loc">DONJA STUBICA</div></div>
+    </div>
+    <div class="pc pc-h">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2025/02/20250130_095539-1-700x420.jpg');background-color:#1e1e26"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Svetice building</div><div class="pc-loc">ZAGREB</div></div>
+    </div>
+    <div class="pc pc-i">
+      <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/FB_IMG_1630730910255-700x420.jpg');background-color:#261e1e"></div>
+      <div class="pc-veil"></div>
+      <div class="pc-info"><div class="pc-name">Production plant</div><div class="pc-loc">KRAPINA</div></div>
+    </div>
+  </div>
+  <!-- Dodatni projekti bez slike -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px">
+    <div class="pc" style="height:120px;background:#1e2a1e">
+      <div class="pc-veil"></div>
+      <div class="pc-info"><span class="pc-cat">HEALTHCARE</span><div class="pc-name" style="font-size:13px">Bračak Hospital</div><div class="pc-loc">BRAČAK</div></div>
+    </div>
+    <div class="pc" style="height:120px;background:#1e2418">
+      <div class="pc-veil"></div>
+      <div class="pc-info"><span class="pc-cat">ENERGY RENOVATION</span><div class="pc-name" style="font-size:13px">Energy renovation</div><div class="pc-loc">KRALJEVAC NA SUTLI</div></div>
+    </div>
+    <div class="pc" style="height:120px;background:#1a2820">
+      <div class="pc-veil"></div>
+      <div class="pc-info"><span class="pc-cat">RESIDENTIAL</span><div class="pc-name" style="font-size:13px">Low-energy house</div><div class="pc-loc">DONJA STUBICA</div></div>
+    </div>
+  </div>
+
+  <!-- Recentni projekti tablica -->
+  <div style="margin-top:56px;background:#fff;border:1px solid rgba(24,24,15,.08);border-radius:12px;overflow:hidden">
+    <div style="padding:18px 28px;border-bottom:1px solid rgba(24,24,15,.07);display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:10px;letter-spacing:.18em;color:#3A9B4E">RECENT PROJECTS 2022–2026</span>
+      <a href="portfolio.html" style="font-size:11px;color:#3A9B4E;border-bottom:1px solid #3A9B4E;padding-bottom:1px;letter-spacing:.08em">All projects →</a>
+    </div>
+    <table style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr style="background:#F7F5F1">
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 28px;font-weight:500">YEAR</th>
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 20px;font-weight:500">CLIENT</th>
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 20px;font-weight:500">WORK TYPE</th>
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 28px;font-weight:500">LOCATION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-top:1px solid rgba(24,24,15,.06)">
+          <td style="padding:14px 28px;font-size:12px;color:#3A9B4E;font-weight:600">2026</td>
+          <td style="padding:14px 20px;font-size:13px;color:#18180F;font-weight:500">Stanić d.o.o.</td>
+          <td style="padding:14px 20px;font-size:13px;color:#7A7870">Warehouse renovation, heat pumps, lighting</td>
+          <td style="padding:14px 28px;font-size:13px;color:#7A7870">Zagreb</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(24,24,15,.06);background:#FAFAF8">
+          <td style="padding:14px 28px;font-size:12px;color:#3A9B4E;font-weight:600">2026</td>
+          <td style="padding:14px 20px;font-size:13px;color:#18180F;font-weight:500">Općina Marija Gorica</td>
+          <td style="padding:14px 20px;font-size:13px;color:#7A7870">Kindergarten construction</td>
+          <td style="padding:14px 28px;font-size:13px;color:#7A7870">Marija Gorica</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(24,24,15,.06)">
+          <td style="padding:14px 28px;font-size:12px;color:#3A9B4E;font-weight:600">2025</td>
+          <td style="padding:14px 20px;font-size:13px;color:#18180F;font-weight:500">Kaufland d.d.</td>
+          <td style="padding:14px 20px;font-size:13px;color:#7A7870">Supermarket construction</td>
+          <td style="padding:14px 28px;font-size:13px;color:#7A7870">Zagreb (Lučko)</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(24,24,15,.06);background:#FAFAF8">
+          <td style="padding:14px 28px;font-size:12px;color:#3A9B4E;font-weight:600">2024</td>
+          <td style="padding:14px 20px;font-size:13px;color:#18180F;font-weight:500">Grad Zagreb</td>
+          <td style="padding:14px 20px;font-size:13px;color:#7A7870">Kindergarten Poletarac</td>
+          <td style="padding:14px 28px;font-size:13px;color:#7A7870">Zagreb</td>
+        </tr>
+        <tr style="border-top:1px solid rgba(24,24,15,.06)">
+          <td style="padding:14px 28px;font-size:12px;color:#3A9B4E;font-weight:600">2023</td>
+          <td style="padding:14px 20px;font-size:13px;color:#18180F;font-weight:500">Muzeji Hrvatskog zagorja</td>
+          <td style="padding:14px 20px;font-size:13px;color:#7A7870">Castle structure renovation</td>
+          <td style="padding:14px 28px;font-size:13px;color:#7A7870">Gornja Stubica</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- USLUGE (bento) -->
+<section id="usluge" class="usluge">
+  <div class="usluge-head">
+    <span class="lbl">What we do</span>
+    <h2 class="h2">Our services</h2>
+  </div>
+  <div class="bento">
+    <div class="bc">
+      <div class="bc-n">01</div>
+      <div class="bc-h">Low-energy houses</div>
+      <div class="bc-p">Complete construction solutions — from project documentation and permits to turnkey delivery.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">02</div>
+      <div class="bc-h">Large public buildings</div>
+      <div class="bc-p">Hospitals, schools, kindergartens, residential and commercial buildings. Experience with the most demanding projects.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">03</div>
+      <div class="bc-h">Interior works</div>
+      <div class="bc-p">Plastering, tiling, ceramics, parquet, sanitary fittings — complete interior preparation.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">04</div>
+      <div class="bc-h">MEP installations</div>
+      <div class="bc-p">Plumbing, sewage, heating and mechanical installations for all types of buildings.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">05</div>
+      <div class="bc-h">Energy renovation</div>
+      <div class="bc-p">Building modernisation, reduced energy consumption with EU co-financing options.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">06</div>
+      <div class="bc-h">Design &amp; documentation</div>
+      <div class="bc-p">Project documentation, cost estimates, permit procurement and all required paperwork.</div>
+    </div>
+    <div class="bc">
+      <div class="bc-n">07</div>
+      <div class="bc-h">Equipment rental</div>
+      <div class="bc-p">Professional construction and installation equipment available for hire at your site.</div>
+    </div>
+  </div>
+</section>
+
+<!-- O NAMA -->
+<section id="onama" class="onama">
+  <div class="onama-inner">
+    <div class="onama-img-wrap">
+      <div class="onama-img">
+        <img src="https://vodolim.hr/wp-content/uploads/2024/11/01-1-1920x1164.jpg" alt="Vodolim tim" onerror="this.style.display='none'">
+      </div>
+      <div class="onama-yr">19<span>73</span>.</div>
+    </div>
+    <div>
+      <span class="lbl">About us</span>
+      <h2 class="h2">A small company for<br>big projects</h2>
+      <p class="body-txt">We started with plumbing and sheet metal work. Today we are a comprehensive construction partner — from a family home to a hospital.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
+        <div style="border:1px solid rgba(58,155,78,.25);border-radius:6px;padding:10px 16px;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:#3A9B4E;letter-spacing:.04em">ISO 9001</div>
+          <div style="font-size:10px;color:#A09D97;margin-top:2px;letter-spacing:.06em">QUALITY</div>
+        </div>
+        <div style="border:1px solid rgba(58,155,78,.25);border-radius:6px;padding:10px 16px;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:#3A9B4E;letter-spacing:.04em">ISO 14001</div>
+          <div style="font-size:10px;color:#A09D97;margin-top:2px;letter-spacing:.06em">ENVIRONMENT</div>
+        </div>
+        <div style="border:1px solid rgba(58,155,78,.25);border-radius:6px;padding:10px 16px;text-align:center">
+          <div style="font-size:13px;font-weight:700;color:#3A9B4E;letter-spacing:.04em">ISO 45001</div>
+          <div style="font-size:10px;color:#A09D97;margin-top:2px;letter-spacing:.06em">SAFETY</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CERTIFIKATI -->
+  <div style="max-width:900px;margin:60px auto 0">
+    <div style="text-align:center;margin-bottom:40px">
+      <span class="lbl">Certified excellence</span>
+      <h2 class="h2" style="margin-top:8px">Quality. Environment. Safety.</h2>
+      <p style="color:rgba(24,24,15,.5);font-size:14px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto">Our operations comply with internationally recognised standards that confirm work quality, responsible environmental management, and occupational health and safety.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:12px;padding:36px 24px;text-align:center">
+        <div style="width:90px;height:90px;margin:0 auto 20px;background:linear-gradient(135deg,#c8a84b,#f0d080,#c8a84b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#7a5c00;letter-spacing:.05em;line-height:1.3;flex-direction:column;box-shadow:0 4px 20px rgba(200,168,75,.3)">
+          <span style="font-size:16px;font-weight:900">ISO</span>
+          <span>9001</span>
+        </div>
+        <div style="font-size:16px;font-weight:700;color:#18180F;margin-bottom:8px">ISO 9001</div>
+        <div style="font-size:11px;letter-spacing:.1em;color:#3A9B4E;font-weight:600;margin-bottom:10px">QUALITY MANAGEMENT</div>
+        <div style="font-size:12px;color:rgba(24,24,15,.45);line-height:1.6">A quality management system ensuring consistency and excellence in every project.</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:12px;padding:36px 24px;text-align:center">
+        <div style="width:90px;height:90px;margin:0 auto 20px;background:linear-gradient(135deg,#c8a84b,#f0d080,#c8a84b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#7a5c00;letter-spacing:.05em;line-height:1.3;flex-direction:column;box-shadow:0 4px 20px rgba(200,168,75,.3)">
+          <span style="font-size:16px;font-weight:900">ISO</span>
+          <span>14001</span>
+        </div>
+        <div style="font-size:16px;font-weight:700;color:#18180F;margin-bottom:8px">ISO 14001</div>
+        <div style="font-size:11px;letter-spacing:.1em;color:#3A9B4E;font-weight:600;margin-bottom:10px">ENVIRONMENTAL MANAGEMENT</div>
+        <div style="font-size:12px;color:rgba(24,24,15,.45);line-height:1.6">Responsible environmental management through minimising our impact on nature at every stage of construction.</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:12px;padding:36px 24px;text-align:center">
+        <div style="width:90px;height:90px;margin:0 auto 20px;background:linear-gradient(135deg,#c8a84b,#f0d080,#c8a84b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#7a5c00;letter-spacing:.05em;line-height:1.3;flex-direction:column;box-shadow:0 4px 20px rgba(200,168,75,.3)">
+          <span style="font-size:16px;font-weight:900">ISO</span>
+          <span>45001</span>
+        </div>
+        <div style="font-size:16px;font-weight:700;color:#18180F;margin-bottom:8px">ISO 45001</div>
+        <div style="font-size:11px;letter-spacing:.1em;color:#3A9B4E;font-weight:600;margin-bottom:10px">HEALTH AND SAFETY</div>
+        <div style="font-size:12px;color:rgba(24,24,15,.45);line-height:1.6">The health and safety of our employees and partners is our top priority.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div style="max-width:900px;margin:60px auto 0;border-radius:8px;overflow:hidden;aspect-ratio:16/9;background:#000">
+    <iframe style="width:100%;height:100%;border:none" src="https://www.youtube-nocookie.com/embed/xZxrZw1dpBQ?rel=0&modestbranding=1&cc_load_policy=0&iv_load_policy=3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Vodolim — O nama"></iframe>
+  </div>
+</section>
+
+<!-- NISKOENERGETSKE KUĆE -->
+<section id="nisko" class="nisko">
+  <div class="nisko-top">
+    <div>
+      <span class="lbl">Green construction</span>
+      <h2 class="h2">Low-energy houses</h2>
+      <p class="nisko-desc">We build houses that consume less and deliver more. Complete service — from idea to keys in hand.</p>
+    </div>
+    <div class="nisko-steps">
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Design &amp; documentation — concept, main project, permits</p></div>
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Complete construction — foundations, structure, roof, facade</p></div>
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Installations — heating, cooling, plumbing and electrical</p></div>
+      <div class="nisko-step"><div class="ns-dot"></div><p class="ns-txt">Finishing works — plastering, tiling, ceramics, parquet</p></div>
+    </div>
+  </div>
+  <div class="nisko-kpis">
+    <div class="kpi">
+      <div class="kpi-n">78<sup>%</sup></div>
+      <div class="kpi-l">Earth energy</div>
+      <div class="kpi-s">GEOTHERMAL SYSTEM</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">70<sup>%</sup></div>
+      <div class="kpi-l">Solar energy</div>
+      <div class="kpi-s">SOLAR PANELS</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-n">22<sup>%</sup></div>
+      <div class="kpi-l">Electric energy</div>
+      <div class="kpi-s">CONVENTIONAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- EU PROJEKTI -->
+<section id="projekti" class="eu">
+  <div>
+    <span class="lbl">EU Projects</span>
+    <h2 class="h2" style="margin-bottom:12px">Projects and funding</h2>
+    <p style="font-size:13px;color:#7A7870;line-height:1.7;margin-bottom:48px;max-width:700px;font-style:italic">"Increasing competitiveness through investment in a software solution for the operations of Vodolim instalacije d.o.o."</p>
+  </div>
+  <div class="eu-inner">
+    <div class="eu-txt">
+      <p class="body-txt">Vodolim instalacije d.o.o. actively uses European funds for digitalisation and competitiveness. Our projects are funded through Next Generation EU — the Recovery and Resilience Mechanism.</p>
+      <p class="body-txt">The project covers: procurement and implementation of digital tools and strengthening employees' digital skills through training. Expected results: significant growth in productivity, number of clients, revenue and digitalisation of business processes.</p>
+      <div class="eu-logos">
+        <img class="eu-logo" src="https://vodolim.hr/wp-content/uploads/2021/02/HAMAG.jpg" alt="HAMAG" onerror="this.outerHTML='<span style=\'font-size:13px;color:#A09D97;\'>HAMAG</span>'">
+        <img class="eu-logo" src="https://vodolim.hr/wp-content/uploads/2021/02/okolis-lenta-300x72-1-450x148.jpg" alt="Okolis" onerror="this.outerHTML='<span style=\'font-size:13px;color:#A09D97;\'>OKOLIS</span>'">
+        <img class="eu-logo" src="https://vodolim.hr/wp-content/uploads/2021/02/ESIF-Logo.png" alt="ESIF" onerror="this.outerHTML='<span style=\'font-size:13px;color:#A09D97;\'>ESIF</span>'">
+      </div>
+      <a href="https://vodolim.hr/wp-content/uploads/2015/05/VODOLIM_instalacije_Web-stranica.pdf" target="_blank" style="display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:12px 22px;background:#3A9B4E;color:#fff;font-size:13px;font-weight:600;letter-spacing:.06em;border-radius:8px;text-decoration:none">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15V3m0 12-4-4m4 4 4-4M2 17v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2"/></svg>
+        Download EU project (PDF)
+      </a>
+    </div>
+    <div class="eu-card">
+      <div class="eu-card-head"><h3>EU PROJECT — BRIEF DESCRIPTION</h3></div>
+      <div class="eu-row"><span class="eu-k">Total value</span><span class="eu-v">15,000 €</span></div>
+      <div class="eu-row"><span class="eu-k">EU co-financing</span><span class="eu-v g">8,400 €</span></div>
+      <div class="eu-row"><span class="eu-k">Period</span><span class="eu-v">2025 – 2026</span></div>
+      <div class="eu-row"><span class="eu-k">Source</span><span class="eu-v" style="font-size:12px">Next Generation EU</span></div>
+      <div class="eu-row"><span class="eu-k">Ref. no.</span><span class="eu-v" style="font-size:11px">NPOO.C1.1.2.R3-12.01-V15.0333</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOVOSTI -->
+<section id="novosti" class="novosti">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px">
+    <div><span class="lbl">From the company</span><h2 class="h2">News</h2></div>
+    <a href="novosti.html" class="s-lnk">All news →</a>
+  </div>
+  <div class="news-g">
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/07/WhatsApp-Image-2026-06-27-at-11.19.28-700x420.jpeg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">1 JULY 2026</div>
+        <div class="nc-h">Workers' Games — sport and togetherness</div>
+        <div class="nc-p">Laughter, team spirit and great atmosphere marked the annual workers' games in Donja Stubica.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/06/706813813_1641579977575636_8497993175470067808_n-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">11 JUNE 2026</div>
+        <div class="nc-h">Team building in Bolfan</div>
+        <div class="nc-p">Building team spirit through sport, socialising and shared values at Vinski Vrh in Bolfan.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/04/653711293_1585015586565409_378279913576056762_n-1-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">14 APRIL 2026</div>
+        <div class="nc-h">Kindergarten in Marija Gorica — construction started</div>
+        <div class="nc-p">We have begun construction of a new kindergarten that will soon welcome children in Marija Gorica.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2026/03/643371864_1566636511736650_2180135527392484269_n-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">10 MARCH 2026</div>
+        <div class="nc-h">Professional training in Italy</div>
+        <div class="nc-p">A visit to an Italian factory of a leading European manufacturer in collaboration with Tim Novak d.o.o.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2025/02/20240718_121244-700x420.jpg" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">4 NOVEMBER 2025</div>
+        <div class="nc-h">Commercial building C.S. Prečko</div>
+        <div class="nc-p">A commercial building with a basement and three above-ground floors in Zagreb's Prečko district.</div>
+      </div>
+    </div>
+    <div class="nc">
+      <div class="nc-img"><img src="https://vodolim.hr/wp-content/uploads/2025/09/Black-and-Beige-Simple-Book-Mockup-Instagram-Post-700x420.png" alt="" onerror="this.style.display='none'"></div>
+      <div class="nc-body">
+        <div class="nc-date">9 SEPTEMBER 2025</div>
+        <div class="nc-h">New issue of Vodoritam</div>
+        <div class="nc-p">A new edition of Vodolim's internal magazine — stay up to date with what's happening in our company.</div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- NJEMAČKO TRŽIŠTE -->
+<section id="njemacko" class="de">
+  <div class="de-inner">
+    <div>
+      <span class="lbl">International work</span>
+      <h2 class="h2">Become a Vodolim partner in Germany!</h2>
+      <p class="de-desc">Are you in water, heating and cooling installations and looking for a reliable partner in the German market?</p>
+      <p class="de-desc">Vodolim has been successfully operating in Germany for 6 years, working exclusively with German investors. Our experience and quality of work is recognised far beyond Croatia's borders.</p>
+      <div class="de-pts">
+        <div class="de-pt"><div class="dp-dot"></div><p class="dp-txt">Accommodation provided for all partners</p></div>
+        <div class="de-pt"><div class="dp-dot"></div><p class="dp-txt">Safe and stable business environment</p></div>
+        <div class="de-pt"><div class="dp-dot"></div><p class="dp-txt">Regular and guaranteed payments</p></div>
+      </div>
+      <a href="kontakt.html" class="btn-g">Become a partner</a>
+    </div>
+    <div class="de-img">
+      <img src="https://vodolim.hr/wp-content/uploads/2015/05/NASLOVNA-SLIDER-31.jpg" alt="Njemačko tržište" onerror="this.style.display='none'">
+    </div>
+  </div>
+</section>
+
+<!-- KALKULATOR -->
+<section class="kalk" id="kalkulator">
+  <div style="margin-bottom:52px">
+    <span class="lbl">Rough estimate</span>
+    <h2 class="h2">Construction cost calculator</h2>
+  </div>
+  <div class="kalk-inner">
+    <div class="kalk-form-wrap">
+      <div>
+        <label class="kalk-lbl" for="k-tip">PROJECT TYPE</label>
+        <select class="kalk-sel" id="k-tip">
+          <option value="kuca">Family house</option>
+          <option value="zgrada">Residential building</option>
+          <option value="poslovni">Commercial building</option>
+          <option value="obnova">Energy renovation</option>
+        </select>
+      </div>
+      <div>
+        <label class="kalk-lbl" for="k-m2">FLOOR AREA</label>
+        <div class="kalk-slider-wrap">
+          <input class="kalk-slider" type="range" id="k-m2" min="50" max="500" value="150" step="10">
+          <span class="kalk-val" id="k-m2-out">150 m²</span>
+        </div>
+      </div>
+      <div>
+        <label class="kalk-lbl" for="k-kval">FINISH QUALITY</label>
+        <select class="kalk-sel" id="k-kval">
+          <option value="std">Standard</option>
+          <option value="visa">Premium</option>
+          <option value="lux">Luxury</option>
+        </select>
+      </div>
+      <p style="font-size:13.5px;color:#7A7870;line-height:1.8;margin-top:8px">Enter your project parameters to get a rough cost estimate. For a precise quote contact us — every project is unique.</p>
+    </div>
+    <div class="kalk-result">
+      <div class="kalk-result-lbl">ESTIMATED PRICE</div>
+      <div class="kalk-price" id="k-min">150.000 €</div>
+      <div class="kalk-range-txt" id="k-range">– 210.000 €</div>
+      <div class="kalk-items">
+        <div class="kalk-row"><span class="kalk-row-k">Floor area</span><span class="kalk-row-v" id="k-r-m2">150 m²</span></div>
+        <div class="kalk-row"><span class="kalk-row-k">Price per m²</span><span class="kalk-row-v" id="k-r-m2c">1,000–1,400 €</span></div>
+        <div class="kalk-row"><span class="kalk-row-k">Project type</span><span class="kalk-row-v" id="k-r-tip">Family house</span></div>
+        <div class="kalk-row"><span class="kalk-row-k">Quality</span><span class="kalk-row-v" id="k-r-kval">Standard</span></div>
+      </div>
+      <a href="kontakt.html" class="kalk-cta">Request a precise quote</a>
+      <div class="kalk-disc">* The estimate is indicative and does not include costs of project documentation, utility connections or permits. Final price depends on project specifics.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CJENIK -->
+<section class="cjenik" id="cjenik">
+  <span class="lbl">Price transparency</span>
+  <h2 class="h2">Service pricing</h2>
+  <p class="cjenik-sub">Indicative prices for our services for private individuals. Every project is unique — final price depends on the scope of work, materials and location. Contact us for a precise quote.</p>
+  <div class="cjenik-pdv">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="#3A9B4E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+    All prices exclude VAT (VAT 25% charged separately)
+  </div>
+  <table class="cjenik-table">
+    <thead>
+      <tr>
+        <th>SERVICE</th>
+        <th>PRICE FROM</th>
+        <th>PRICE TO</th>
+        <th>UNIT</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div class="cjenik-name">Family house construction</div>
+          <div class="cjenik-desc">Complete turnkey construction — foundations, structure, roof, facade, installations, finishing works</div>
+        </td>
+        <td><div class="cjenik-price">1,000 €</div></td>
+        <td><div class="cjenik-price">2,800 €</div></td>
+        <td><div class="cjenik-unit">PER m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Residential building</div>
+          <div class="cjenik-desc">Multi-unit residential buildings, apartment blocks — from foundations to handover</div>
+        </td>
+        <td><div class="cjenik-price">800 €</div></td>
+        <td><div class="cjenik-price">2,200 €</div></td>
+        <td><div class="cjenik-unit">PER m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Energy renovation</div>
+          <div class="cjenik-desc">Thermal insulation, window and door replacement, facade, roof — in line with EU standards</div>
+        </td>
+        <td><div class="cjenik-price">350 €</div></td>
+        <td><div class="cjenik-price">1,000 €</div></td>
+        <td><div class="cjenik-unit">PER m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Low-energy house</div>
+          <div class="cjenik-desc">Construction with heat pumps, solar panels and geothermal system</div>
+        </td>
+        <td><div class="cjenik-price">1,200 €</div></td>
+        <td><div class="cjenik-price">3,200 €</div></td>
+        <td><div class="cjenik-unit">PER m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Installations (plumbing, heating, cooling)</div>
+          <div class="cjenik-desc">Plumbing, heating and cooling installations — for new and existing buildings</div>
+        </td>
+        <td><div class="cjenik-price">200 €</div></td>
+        <td><div class="cjenik-price">500 €</div></td>
+        <td><div class="cjenik-unit">PER m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Interior works</div>
+          <div class="cjenik-desc">Plastering, ceramics, parquet, painting, plasterboard, joinery</div>
+        </td>
+        <td><div class="cjenik-price">150 €</div></td>
+        <td><div class="cjenik-price">450 €</div></td>
+        <td><div class="cjenik-unit">PER m²</div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cjenik-name">Project documentation</div>
+          <div class="cjenik-desc">Concept design, main project, permit procurement and all related paperwork</div>
+        </td>
+        <td><div class="cjenik-price">2,000 €</div></td>
+        <td><div class="cjenik-price">15,000 €</div></td>
+        <td><div class="cjenik-unit">PER PROJECT</div></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cjenik-note">
+    <strong>Note:</strong> Prices shown are indicative and may vary depending on project specifics, chosen materials, location and market conditions at the time of contract. Published pursuant to the Decision on Publishing Price Lists on Websites (NN 101/2026). Price list valid from 1 October 2026. Last updated: September 2026. For a precise quote <a href="kontakt.html" style="color:#3A9B4E;border-bottom:1px solid rgba(58,155,78,.3)">contact us</a>.
+  </div>
+  <div style="margin-top:28px;text-align:center">
+    <a href="cjenik.csv" download="Vodolim-pricelist-2026.csv" style="display:inline-flex;align-items:center;gap:10px;background:transparent;border:1.5px solid rgba(58,155,78,.5);color:#3A9B4E;padding:12px 28px;border-radius:4px;font-size:14px;font-weight:500;letter-spacing:.03em;transition:background .2s,border-color .2s" onmouseover="this.style.background='rgba(58,155,78,.08)';this.style.borderColor='#3A9B4E'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(58,155,78,.5)'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download price list (.CSV) — pursuant to NN 101/2026
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="lbl">Frequently asked questions</span>
+    <h2 class="h2">Have questions? We have answers.</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">How long does it take to build a family house?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Depending on the size and complexity of the project, building a family house takes 10–18 months from obtaining a building permit. Our team works in parallel on multiple phases to shorten timelines as much as possible. The exact timeframe is always defined in the contract.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you offer a warranty on completed works?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Yes. We provide a statutory 2-year warranty on all completed works, and 10 years on the building structure in accordance with the Construction Act. We hold ISO 9001, ISO 14001 and ISO 45001 certificates guaranteeing the quality of our processes.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you carry out energy renovation of older buildings?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Absolutely. Energy renovation of residential and commercial buildings is one of our core activities. We carry out thermal insulation, replacement of windows and doors, installation of solar panels and heat pumps, and all required installations. We can also help you apply for EU funds to co-finance the renovation.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you also work in Germany?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Yes, we have been actively present in the German market for 6 years, working exclusively with German investors. If you work in installations and are looking for a reliable partner in Germany, contact us — we offer provided accommodation and stable working conditions.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is there a minimum project size for collaboration?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">There is no strict minimum — we work on everything from family homes to hospitals and commercial complexes. However, our strength lies in complex, large-scale projects where the full capacity of our 150+ experts can be utilised. For smaller projects we can recommend partners from our network.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How can I get a quote?
+        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+      </button>
+      <div class="faq-a">Fill in the contact form on this page or call us on +385 (0) 49 286 596. We arrange a free consultation where we discuss your project, timeline and rough budget. Based on that conversation we prepare a precise quote.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERI -->
+<div class="partners">
+  <span class="partners-lbl">OUR PARTNERS</span>
+  <div class="p-logos">
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wiesman-mali-logo.png" alt="Viessmann" onerror="this.outerHTML='<span class=\'p-name\'>Viessmann</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/geberit.png" alt="Geberit" onerror="this.outerHTML='<span class=\'p-name\'>Geberit</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wurth.png" alt="Würth" onerror="this.outerHTML='<span class=\'p-name\'>Würth</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/kolpa.png" alt="Kolpasan" onerror="this.outerHTML='<span class=\'p-name\'>Kolpasan</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/helios.png" alt="Helios" onerror="this.outerHTML='<span class=\'p-name\'>Helios</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/slo.png" alt="Slovarm" onerror="this.outerHTML='<span class=\'p-name\'>Slovarm</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/vargon.png" alt="Vargon" onerror="this.outerHTML='<span class=\'p-name\'>Vargon</span>'"></div>
+    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/inker.png" alt="Inker" onerror="this.outerHTML='<span class=\'p-name\'>Inker</span>'"></div>
+  </div>
+</div>
+
+<!-- BEFORE/AFTER SLIDER -->
+<section class="ba-section reveal">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="lbl" style="color:rgba(255,255,255,.3)">Energy renovation</span>
+    <h2 class="h2" style="color:#fff">See the difference in action</h2>
+    <p style="color:rgba(255,255,255,.35);font-size:14px;margin-top:12px">Drag the slider and see the building transformation</p>
+  </div>
+  <div class="ba-wrap" id="ba-wrap">
+    <div class="ba-after">
+      <img src="https://vodolim.hr/wp-content/uploads/2021/09/OBITELJSKAKUCA-DONJA-STBICA-700x420.jpg" alt="Completed family house — Donja Stubica">
+      <div class="ba-label ba-label-after">AFTER</div>
+    </div>
+    <div class="ba-before" id="ba-before">
+      <img src="https://vodolim.hr/wp-content/uploads/2025/02/20240718_121244-700x420.jpg" alt="Construction site — C.S. Prečko">
+      <div class="ba-label ba-label-before">BEFORE</div>
+    </div>
+    <div class="ba-handle" id="ba-handle"></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALI -->
+<section class="testi reveal">
+  <div style="text-align:center;margin-bottom:52px">
+    <span class="lbl">Client reviews</span>
+    <h2 class="h2">What our clients say</h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Vodolim built our family home from the ground up, turnkey. A professional team, delivered exactly on time and on budget. Highly recommended."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MK</div>
+        <div><div class="testi-name">Marko Kovačević</div><div class="testi-role">FAMILY HOME, ZAPREŠIĆ</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The energy renovation of our apartment building was completed faster than we expected. Heating bills reduced by 40%. Excellent work!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AH</div>
+        <div><div class="testi-name">Ana Horvatić</div><div class="testi-role">RESIDENTIAL BUILDING, ZAGREB</div></div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"We have been working with Vodolim for 10 years on all installation works. Reliable, skilled, always available. A true project partner."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">IP</div>
+        <div><div class="testi-name">Ivan Petrović</div><div class="testi-role">COMMERCIAL BUILDING, KRAPINA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section reveal">
+  <div style="text-align:center;margin-bottom:64px">
+    <span class="lbl" style="color:rgba(255,255,255,.3)">Our story</span>
+    <h2 class="h2" style="color:#fff">50 years of tradition</h2>
+  </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">›</div>
+      <div class="tl-content">
+        <div class="tl-year">1973</div>
+        <div class="tl-title">Company founded</div>
+        <div class="tl-desc">Leopold Brundula founds Vodolim as a craft workshop for installation works in Donja Stubica. Humble beginnings, big vision.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">›</div>
+      <div class="tl-content">
+        <div class="tl-year">1990</div>
+        <div class="tl-title">Expansion to complex buildings</div>
+        <div class="tl-desc">Vodolim begins working on larger residential and commercial buildings. The team grows to 20+ specialists.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">›</div>
+      <div class="tl-content">
+        <div class="tl-year">2005</div>
+        <div class="tl-title">Hospital projects</div>
+        <div class="tl-desc">First hospital and public projects entrusted to us — the most demanding technical standards become our everyday reality.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">›</div>
+      <div class="tl-content">
+        <div class="tl-year">2015</div>
+        <div class="tl-title">Low-energy construction</div>
+        <div class="tl-desc">Introduction of low-energy and passive solutions into the portfolio. Certified for EU energy efficiency standards.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">›</div>
+      <div class="tl-content">
+        <div class="tl-year">2023</div>
+        <div class="tl-title">50 years — 150+ specialists</div>
+        <div class="tl-desc">Half-century jubilee. A team of 150+ specialists, 24+ active projects, partnerships with leading European brands.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar">
+  <a href="tel:+38549286596" class="sticky-call">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    CALL
+  </a>
+  <a href="kontakt.html" class="sticky-upit">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    SEND INQUIRY
+  </a>
+</div>
+
+<!-- KONTAKT -->
+<section id="kontakt" class="kontakt">
+  <div class="kontakt-inner">
+    <div>
+      <span class="lbl">How to reach us</span>
+      <h2 class="h2">Let's talk about<br>your project</h2>
+      <div class="k-items">
+        <div><div class="k-lbl">ADDRESS</div><div class="k-val">Nova ulica 3 A, Donja Stubica</div></div>
+        <div><div class="k-lbl">PHONE</div><div class="k-val"><a href="tel:+38549286596">+385 (0) 49 286 596</a></div></div>
+        <div><div class="k-lbl">MOBILE</div><div class="k-val"><a href="tel:+38598444156">098 444 156</a></div></div>
+        <div><div class="k-lbl">EMAIL</div><div class="k-val"><a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a></div></div>
+        <div><div class="k-lbl">FOLLOW US</div><div class="k-val" style="display:flex;gap:20px"><a href="https://www.facebook.com/vodolimkuce" target="_blank" style="color:#3A9B4E">Facebook</a><a href="https://www.instagram.com/vodolim.vodolim" target="_blank" style="color:#3A9B4E">Instagram</a></div></div>
+      </div>
+      <div class="maps-wrap">
+        <iframe src="https://maps.google.com/maps?q=Nova+ulica+3A,+Donja+Stubica,+Hrvatska&output=embed&z=15" allowfullscreen loading="lazy" title="Lokacija Vodolim"></iframe>
+      </div>
+    </div>
+    <form id="kontakt-forma" action="https://formspree.io/f/xpwzgdkv" method="POST">
+      <input type="hidden" name="_subject" value="New inquiry from vodolim.amelodesign.com">
+      <input type="hidden" name="_next" value="https://vodolim.amelodesign.com#kontakt">
+      <div><label class="f-lbl">FULL NAME</label><input type="text" name="ime" placeholder="Your full name" required></div>
+      <div><label class="f-lbl">EMAIL</label><input type="email" name="email" placeholder="your@email.com" required></div>
+      <div><label class="f-lbl">PHONE</label><input type="tel" name="telefon" placeholder="+385 ..."></div>
+      <div><label class="f-lbl">MESSAGE</label><textarea name="poruka" placeholder="Describe your project or inquiry..." required></textarea></div>
+      <button class="f-btn" type="submit">SEND INQUIRY</button>
+      <div id="forma-msg" style="margin-top:14px;font-size:13px;display:none"></div>
+    </form>
+  </div>
+</section>
+
+<!-- EU STRIP -->
+<div class="eu-strip">
+  <p><strong>EU project:</strong> Increasing competitiveness through investment in a software solution — Vodolim instalacije d.o.o. · Total value: 15,000 € · EU co-financing: 8,400 € · 2025–2026 · Next Generation EU · Ref. no. NPOO.C1.1.2.R3-12.01-V15.0333</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">VODOLIM INSTALACIJE D.O.O.</div>
+      <div class="footer-sub">A small company for big projects · Tradition since 1973</div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <div class="fc-t">NAVIGATION</div>
+        <div class="fc-links">
+          <a href="stanovi.html">Vodolim Apartments</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="onama.html">About us</a>
+          <a href="nisko.html">Low-energy homes</a>
+          <a href="projekti.html">Projects</a>
+          <a href="novosti.html">News</a>
+          <a href="njemacko.html">German market</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-t">CONTACT</div>
+        <div class="fc-links">
+          <a href="tel:+38549286596">+385 (0) 49 286 596</a>
+          <a href="tel:+38598444156">098 444 156</a>
+          <a href="mailto:vodolim@vodolim.eu">vodolim@vodolim.eu</a>
+          <a href="#">Nova ulica 3A, Donja Stubica</a>
+        </div>
+      </div>
+      <div>
+        <div class="fc-t">LEGAL</div>
+        <div class="fc-links">
+          <a href="cjenik.html">Service pricing</a>
+          <a href="#">Privacy policy</a>
+          <a href="#">Cookies</a>
+          <a href="#">EU projects</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span class="footer-copy">© Vodolim instalacije d.o.o. 2026. All rights reserved. · Web design: <a href="https://amelodesign.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,.35);text-decoration:none">Amelo Design</a></span>
+    <div class="footer-soc">
+      <a href="https://www.facebook.com/vodolimkuce" target="_blank">FACEBOOK</a>
+      <a href="https://www.instagram.com/vodolim.vodolim" target="_blank">INSTAGRAM</a>
+    </div>
+  </div>
+</footer>
+
+<!-- GDPR COOKIE BANNER -->
+<div class="gdpr" id="gdpr">
+  <div class="gdpr-txt">
+    We use cookies to improve your experience on the site and to analyse traffic. You may accept all cookies or decline non-essential ones. More information in our <a href="#">Cookie Policy</a>.
+  </div>
+  <div class="gdpr-btns">
+    <button class="gdpr-decline" id="gdpr-decline">Decline</button>
+    <button class="gdpr-accept" id="gdpr-accept">Accept all</button>
+  </div>
+</div>
+
+<script>
+/* ── SCROLL PROGRESS + BACK TO TOP ── */
+(function(){
+  var bar=document.getElementById('scroll-bar');
+  var btt=document.getElementById('btt');
+  window.addEventListener('scroll',function(){
+    var st=window.scrollY||document.documentElement.scrollTop;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(st/h*100):0)+'%';
+    btt.classList.toggle('show',st>400);
+  },{passive:true});
+  btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+
+/* ── GDPR ── */
+(function(){
+  var el=document.getElementById('gdpr');
+  try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}
+  document.getElementById('gdpr-accept').onclick=function(){
+    try{localStorage.setItem('gdpr','1')}catch(e){}
+    el.classList.add('gdpr-hidden');
+  };
+  document.getElementById('gdpr-decline').onclick=function(){
+    try{localStorage.setItem('gdpr','0')}catch(e){}
+    el.classList.add('gdpr-hidden');
+  };
+})();
+
+/* ── LIGHTBOX ── */
+(function(){
+  var lb=document.getElementById('lbox');
+  var lbImg=document.getElementById('lbox-img');
+  var lbName=document.getElementById('lbox-name');
+  var lbLoc=document.getElementById('lbox-loc');
+  var cards=[];
+  var cur=0;
+
+  document.querySelectorAll('.pc').forEach(function(card,i){
+    var imgEl=card.querySelector('.pc-img');
+    var nameEl=card.querySelector('.pc-name');
+    var locEl=card.querySelector('.pc-loc');
+    var bg=imgEl?imgEl.style.backgroundImage:'';
+    var url=bg.replace(/url\(['"]?([^'"]+)['"]?\)/,'$1');
+    if(!url||url===bg)return;
+    var entry={url:url,name:nameEl?nameEl.textContent:'',loc:locEl?locEl.textContent:''};
+    var idx=cards.length;
+    cards.push(entry);
+    card.style.cursor='zoom-in';
+    card.addEventListener('click',function(){open(idx)});
+  });
+
+  function open(i){
+    cur=i;
+    var c=cards[i];
+    lbImg.src=c.url;
+    lbImg.alt=c.name;
+    lbName.textContent=c.name;
+    lbLoc.textContent=c.loc;
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+    lbImg.src='';
+  }
+  document.getElementById('lbox-close').onclick=close;
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.getElementById('lbox-prev').onclick=function(){open((cur-1+cards.length)%cards.length)};
+  document.getElementById('lbox-next').onclick=function(){open((cur+1)%cards.length)};
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')close();
+    if(e.key==='ArrowLeft')open((cur-1+cards.length)%cards.length);
+    if(e.key==='ArrowRight')open((cur+1)%cards.length);
+  });
+})();
+
+/* ── FAQ ── */
+(function(){
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click',function(){
+      var open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+      if(!open)item.classList.add('open');
+    });
+  });
+})();
+
+/* ── HAMBURGER MENU ── */
+function toggleMobileMenu(){
+  var m=document.getElementById('mobile-menu');
+  var h=document.getElementById('hamburger');
+  var open=m.classList.toggle('open');
+  h.classList.toggle('open',open);
+  document.body.style.overflow=open?'hidden':'';
+}
+function closeMobileMenu(){
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+/* ── SCROLL REVEAL ── */
+(function(){
+  var autoTargets=[
+    '.usluge-head','.bento .bc',
+    '.onama-inner > *','.nisko-top > *','.nisko-kpis',
+    '.eu-inner > *','.news-g .nc','.de-inner > *',
+    '.faq-item','.kalk-inner > *','.kontakt-inner > *',
+    '.partners-row','.port-g .pc'
+  ];
+  autoTargets.forEach(function(s){
+    document.querySelectorAll(s).forEach(function(el,i){
+      if(!el.classList.contains('reveal')&&!el.classList.contains('reveal-l')&&!el.classList.contains('reveal-r')){
+        el.classList.add('reveal');
+        el.style.transitionDelay=(i*0.06)+'s';
+      }
+    });
+  });
+  function check(){
+    var wh=window.innerHeight;
+    document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s').forEach(function(el){
+      if(el.getBoundingClientRect().top<wh*0.92)el.classList.add('in');
+    });
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  check();
+})();
+
+/* ── ANIMATED COUNTERS ── */
+(function(){
+  var done=false;
+  var data=[{target:50,sfx:'+'},{target:150,sfx:'+'},{target:24,sfx:'+'}];
+  var els=document.querySelectorAll('.stat-n');
+  function animCount(el,target,sfx){
+    var dur=2000,interval=16,steps=dur/interval,step=0;
+    var ease=function(t){return t<.5?4*t*t*t:(t-1)*(2*t-2)*(2*t-2)+1};
+    var t=setInterval(function(){
+      step++;
+      var val=Math.round(target*ease(step/steps));
+      if(step>=steps){val=target;clearInterval(t)}
+      el.innerHTML=val+'<sup>'+sfx+'</sup>';
+    },interval);
+  }
+  function checkHero(){
+    if(done||!els.length)return;
+    if(els[0].getBoundingClientRect().top<window.innerHeight){
+      done=true;
+      data.forEach(function(d,i){if(els[i])animCount(els[i],d.target,d.sfx)});
+    }
+  }
+  window.addEventListener('scroll',checkHero,{passive:true});
+  setTimeout(checkHero,400);
+})();
+
+/* ── BEFORE/AFTER SLIDER ── */
+(function(){
+  var wrap=document.getElementById('ba-wrap');
+  var before=document.getElementById('ba-before');
+  var handle=document.getElementById('ba-handle');
+  if(!wrap)return;
+  var dragging=false;
+  function setPos(x){
+    var rect=wrap.getBoundingClientRect();
+    var pct=Math.min(Math.max((x-rect.left)/rect.width*100,2),98);
+    before.style.width=pct+'%';
+    handle.style.left=pct+'%';
+  }
+  handle.addEventListener('mousedown',function(e){dragging=true;e.preventDefault()});
+  wrap.addEventListener('touchstart',function(e){dragging=true},{passive:true});
+  document.addEventListener('mousemove',function(e){if(dragging)setPos(e.clientX)});
+  document.addEventListener('touchmove',function(e){if(dragging)setPos(e.touches[0].clientX)},{passive:true});
+  document.addEventListener('mouseup',function(){dragging=false});
+  document.addEventListener('touchend',function(){dragging=false});
+  wrap.addEventListener('click',function(e){setPos(e.clientX)});
+})();
+
+/* ── 3D TILT ── */
+(function(){
+  document.querySelectorAll('.bc,.testi-card').forEach(function(el){
+    el.addEventListener('mousemove',function(e){
+      var r=el.getBoundingClientRect();
+      var x=(e.clientX-r.left)/r.width-.5;
+      var y=(e.clientY-r.top)/r.height-.5;
+      el.style.transform='perspective(600px) rotateY('+(x*10)+'deg) rotateX('+(-y*10)+'deg) scale(1.02)';
+    });
+    el.addEventListener('mouseleave',function(){
+      el.style.transform='perspective(600px) rotateY(0deg) rotateX(0deg) scale(1)';
+    });
+  });
+})();
+
+/* ── KALKULATOR ── */
+(function(){
+  var tipSel=document.getElementById('k-tip');
+  var kvalSel=document.getElementById('k-kval');
+  var m2Inp=document.getElementById('k-m2');
+  var m2Out=document.getElementById('k-m2-out');
+
+  var prices={
+    kuca:{std:[1000,1400],visa:[1400,1900],lux:[1900,2800]},
+    zgrada:{std:[800,1100],visa:[1100,1500],lux:[1500,2200]},
+    poslovni:{std:[900,1200],visa:[1200,1700],lux:[1700,2500]},
+    obnova:{std:[350,500],visa:[500,700],lux:[700,1000]}
+  };
+  var tipNames={kuca:'Obiteljska kuća',zgrada:'Stambena zgrada',poslovni:'Poslovni objekt',obnova:'Energetska obnova'};
+  var kvalNames={std:'Standardna',visa:'Viša',lux:'Luksuzna'};
+
+  function fmt(n){return n.toLocaleString('hr-HR')+'&nbsp;€'}
+  function calc(){
+    var tip=tipSel.value,kval=kvalSel.value,m2=parseInt(m2Inp.value,10);
+    var rng=prices[tip][kval];
+    var lo=rng[0]*m2,hi=rng[1]*m2;
+    m2Out.textContent=m2+' m²';
+    document.getElementById('k-min').innerHTML=fmt(lo);
+    document.getElementById('k-range').innerHTML='– '+fmt(hi);
+    document.getElementById('k-r-m2').textContent=m2+' m²';
+    document.getElementById('k-r-m2c').textContent=rng[0].toLocaleString('hr-HR')+'–'+rng[1].toLocaleString('hr-HR')+' €/m²';
+    document.getElementById('k-r-tip').textContent=tipNames[tip];
+    document.getElementById('k-r-kval').textContent=kvalNames[kval];
+  }
+  tipSel.addEventListener('change',calc);
+  kvalSel.addEventListener('change',calc);
+  m2Inp.addEventListener('input',function(){m2Out.textContent=m2Inp.value+' m²';calc()});
+  calc();
+})();
+</script>
+
+<!-- TAWK.TO LIVE CHAT -->
+<script>
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/67ef4a5b16b7a5190f7bd3c7/1inuk7gal';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+</body>
+</html>
