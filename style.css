@@ -483,6 +483,7 @@ html,body{overflow-x:hidden;max-width:100%}
 }
 @media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}}
 @media(max-width:600px){.two-col-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){.kontakt-grid{grid-template-columns:1fr!important;gap:40px!important}}
 @media(max-width:760px){.ref-section{padding:60px 20px!important}}
 @media(max-width:520px){
   .port-g{grid-template-columns:1fr}
