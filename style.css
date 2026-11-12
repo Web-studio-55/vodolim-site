@@ -345,7 +345,7 @@ footer{background:#18180F;padding:60px 40px 28px}
 
 /* ── STICKY MOBILE BAR ── */
 .sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:350;background:#18180F;border-top:1px solid rgba(255,255,255,.08);padding:10px 16px;gap:10px}
-@media(max-width:760px){.sticky-bar{display:flex}}
+/* @media(max-width:760px){.sticky-bar{display:flex}} */
 .sticky-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;border-radius:6px;font-size:12px;font-weight:600;letter-spacing:.06em;text-decoration:none}
 .sticky-call{background:#3A9B4E;color:#fff}
 .sticky-upit{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12)}
@@ -479,7 +479,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .lbox-prev,.lbox-next{width:36px;height:36px;font-size:16px;left:8px}
   .lbox-next{right:8px}
   .float-btns{display:none}
-  .btt{right:12px;bottom:76px}
+  .btt{right:12px;bottom:20px}
 }
 @media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}}
 @media(max-width:600px){.two-col-grid{grid-template-columns:1fr!important}}
