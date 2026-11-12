@@ -281,9 +281,18 @@
   <a href="tel:+38549286596" class="sticky-call"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>NAZOVI</a>
   <a href="kontakt.html" class="sticky-upit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>POŠALJI UPIT</a>
 </div>
+<style>
+.yf-btn{padding:8px 16px;border-radius:20px;border:1px solid rgba(24,24,15,.14);background:#fff;font-size:12.5px;font-family:inherit;color:#6B6860;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.yf-btn:hover{background:#F7F5F1;border-color:rgba(24,24,15,.22)}
+.yf-btn.active{background:#18180F;color:#fff;border-color:#18180F}
+</style>
 <script>
 function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var h=document.getElementById('hamburger');m.classList.toggle('open');h.classList.toggle('open')}
 function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}
+var activeYear='sve';
+function setYear(btn,year){activeYear=year;document.querySelectorAll('.yf-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');filterRef()}
+function filterRef(){var q=(document.getElementById('ref-search').value||'').toLowerCase();document.querySelectorAll('#ref-tbody tr[data-year]').forEach(function(r){var matchYear=activeYear==='sve'||r.dataset.year===activeYear;var matchText=!q||r.textContent.toLowerCase().includes(q);r.style.display=(matchYear&&matchText)?'':'none'})}
+(function(){var rows=document.querySelectorAll('#ref-tbody tr[data-year]');var years=[];rows.forEach(function(r){if(years.indexOf(r.dataset.year)===-1)years.push(r.dataset.year)});years.sort(function(a,b){return b-a});var wrap=document.getElementById('year-filters');years.forEach(function(y){var btn=document.createElement('button');btn.className='yf-btn';btn.dataset.year=y;btn.textContent=y;btn.onclick=function(){setYear(this,y)};wrap.appendChild(btn)})})();
 (function(){var bar=document.getElementById('scroll-bar');var btt=document.getElementById('btt');window.addEventListener('scroll',function(){var st=window.scrollY||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(st/h*100):0)+'%';btt.classList.toggle('show',st>400)},{passive:true});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
 (function(){var el=document.getElementById('gdpr');try{if(localStorage.getItem('gdpr'))el.classList.add('gdpr-hidden')}catch(e){}document.getElementById('gdpr-accept').onclick=function(){try{localStorage.setItem('gdpr','1')}catch(e){}el.classList.add('gdpr-hidden')};document.getElementById('gdpr-decline').onclick=function(){try{localStorage.setItem('gdpr','0')}catch(e){}el.classList.add('gdpr-hidden')}})();
 (function(){var els=document.querySelectorAll('.reveal,.reveal-l,.reveal-r,.reveal-s');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.12});els.forEach(function(el){io.observe(el)})})();
