@@ -338,11 +338,16 @@ nav{
 
 /* ── PARTNERI ── */
 .partners{padding:48px 40px;background:#F7F5F1;border-top:1px solid rgba(24,24,15,.09)}
-.partners-lbl{font-size:9.5px;letter-spacing:.2em;color:#A09D97;text-align:center;display:block;margin-bottom:28px}
-.p-logos{display:flex;gap:16px;align-items:center;justify-content:center;flex-wrap:wrap}
-.p-logo-card{background:#fff;border:1px solid rgba(24,24,15,.09);border-radius:10px;padding:16px 24px;display:flex;align-items:center;justify-content:center;height:80px;min-width:130px;transition:box-shadow .2s,border-color .2s}
+.partners-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px}
+.partners-lbl{font-size:9.5px;letter-spacing:.2em;color:#A09D97;display:block}
+.partners-arrows{display:flex;gap:8px}
+.p-arrow{width:36px;height:36px;border-radius:50%;border:1px solid rgba(24,24,15,.15);background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:#18180F;transition:background .2s,border-color .2s;line-height:1}
+.p-arrow:hover{background:#3A9B4E;border-color:#3A9B4E;color:#fff}
+.p-carousel{overflow:hidden;position:relative}
+.p-logos{display:flex;gap:16px;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.p-logo-card{background:#fff;border:1px solid rgba(24,24,15,.09);border-radius:10px;padding:16px 24px;display:flex;align-items:center;justify-content:center;height:80px;min-width:140px;flex-shrink:0;transition:box-shadow .2s,border-color .2s}
 .p-logo-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08);border-color:rgba(24,24,15,.15)}
-.p-logo-card img{height:36px;max-width:110px;object-fit:contain;filter:grayscale(1);opacity:.7;transition:opacity .25s,filter .25s}
+.p-logo-card img{height:36px;max-width:110px;object-fit:contain;filter:grayscale(1);opacity:.6;transition:opacity .25s,filter .25s}
 .p-logo-card:hover img{filter:grayscale(0);opacity:1}
 .p-name{font-size:13.5px;color:#B0ADA7;letter-spacing:.04em}
 
@@ -377,6 +382,9 @@ textarea{min-height:130px;resize:vertical}
 .eu-strip{background:#EDEAE4;border-top:1px solid rgba(24,24,15,.09);padding:16px 40px}
 .eu-strip p{font-size:11.5px;color:#7A7870;line-height:1.7}
 .eu-strip strong{color:#18180F}
+.eu-logos-strip{background:#fff;border-top:1px solid rgba(24,24,15,.09);padding:20px 40px;display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.eu-logos-strip img{height:50px;object-fit:contain;padding:0 20px;border-right:1px solid rgba(24,24,15,.08);opacity:.85}
+.eu-logos-strip img:last-child{border-right:none}
 
 /* ── FOOTER ── */
 footer{background:#18180F;padding:60px 40px 28px}
@@ -1620,16 +1628,24 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 
 <!-- PARTNERI -->
 <div class="partners">
-  <span class="partners-lbl">NAŠI PARTNERI</span>
-  <div class="p-logos">
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wiesman-mali-logo.png" alt="Viessmann" onerror="this.outerHTML='<span class=\'p-name\'>Viessmann</span>'"></div>
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/geberit.png" alt="Geberit" onerror="this.outerHTML='<span class=\'p-name\'>Geberit</span>'"></div>
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wurth.png" alt="Würth" onerror="this.outerHTML='<span class=\'p-name\'>Würth</span>'"></div>
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/kolpa.png" alt="Kolpasan" onerror="this.outerHTML='<span class=\'p-name\'>Kolpasan</span>'"></div>
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/helios.png" alt="Helios" onerror="this.outerHTML='<span class=\'p-name\'>Helios</span>'"></div>
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/slo.png" alt="Slovarm" onerror="this.outerHTML='<span class=\'p-name\'>Slovarm</span>'"></div>
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/vargon.png" alt="Vargon" onerror="this.outerHTML='<span class=\'p-name\'>Vargon</span>'"></div>
-    <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/inker.png" alt="Inker" onerror="this.outerHTML='<span class=\'p-name\'>Inker</span>'"></div>
+  <div class="partners-head">
+    <span class="partners-lbl">NAŠI PARTNERI</span>
+    <div class="partners-arrows">
+      <button class="p-arrow" id="p-prev" aria-label="Prethodna">&#8249;</button>
+      <button class="p-arrow" id="p-next" aria-label="Sljedeća">&#8250;</button>
+    </div>
+  </div>
+  <div class="p-carousel">
+    <div class="p-logos" id="p-logos">
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wiesman-mali-logo.png" alt="Viessmann" onerror="this.outerHTML='<span class=\'p-name\'>Viessmann</span>'"></div>
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/geberit.png" alt="Geberit" onerror="this.outerHTML='<span class=\'p-name\'>Geberit</span>'"></div>
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/wurth.png" alt="Würth" onerror="this.outerHTML='<span class=\'p-name\'>Würth</span>'"></div>
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/kolpa.png" alt="Kolpasan" onerror="this.outerHTML='<span class=\'p-name\'>Kolpasan</span>'"></div>
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/helios.png" alt="Helios" onerror="this.outerHTML='<span class=\'p-name\'>Helios</span>'"></div>
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/slo.png" alt="Slovarm" onerror="this.outerHTML='<span class=\'p-name\'>Slovarm</span>'"></div>
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/vargon.png" alt="Vargon" onerror="this.outerHTML='<span class=\'p-name\'>Vargon</span>'"></div>
+      <div class="p-logo-card"><img src="https://vodolim.hr/wp-content/uploads/2015/05/inker.png" alt="Inker" onerror="this.outerHTML='<span class=\'p-name\'>Inker</span>'"></div>
+    </div>
   </div>
 </div>
 
@@ -1782,6 +1798,13 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
 <!-- EU STRIP -->
 <div class="eu-strip">
   <p><strong>EU projekt:</strong> Podizanje konkurentnosti kroz ulaganje u softversko rješenje — Vodolim instalacije d.o.o. · Ukupna vrijednost: 15.000 € · EU sufinanciranje: 8.400 € · 2025.–2026. · Next Generation EU · Ref. br. NPOO.C1.1.2.R3-12.01-V15.0333</p>
+</div>
+
+<!-- EU LOGOS BOTTOM STRIP -->
+<div class="eu-logos-strip">
+  <img src="https://vodolim.hr/wp-content/uploads/2021/02/HAMAG.jpg" alt="HAMAG-BICRO" onerror="this.style.display='none'">
+  <img src="https://vodolim.hr/wp-content/uploads/2021/02/okolis-lenta-300x72-1-450x148.jpg" alt="Operativni program Konkurentnost i Kohezija" onerror="this.style.display='none'">
+  <img src="https://vodolim.hr/wp-content/uploads/2021/02/ESIF-Logo.png" alt="ESIF Financijski instrumenti" onerror="this.style.display='none'">
 </div>
 
 <!-- FOOTER -->
@@ -2020,6 +2043,22 @@ function closeMobileMenu(){
   document.addEventListener('mouseup',function(){dragging=false});
   document.addEventListener('touchend',function(){dragging=false});
   wrap.addEventListener('click',function(e){setPos(e.clientX)});
+})();
+
+/* ── PARTNERS CAROUSEL ── */
+(function(){
+  var track=document.getElementById('p-logos');
+  var prev=document.getElementById('p-prev');
+  var next=document.getElementById('p-next');
+  if(!track||!prev||!next)return;
+  var idx=0;
+  function cardW(){var c=track.querySelector('.p-logo-card');return c?(c.offsetWidth+16):156;}
+  function visible(){return Math.floor(track.parentElement.offsetWidth/cardW());}
+  function maxIdx(){return Math.max(0,track.children.length-visible());}
+  function go(n){idx=Math.min(Math.max(n,0),maxIdx());track.style.transform='translateX(-'+(idx*cardW())+'px)';}
+  prev.addEventListener('click',function(){go(idx-1)});
+  next.addEventListener('click',function(){go(idx+1)});
+  window.addEventListener('resize',function(){go(Math.min(idx,maxIdx()))});
 })();
 
 /* ── 3D TILT ── */
