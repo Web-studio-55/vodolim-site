@@ -482,6 +482,8 @@ html,body{overflow-x:hidden;max-width:100%}
   .btt{right:12px;bottom:76px}
 }
 @media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}}
+@media(max-width:600px){.two-col-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){.ref-section{padding:60px 20px!important}}
 @media(max-width:520px){
   .port-g{grid-template-columns:1fr}
   .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i,.pc-j,.pc-k,.pc-l{grid-column:span 1!important;height:190px!important}
