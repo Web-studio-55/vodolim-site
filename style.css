@@ -31,6 +31,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 40px;d
 .hero-video-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .hero-yt{position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);filter:brightness(.28);border:none;pointer-events:none}
 @media(max-width:760px){.hero-video-wrap{display:none}}
+@media(max-width:760px){.hero{min-height:auto;padding-top:120px}}
 .hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,6,.98) 0%,rgba(8,8,6,.55) 50%,rgba(8,8,6,.18) 100%)}
 .hero-content{position:relative;width:100%;padding:0 40px 72px;display:grid;grid-template-columns:1fr auto;align-items:flex-end;gap:48px}
 .hero-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(58,155,78,.35);border-radius:20px;padding:5px 14px 5px 8px;margin-bottom:28px;width:fit-content}
