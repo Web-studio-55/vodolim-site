@@ -488,6 +488,7 @@ html,body{overflow-x:hidden;max-width:100%}
 @media(max-width:520px){
   .port-g{grid-template-columns:1fr}
   .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i,.pc-j,.pc-k,.pc-l{grid-column:span 1!important;height:190px!important}
+  .pc-a .pc-name{font-size:15px}
   .hero-stats{flex-direction:column}
   .hero-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.07);padding:14px 16px}
   .hero-stat:last-child{border:none}
