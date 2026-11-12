@@ -156,32 +156,46 @@
     <h2 class="h2">Svi projekti 2002–2026</h2>
     <p class="body-txt" style="max-width:600px">Djelomičan pregled izvršenih radova po godinama. Kompletna referentna lista dostupna na upit.</p>
   </div>
-  <div style="background:#fff;border:1px solid rgba(24,24,15,.08);border-radius:12px;overflow:hidden" class="reveal">
-    <div style="padding:18px 28px;border-bottom:1px solid rgba(24,24,15,.07);background:#EDEAE4">
-      <span style="font-size:10px;letter-spacing:.18em;color:#3A9B4E">RECENTNI PROJEKTI 2022–2026</span>
+  <!-- FILTER -->
+  <div style="margin-bottom:24px" class="reveal">
+    <input id="ref-search" type="text" placeholder="Pretraži investitora, mjesto ili radove"
+      style="width:100%;box-sizing:border-box;padding:14px 20px;border:1px solid rgba(24,24,15,.12);border-radius:8px;font-size:14px;font-family:inherit;color:#18180F;background:#fff;outline:none;margin-bottom:16px"
+      oninput="filterRef()">
+    <div id="year-filters" style="display:flex;flex-wrap:wrap;gap:8px">
+      <button class="yf-btn active" data-year="sve" onclick="setYear(this,'sve')">Sve godine</button>
     </div>
+  </div>
+
+  <div style="background:#fff;border:1px solid rgba(24,24,15,.08);border-radius:12px;overflow:hidden" class="reveal">
     <table style="width:100%;border-collapse:collapse">
       <thead>
-        <tr style="background:#F7F5F1">
-          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 28px;font-weight:500">GODINA</th>
-          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 20px;font-weight:500">INVESTITOR / PROJEKT</th>
-          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 20px;font-weight:500">VRSTA RADOVA</th>
-          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:12px 28px;font-weight:500">LOKACIJA</th>
+        <tr style="background:#F7F5F1;border-bottom:2px solid rgba(24,24,15,.1)">
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:14px 20px 14px 28px;font-weight:500;width:52px"></th>
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:14px 20px;font-weight:500;width:70px">GODINA</th>
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:14px 20px;font-weight:500">INVESTITOR / PROJEKT</th>
+          <th style="font-size:9.5px;letter-spacing:.14em;color:#A09D97;text-align:left;padding:14px 28px 14px 20px;font-weight:500">VRSTA RADOVA</th>
         </tr>
       </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2026.</td><td style="padding:14px 20px;font-size:13px">Dječji vrtić Marija Gorica</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Gradnja vrtića</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Marija Gorica</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2025.</td><td style="padding:14px 20px;font-size:13px">Poslovna zgrada C.S. Prečko</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Instalacijski i građevinski radovi</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Zagreb — Prečko</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2025.</td><td style="padding:14px 20px;font-size:13px">Svetice stambena zgrada</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Kompletni instalacijski radovi</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Zagreb</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2024.</td><td style="padding:14px 20px;font-size:13px">Dom za starije osobe Lobor</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Instalacijski i završni radovi</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Lobor</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2023.</td><td style="padding:14px 20px;font-size:13px">Bolnica Merkur — rekonstrukcija</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Kompletni instalacijski radovi</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Zagreb</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2022.</td><td style="padding:14px 20px;font-size:13px">Turistički kompleks Petram</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Instalacijski radovi i opremanje</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Savudrija</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2022.</td><td style="padding:14px 20px;font-size:13px">Institut IMI Zagreb</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Instalacijski radovi</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Zagreb</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2021.</td><td style="padding:14px 20px;font-size:13px">Stambena zgrada Donja Stubica</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Gradnja i instalacije</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Donja Stubica</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2021.</td><td style="padding:14px 20px;font-size:13px">Višestambena zgrada Bužanova</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Kompletni radovi</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Zagreb</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2021.</td><td style="padding:14px 20px;font-size:13px">Energetska obnova</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">EU energetska obnova</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Jakovlje</td></tr>
-        <tr style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2021.</td><td style="padding:14px 20px;font-size:13px">Centar za socijalnu skrb</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Adaptacija i instalacije</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Novi Marof</td></tr>
-        <tr><td style="padding:14px 28px;font-size:13.5px;font-weight:600">2002–2020.</td><td style="padding:14px 20px;font-size:13px">250+ projekata</td><td style="padding:14px 20px;font-size:12.5px;color:#7A7870">Stambeni, javni i poslovni objekti</td><td style="padding:14px 28px;font-size:12.5px;color:#7A7870">Hrvatska i Europa</td></tr>
+      <tbody id="ref-tbody">
+        <tr data-year="2026" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">1.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2026.</td><td style="padding:14px 20px;font-size:13px">Dječji vrtić Marija Gorica</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Gradnja vrtića</td></tr>
+        <tr data-year="2025" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">2.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2025.</td><td style="padding:14px 20px;font-size:13px">Poslovna zgrada C.S. Prečko</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Instalacijski i građevinski radovi</td></tr>
+        <tr data-year="2025" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">3.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2025.</td><td style="padding:14px 20px;font-size:13px">Svetice stambena zgrada</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Kompletni instalacijski radovi</td></tr>
+        <tr data-year="2024" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">4.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2024.</td><td style="padding:14px 20px;font-size:13px">Dom za starije osobe Lobor</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Instalacijski i završni radovi</td></tr>
+        <tr data-year="2023" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">5.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2023.</td><td style="padding:14px 20px;font-size:13px">Bolnica Merkur — rekonstrukcija</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Kompletni instalacijski radovi</td></tr>
+        <tr data-year="2022" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">6.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2022.</td><td style="padding:14px 20px;font-size:13px">Turistički kompleks Petram</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Instalacijski radovi i opremanje</td></tr>
+        <tr data-year="2022" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">7.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2022.</td><td style="padding:14px 20px;font-size:13px">Institut IMI Zagreb</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Instalacijski radovi</td></tr>
+        <tr data-year="2021" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">8.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2021.</td><td style="padding:14px 20px;font-size:13px">Stambena zgrada Donja Stubica</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Gradnja i instalacije</td></tr>
+        <tr data-year="2021" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">9.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2021.</td><td style="padding:14px 20px;font-size:13px">Višestambena zgrada Bužanova</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Kompletni radovi</td></tr>
+        <tr data-year="2021" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">10.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2021.</td><td style="padding:14px 20px;font-size:13px">Energetska obnova</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">EU energetska obnova — Jakovlje</td></tr>
+        <tr data-year="2021" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">11.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2021.</td><td style="padding:14px 20px;font-size:13px">Centar za socijalnu skrb Novi Marof</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Adaptacija i instalacije</td></tr>
+        <tr data-year="2020" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">12.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2020.</td><td style="padding:14px 20px;font-size:13px">Škola Resnik</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Rekonstrukcija i instalacije</td></tr>
+        <tr data-year="2020" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">13.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2020.</td><td style="padding:14px 20px;font-size:13px">Vrtić Omišalj</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Gradnja vrtića</td></tr>
+        <tr data-year="2015" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">14.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2015.</td><td style="padding:14px 20px;font-size:13px">Bolnica Merkur — sanacija</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Sanitarije, strojarstvo, završni radovi</td></tr>
+        <tr data-year="2014" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">15.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2014.</td><td style="padding:14px 20px;font-size:13px">Zagorje Tehobeton d.d.</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Vodoopskrba i odvodnja — DB "Pleso", MORH</td></tr>
+        <tr data-year="2014" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">16.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2014.</td><td style="padding:14px 20px;font-size:13px">Šudigo</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Sanacija sanitarskog čvora</td></tr>
+        <tr data-year="2014" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">17.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2014.</td><td style="padding:14px 20px;font-size:13px">Satura d.o.o.</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Uređenje ureda u Varaždinu</td></tr>
+        <tr data-year="2013" style="border-bottom:1px solid rgba(24,24,15,.06)"><td style="padding:14px 20px 14px 28px;font-size:13px;color:#A09D97">18.</td><td style="padding:14px 20px;font-size:13px;font-weight:600;white-space:nowrap">2013.</td><td style="padding:14px 20px;font-size:13px">Croatia osiguranje — filijala Zabok</td><td style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870">Održavanje</td></tr>
+        <tr style="background:#F7F5F1"><td style="padding:14px 20px 14px 28px;font-size:12px;color:#A09D97">···</td><td colspan="3" style="padding:14px 28px 14px 20px;font-size:12.5px;color:#7A7870;font-style:italic">250+ dodatnih projekata 2002–2012. — kompletna lista dostupna na upit</td></tr>
       </tbody>
     </table>
   </div>
@@ -219,7 +233,47 @@
   <a href="tel:+38549286596" class="sticky-call"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>NAZOVI</a>
   <a href="kontakt.html" class="sticky-upit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>POŠALJI UPIT</a>
 </div>
+<style>
+.yf-btn{padding:8px 16px;border-radius:20px;border:1px solid rgba(24,24,15,.15);background:#fff;font-size:12.5px;font-family:inherit;color:#18180F;cursor:pointer;transition:all .18s;white-space:nowrap}
+.yf-btn:hover{border-color:#3A9B4E;color:#3A9B4E}
+.yf-btn.active{background:#3A9B4E;border-color:#3A9B4E;color:#fff}
+#ref-search:focus{border-color:#3A9B4E;box-shadow:0 0 0 3px rgba(58,155,78,.1)}
+</style>
 <script>
+/* ── REFERENTNA LISTA FILTER ── */
+(function(){
+  var rows=document.querySelectorAll('#ref-tbody tr');
+  var years=[];
+  rows.forEach(function(r){
+    var y=r.dataset.year;
+    if(y&&years.indexOf(y)===-1)years.push(y);
+  });
+  years.sort(function(a,b){return b-a});
+  var container=document.getElementById('year-filters');
+  years.forEach(function(y){
+    var b=document.createElement('button');
+    b.className='yf-btn';
+    b.dataset.year=y;
+    b.textContent=y+'.';
+    b.setAttribute('onclick','setYear(this,"'+y+'")');
+    container.appendChild(b);
+  });
+})();
+var _activeYear='sve';
+function setYear(btn,y){
+  _activeYear=y;
+  document.querySelectorAll('.yf-btn').forEach(function(b){b.classList.toggle('active',b===btn)});
+  filterRef();
+}
+function filterRef(){
+  var q=document.getElementById('ref-search').value.toLowerCase();
+  document.querySelectorAll('#ref-tbody tr').forEach(function(r){
+    var yearOk=_activeYear==='sve'||r.dataset.year===_activeYear;
+    var textOk=!q||r.textContent.toLowerCase().includes(q);
+    r.style.display=(yearOk&&textOk)?'':'none';
+  });
+}
+
 function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var h=document.getElementById('hamburger');m.classList.toggle('open');h.classList.toggle('open')}
 function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}
 (function(){var bar=document.getElementById('scroll-bar');var btt=document.getElementById('btt');window.addEventListener('scroll',function(){var st=window.scrollY||document.documentElement.scrollTop;var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?(st/h*100):0)+'%';btt.classList.toggle('show',st>400)},{passive:true});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})})})();
