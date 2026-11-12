@@ -482,6 +482,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .btt{right:12px;bottom:20px}
 }
 @media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){.reveal,.reveal-l,.reveal-r,.reveal-s{opacity:1!important;transform:none!important}}
 @media(max-width:600px){.two-col-grid{grid-template-columns:1fr!important}}
 @media(max-width:760px){.kontakt-grid{grid-template-columns:1fr!important;gap:40px!important}}
 @media(max-width:760px){.ref-section{padding:60px 20px!important}}
@@ -500,5 +501,6 @@ html,body{overflow-x:hidden;max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){
   .pc-img,.nc-img img,.btn-g,.btn-g:hover,.f-btn,.f-btn:hover,.nc,.float-btn,.reveal,.reveal-l,.reveal-r,.reveal-s{transition:none;transform:none!important;animation:none}
+  .reveal,.reveal-l,.reveal-r,.reveal-s{opacity:1!important}
   .ticker-inner{animation:none}
 }
