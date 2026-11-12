@@ -171,7 +171,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 40px;d
 
 /* ── NJEMAČKO TRŽIŠTE ── */
 .de{padding:100px 40px;background:#18180F}
-.de-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.de-inner{display:grid;grid-template-columns:1fr;gap:48px}
 .de .h2{color:#fff}
 .de .lbl{color:#3A9B4E}
 .de-desc{font-size:16px;color:rgba(255,255,255,.32);line-height:1.9;margin-bottom:14px;margin-top:16px}
@@ -179,7 +179,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 40px;d
 .de-pt{display:flex;gap:12px;align-items:flex-start}
 .dp-dot{width:5px;height:5px;border-radius:50%;background:#3A9B4E;flex-shrink:0;margin-top:10px}
 .dp-txt{font-size:15px;color:rgba(255,255,255,.38);line-height:1.7}
-.de-img{border-radius:12px;overflow:hidden;background:#1A1A14}
+.de-img{border-radius:12px;overflow:hidden;background:#1A1A14;max-width:520px}
 .de-img img{width:100%;height:auto;display:block;opacity:.85}
 
 /* ── PARTNERI ── */
