@@ -54,18 +54,18 @@
     <div><span class="lbl">Naš rad</span><h2 class="h2">Odabrani projekti</h2></div>
   </div>
   <div id="pf-filters" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px"></div>
-  <div class="port-g" id="port-g">
+  <div id="port-g" style="display:flex;flex-wrap:wrap;gap:14px">
     <div class="pc pc-a" data-cat="VELIKI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2015/05/porfolio-3-700x420-1.jpg');background-color:#1e2a1e"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">ZDRAVSTVO</span><div class="pc-name">Bolnica Merkur</div><div class="pc-loc">ZAGREB</div></div>
     </div>
-    <div class="pc pc-b" data-cat="VELIKI PROJEKTI">
+    <div class="pc pc-b" data-cat="VELIKI PROJEKTI,ZADNJI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2024/10/staracki-Lobor_003-3-1-700x420.jpg');background-color:#1e1e2a"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">SOCIJALNA SKRB</span><div class="pc-name">Dom za starije — Lobor</div><div class="pc-loc">LOBOR</div></div>
     </div>
-    <div class="pc pc-c" data-cat="TURIZAM">
+    <div class="pc pc-c" data-cat="ZADNJI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/TURISTICKI-KOMPLEPKS-PETRAM-SAVUDRIJA-700x420.jpg');background-color:#1e2620"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">TURIZAM</span><div class="pc-name">Petram kompleks</div><div class="pc-loc">SAVUDRIJA</div></div>
@@ -90,7 +90,7 @@
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">NISKOENERGETSKE KUĆE</span><div class="pc-name">Stambena zgrada</div><div class="pc-loc">DONJA STUBICA</div></div>
     </div>
-    <div class="pc pc-h" data-cat="ZADNJI PROJEKTI">
+    <div class="pc pc-h" data-cat="VELIKI PROJEKTI,ZADNJI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2025/02/20250130_095539-1-700x420.jpg');background-color:#1e1e26"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">STAMBENA GRADNJA</span><div class="pc-name">Svetice zgrada</div><div class="pc-loc">ZAGREB</div></div>
@@ -100,12 +100,12 @@
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">INDUSTRIJA</span><div class="pc-name">Proizvodni pogon</div><div class="pc-loc">KRAPINA</div></div>
     </div>
-    <div class="pc pc-j" data-cat="STAMBENA GRADNJA">
+    <div class="pc pc-j" data-cat="ZADNJI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/VISESTAMBENA-ZGRADA-BUZANOVA-700x420.jpg');background-color:#1e2a1e"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">STAMBENA GRADNJA</span><div class="pc-name" style="font-size:13px">Višestambena zgrada, Bužanova</div><div class="pc-loc">ZAGREB</div></div>
     </div>
-    <div class="pc pc-k" data-cat="VELIKI PROJEKTI">
+    <div class="pc pc-k" data-cat="VELIKI PROJEKTI,ZADNJI PROJEKTI">
       <div class="pc-img" style="background-image:url('https://vodolim.hr/wp-content/uploads/2021/09/SKOLA-RESNIK-700x420.jpg');background-color:#1e2418"></div>
       <div class="pc-veil"></div>
       <div class="pc-info"><span class="pc-cat">OBRAZOVANJE</span><div class="pc-name" style="font-size:13px">Škola Resnik</div><div class="pc-loc">RESNIK</div></div>
@@ -287,7 +287,7 @@
 <script>
 function toggleMobileMenu(){var m=document.getElementById('mobile-menu');var h=document.getElementById('hamburger');m.classList.toggle('open');h.classList.toggle('open')}
 function closeMobileMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open')}
-(function(){var CATS=['SHOW ALL','NISKOENERGETSKE KUĆE','VELIKI PROJEKTI','ZADNJI PROJEKTI'];var container=document.getElementById('pf-filters');var active='SHOW ALL';function filter(){document.querySelectorAll('#port-g .pc').forEach(function(c){c.style.display=(active==='SHOW ALL'||c.dataset.cat===active)?'':'none'})}CATS.forEach(function(cat){var b=document.createElement('button');b.className='yf-btn'+(cat==='SHOW ALL'?' active':'');b.innerHTML=cat==='SHOW ALL'?'<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>SHOW ALL':cat;b.onclick=function(){active=cat;container.querySelectorAll('.yf-btn').forEach(function(x){x.classList.remove('active')});b.classList.add('active');filter()};container.appendChild(b)})})();
+(function(){var CATS=['SHOW ALL','NISKOENERGETSKE KUĆE','VELIKI PROJEKTI','ZADNJI PROJEKTI'];var container=document.getElementById('pf-filters');var active='SHOW ALL';function filter(){document.querySelectorAll('#port-g .pc').forEach(function(c){c.style.display=(active==='SHOW ALL'||c.dataset.cat===active)?'':'none'})}CATS.forEach(function(cat){var b=document.createElement('button');b.className='yf-btn'+(cat==='SHOW ALL'?' active':'');b.innerHTML=cat==='SHOW ALL'?'<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:5px"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>SHOW ALL':cat;b.onclick=function(){active=cat;container.querySelectorAll('.yf-btn').forEach(function(x){x.classList.remove('active')});b.classList.add('active');filter()};container.appendChild(b)});function filter(){document.querySelectorAll('#port-g .pc').forEach(function(c){var cats=c.dataset.cat?c.dataset.cat.split(',').map(function(s){return s.trim()}):[];c.style.display=(active==='SHOW ALL'||cats.indexOf(active)!==-1)?'':'none'})}})();
 var activeYear='sve';
 function setYear(btn,year){activeYear=year;document.querySelectorAll('.yf-btn').forEach(function(b){b.classList.remove('active')});btn.classList.add('active');filterRef()}
 function filterRef(){var q=(document.getElementById('ref-search').value||'').toLowerCase();document.querySelectorAll('#ref-tbody tr[data-year]').forEach(function(r){var matchYear=activeYear==='sve'||r.dataset.year===activeYear;var matchText=!q||r.textContent.toLowerCase().includes(q);r.style.display=(matchYear&&matchText)?'':'none'})}
