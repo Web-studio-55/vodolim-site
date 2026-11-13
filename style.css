@@ -480,6 +480,8 @@ html,body{overflow-x:hidden;max-width:100%}
   .lbox-prev,.lbox-next{width:36px;height:36px;font-size:16px;left:8px}
   .lbox-next{right:8px}
   .btt{right:12px;bottom:20px}
+  .float-btn{width:44px;height:44px}
+  .float-btn svg{width:20px;height:20px}
 }
 @media(max-width:760px){.iso-grid{grid-template-columns:1fr 1fr 1fr!important}.access-btn{display:none!important}}
 @media(max-width:520px){.iso-grid{grid-template-columns:1fr!important}}
