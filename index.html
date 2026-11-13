@@ -1920,9 +1920,16 @@ function closeMobileMenu(){
   function visible(){return Math.floor(track.parentElement.offsetWidth/cardW());}
   function maxIdx(){return Math.max(0,track.children.length-visible());}
   function go(n){idx=Math.min(Math.max(n,0),maxIdx());track.style.transform='translateX(-'+(idx*cardW())+'px)';}
-  prev.addEventListener('click',function(){go(idx-1)});
-  next.addEventListener('click',function(){go(idx+1)});
+  prev.addEventListener('click',function(){go(idx-1);resetAuto()});
+  next.addEventListener('click',function(){go(idx+1);resetAuto()});
   window.addEventListener('resize',function(){go(Math.min(idx,maxIdx()))});
+  var autoT;
+  function autoNext(){idx=idx>=maxIdx()?0:idx+1;go(idx);}
+  function startAuto(){autoT=setInterval(autoNext,3000);}
+  function resetAuto(){clearInterval(autoT);startAuto();}
+  track.parentElement.addEventListener('mouseenter',function(){clearInterval(autoT)});
+  track.parentElement.addEventListener('mouseleave',startAuto);
+  startAuto();
 })();
 
 /* ── 3D TILT ── */
