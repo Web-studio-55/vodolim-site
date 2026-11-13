@@ -484,7 +484,8 @@ html,body{overflow-x:hidden;max-width:100%}
   .float-btn svg{width:20px;height:20px}
 }
 .iso-grid{grid-template-columns:repeat(3,1fr)}
-@media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}.access-btn{display:none!important}.port-extra-g{display:none!important}}
+@media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}.access-btn{display:none!important}}
+.port-extra-g{display:none!important}
 @media(max-width:760px){
   .port-g{grid-template-columns:1fr!important;grid-template-rows:auto!important}
   .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i,.pc-j,.pc-k,.pc-l{grid-column:span 1!important;height:220px!important}
