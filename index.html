@@ -507,7 +507,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .kontakt-inner{gap:32px}
   .stanovi-img{height:220px}
   .ticker-item{padding:0 20px;font-size:10px}
-  .float-btns{right:12px;bottom:130px}
+  .float-btns{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   .pc-img,.nc-img img,.btn-g,.btn-g:hover,.f-btn,.f-btn:hover,.nc,.float-btn{
@@ -532,7 +532,7 @@ html,body{overflow-x:hidden;max-width:100%}
 .btt.show{opacity:1;pointer-events:auto}
 .btt:hover{transform:translateY(-3px)}
 .btt svg{width:20px;height:20px;fill:#fff}
-@media(max-width:520px){.btt{right:12px;bottom:132px}}
+@media(max-width:520px){.btt{right:12px;bottom:20px}}
 
 /* ── GDPR BANNER ── */
 .gdpr{
@@ -670,12 +670,11 @@ html,body{overflow-x:hidden;max-width:100%}
 }
 .faq-q:hover{color:#3A9B4E}
 .faq-icon{
-  width:28px;height:28px;border-radius:50%;background:#3A9B4E;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;transition:transform .3s,background .2s;
+  width:28px;height:28px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:transform .3s;
 }
-.faq-icon svg{width:14px;height:14px;fill:#fff;transition:transform .3s}
-.faq-item.open .faq-icon{background:#18180F}
-.faq-item.open .faq-icon svg{transform:rotate(45deg)}
+.faq-icon svg{width:20px;height:20px;fill:none;stroke:#3A9B4E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.faq-item.open .faq-icon svg{transform:rotate(180deg)}
 .faq-a{font-size:15px;color:#6B6860;line-height:1.9;max-height:0;overflow:hidden;transition:max-height .4s ease,padding-bottom .4s}
 .faq-item.open .faq-a{max-height:400px;padding-bottom:22px}
 
@@ -1238,7 +1237,7 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
       <h2 class="h2" style="margin-top:8px">Kvaliteta. Okoliš. Sigurnost.</h2>
       <p style="color:rgba(24,24,15,.5);font-size:14px;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto">Naše poslovanje usklađeno je s međunarodno priznatim normama koje potvrđuju kvalitetu rada, odgovoran odnos prema okolišu te sigurnost i zdravlje na radu.</p>
     </div>
-    <div class="iso-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+    <div class="iso-grid two-col-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
       <div style="background:#fff;border:1px solid rgba(24,24,15,.07);border-radius:12px;padding:36px 24px;text-align:center">
         <img src="https://vodolim.hr/wp-content/uploads/2015/05/ICR-Adriatica_znak_9001.png" alt="ISO 9001" style="width:140px;height:140px;object-fit:contain;margin:0 auto 20px;display:block">
         <div style="font-size:16px;font-weight:700;color:#18180F;margin-bottom:8px">ISO 9001</div>
@@ -1455,37 +1454,37 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-q">Koliko traje izgradnja obiteljske kuće?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Ovisno o veličini i složenosti projekta, izgradnja obiteljske kuće traje 10–18 mjeseci od ishođenja građevinske dozvole. Naš tim radi paralelno na više faza pa skraćujemo rokove koliko je god moguće. Točan rok uvijek definiramo ugovorom.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Dajete li garanciju na izvedene radove?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Da. Na sve izvedene radove dajemo zakonsku garanciju od 2 godine, a na konstrukciju objekta 10 godina sukladno Zakonu o gradnji. Posjedujemo certifikate ISO 9001, ISO 14001 i ISO 45001 koji jamče kvalitetu naših procesa.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Izvodite li radove energetske obnove starih zgrada?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Apsolutno. Energetska obnova stambenih i poslovnih zgrada jedna je od naših ključnih djelatnosti. Radimo toplinsku izolaciju, zamjenu prozora i vrata, instalaciju solarnih panela i toplinskih pumpi, te sve potrebne instalacije. Možemo vam pomoći i s prijavom na EU fondove za sufinanciranje obnove.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Radite li i u Njemačkoj?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Da, aktivno smo prisutni na njemačkom tržištu već 6 godina, surađujući isključivo s njemačkim investitorima. Ako se bavite instalacijama i tražite pouzdanog partnera za rad u Njemačkoj, kontaktirajte nas — nudimo osiguran smještaj i stabilno poslovanje.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Postoji li minimalna veličina projekta za suradnju?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Ne postoji strogi minimum — radimo od obiteljskih kuća do bolnica i poslovnih kompleksa. Međutim, naša snaga leži u složenim i velikim projektima gdje se može iskoristiti puni kapacitet naših 150+ stručnjaka. Za manje projekte možemo preporučiti suradnike iz naše mreže.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Kako mogu dobiti ponudu?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Ispunite kontakt formu na ovoj stranici ili nas nazovite na +385 (0) 49 286 596. Dogovaramo besplatnu konzultaciju na kojoj razgovaramo o vašem projektu, rokovima i okvirnom budžetu. Na temelju tog razgovora izrađujemo preciznu ponudu.</div>
     </div>

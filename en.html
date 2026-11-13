@@ -499,7 +499,7 @@ html,body{overflow-x:hidden;max-width:100%}
   .kontakt-inner{gap:32px}
   .stanovi-img{height:220px}
   .ticker-item{padding:0 20px;font-size:10px}
-  .float-btns{right:12px;bottom:130px}
+  .float-btns{display:none}
 }
 @media(prefers-reduced-motion:reduce){
   .pc-img,.nc-img img,.btn-g,.btn-g:hover,.f-btn,.f-btn:hover,.nc,.float-btn{
@@ -524,7 +524,7 @@ html,body{overflow-x:hidden;max-width:100%}
 .btt.show{opacity:1;pointer-events:auto}
 .btt:hover{transform:translateY(-3px)}
 .btt svg{width:20px;height:20px;fill:#fff}
-@media(max-width:520px){.btt{right:12px;bottom:132px}}
+@media(max-width:520px){.btt{right:12px;bottom:20px}}
 
 /* ── GDPR BANNER ── */
 .gdpr{
@@ -662,12 +662,11 @@ html,body{overflow-x:hidden;max-width:100%}
 }
 .faq-q:hover{color:#3A9B4E}
 .faq-icon{
-  width:28px;height:28px;border-radius:50%;background:#3A9B4E;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;transition:transform .3s,background .2s;
+  width:28px;height:28px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;transition:transform .3s;
 }
-.faq-icon svg{width:14px;height:14px;fill:#fff;transition:transform .3s}
-.faq-item.open .faq-icon{background:#18180F}
-.faq-item.open .faq-icon svg{transform:rotate(45deg)}
+.faq-icon svg{width:20px;height:20px;fill:none;stroke:#3A9B4E;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.faq-item.open .faq-icon svg{transform:rotate(180deg)}
 .faq-a{font-size:15px;color:#6B6860;line-height:1.9;max-height:0;overflow:hidden;transition:max-height .4s ease,padding-bottom .4s}
 .faq-item.open .faq-a{max-height:400px;padding-bottom:22px}
 
@@ -1585,37 +1584,37 @@ body.ac-font,body.ac-font *{font-family:Arial,sans-serif!important;letter-spacin
   <div class="faq-list">
     <div class="faq-item">
       <button class="faq-q">How long does it take to build a family house?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Depending on the size and complexity of the project, building a family house takes 10–18 months from obtaining a building permit. Our team works in parallel on multiple phases to shorten timelines as much as possible. The exact timeframe is always defined in the contract.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Do you offer a warranty on completed works?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Yes. We provide a statutory 2-year warranty on all completed works, and 10 years on the building structure in accordance with the Construction Act. We hold ISO 9001, ISO 14001 and ISO 45001 certificates guaranteeing the quality of our processes.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Do you carry out energy renovation of older buildings?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Absolutely. Energy renovation of residential and commercial buildings is one of our core activities. We carry out thermal insulation, replacement of windows and doors, installation of solar panels and heat pumps, and all required installations. We can also help you apply for EU funds to co-finance the renovation.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Do you also work in Germany?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Yes, we have been actively present in the German market for 6 years, working exclusively with German investors. If you work in installations and are looking for a reliable partner in Germany, contact us — we offer provided accommodation and stable working conditions.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">Is there a minimum project size for collaboration?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">There is no strict minimum — we work on everything from family homes to hospitals and commercial complexes. However, our strength lies in complex, large-scale projects where the full capacity of our 150+ experts can be utilised. For smaller projects we can recommend partners from our network.</div>
     </div>
     <div class="faq-item">
       <button class="faq-q">How can I get a quote?
-        <span class="faq-icon"><svg viewBox="0 0 14 14"><path d="M7 2v10M2 7h10"/></svg></span>
+        <span class="faq-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
       </button>
       <div class="faq-a">Fill in the contact form on this page or call us on +385 (0) 49 286 596. We arrange a free consultation where we discuss your project, timeline and rough budget. Based on that conversation we prepare a precise quote.</div>
     </div>
