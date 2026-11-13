@@ -1,6 +1,6 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#F7F5F1;color:#18180F;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:#F7F5F1;color:#18180F;line-height:1.6;-webkit-font-smoothing:antialiased;scrollbar-gutter:stable}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 
@@ -83,7 +83,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 40px;d
 .pc:hover .pc-img{transform:scale(1.07)}
 .pc-veil{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,4,.9) 0%,rgba(6,6,4,.2) 55%,transparent 100%)}
 .pc-info{position:absolute;bottom:0;left:0;right:0;padding:18px 20px}
-.pc-cat{display:inline-block;font-size:9px;letter-spacing:.14em;color:#3A9B4E;background:rgba(58,155,78,.13);border:1px solid rgba(58,155,78,.25);padding:3px 9px;border-radius:20px;margin-bottom:8px}
+.pc-cat{display:inline-block;font-size:9px;letter-spacing:.14em;color:#fff;background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.2);padding:3px 9px;border-radius:20px;margin-bottom:8px}
 .pc-name{font-family:Georgia,serif;font-weight:400;color:#fff;line-height:1.3}
 .pc-loc{font-size:10px;color:rgba(255,255,255,.32);letter-spacing:.08em;margin-top:3px}
 .pc-a{grid-column:1/6;grid-row:1/3;height:480px}
@@ -483,6 +483,11 @@ html,body{overflow-x:hidden;max-width:100%}
   .btt{right:12px;bottom:20px}
 }
 @media(max-width:760px){.iso-grid{grid-template-columns:1fr!important}}
+@media(max-width:760px){
+  .port-g{grid-template-columns:1fr!important;grid-template-rows:auto!important}
+  .pc-a,.pc-b,.pc-c,.pc-d,.pc-e,.pc-f,.pc-g,.pc-h,.pc-i,.pc-j,.pc-k,.pc-l{grid-column:span 1!important;height:220px!important}
+  .pc-a .pc-name{font-size:15px}
+}
 @media(max-width:760px){.reveal,.reveal-l,.reveal-r,.reveal-s{opacity:1!important;transform:none!important}}
 @media(max-width:600px){.two-col-grid{grid-template-columns:1fr!important}}
 @media(max-width:760px){.kontakt-grid{grid-template-columns:1fr!important;gap:40px!important}}
